@@ -10,6 +10,7 @@ export default Component.extend({
   proposals: null,
   answerValue: null,
   answerChanged: null, // action
+  postMessageHandler:null,
 
   _blocks: computed('proposals', function() {
     return proposalsAsBlocks(this.proposals);
@@ -20,11 +21,26 @@ export default Component.extend({
     return answer.indexOf('#ABAND#') > -1 ? '' : answer;
   }),
 
+  _setAnswerValue(event) {
+    this.set('answerValue',event.data) ;
+  },
+
+  didUpdateAttrs() {
+    this._super(...arguments);
+    this.set('userAnswer', '');
+  },
+
   didInsertElement: function() {
+    this.postMessageHandler = this._setAnswerValue.bind(this);
+    window.addEventListener('message', this.postMessageHandler);
 
     this.$('input').keydown(() => {
       this.answerChanged();
     });
+  },
+
+  didDestroyElement: function() {
+    window.removeEventListener('message',this.postMessageHandler);
   },
 
   willRender: function() {
