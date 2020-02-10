@@ -12,6 +12,8 @@ const ChallengeItemGeneric = Component.extend({
 
   isValidateButtonEnabled: true,
   isSkipButtonEnabled: true,
+  hideInput: false,
+  hideInputHandler: null,
 
   _elapsedTime: null,
   _timer: null,
@@ -26,6 +28,8 @@ const ChallengeItemGeneric = Component.extend({
 
   didUpdateAttrs() {
     this._super(...arguments);
+    this.set('hideInput', false);
+
     if (!this._isUserAwareThatChallengeIsTimed) {
       this.set('hasUserConfirmWarning', false);
       this.set('hasChallengeTimer', this.hasTimerDefined());
@@ -36,6 +40,15 @@ const ChallengeItemGeneric = Component.extend({
     this._super(...arguments);
     const timer = this._timer;
     cancel(timer);
+  },
+
+  didInsertElement: function() {
+    this.hideInputHandler = this._hideInput.bind(this);
+    window.addEventListener('message',  this.hideInputHandler);
+  },
+
+  didDestroyElement: function() {
+    window.removeEventListener('message', this.hideInputHandler);
   },
 
   hasUserConfirmWarning: computed('challenge', function() {
@@ -52,6 +65,12 @@ const ChallengeItemGeneric = Component.extend({
 
   hasTimerDefined() {
     return _.isInteger(this.get('challenge.timer'));
+  },
+
+  _hideInput: function(event) {
+    if (event.data === 'hideInput') {
+      this.set('hideInput', true);
+    }
   },
 
   _getTimeout() {
@@ -86,16 +105,16 @@ const ChallengeItemGeneric = Component.extend({
         if (this._hasError()) {
 
           const errorMessage = this._getErrorMessage();
-          
+
           this.set('errorMessage', errorMessage);
 
           return;
         }
-        
+
         this.set('errorMessage', null);
         this.set('_isUserAwareThatChallengeIsTimed', false);
         this.set('isValidateButtonEnabled', false);
-        
+
         return this.answerValidated(this.challenge, this.assessment, this._getAnswerValue(), this._getTimeout(), this._getElapsedTime())
           .finally(() => this.set('isValidateButtonEnabled', true));
       }
