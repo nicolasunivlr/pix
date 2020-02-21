@@ -5,9 +5,7 @@
   </a>
 {{else}}
   {{#if this.isValidateButtonEnabled}}
-    <a class="challenge-actions__action challenge-actions__action-validate" {{action validateAnswer}} href="#">
-      <span class="challenge-actions__action-validate-text">Je valide</span>
-    </a>
+    <Button @executeAction={{@validateAnswer}}>Je valide</Button>
   {{else}}
     <div class="challenge-actions__action challenge-actions__action-validate__loader">
       <div class="challenge-actions__action-validate__loader-bar"></div>
