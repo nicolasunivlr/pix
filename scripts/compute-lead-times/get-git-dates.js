@@ -7,10 +7,10 @@ async function getCommitDatesBetweenTags(olderTag, newerTag) {
 }
 
 async function getTagDate(tag) {
-  return exec(`git show --pretty=format:"%ad" --summary ${tag} | tail -1`);
+  return exec(`git show --pretty=format:"%ad" --summary ${tag} | head -n 6 | tail -1`);
 }
 
-async function getRefNames(maxCount = 6) {
+async function getRefNames(maxCount = 20) {
   const refs = await exec(`git for-each-ref --format="%(refname)" --sort=-taggerdate --count=${maxCount} refs/tags`);
   return refs.replace(/refs\/tags\//gi, '').split('\n');
 }

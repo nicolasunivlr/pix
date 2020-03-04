@@ -93,11 +93,13 @@
     "test:scripts": "cd scripts && NODE_ENV=test mocha --recursive --exit --reporter dot tests"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "0.19.2",
     "bluebird": "3.7.2",
     "d3-dsv": "1.2.0",
     "eslint-plugin-ember": "^7.6.0",
+    "lodash": "4.17.15",
     "moment": "^2.24.0",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "stats-lite": "2.2.0"
   }
 }
