@@ -1,0 +1,15 @@
+@startuml
+actor User #blue
+participant MonPix
+participant API
+User -> MonPix : /connexion
+note left:  clic sur bouton \n "Je me connecte"
+MonPix -> API : POST /token
+API -> MonPix : 200 / { access_token: \n <JWT> =>  user_id: <USER-ID>, source: pix, iat: <IAT>, exp: <EXP> \n, user_id: <USER-ID>}
+MonPix -> API : GET /users/me
+API -> MonPix : 200 / { type: users , id: <USER-ID>, \n attributes: {"first-name": (..)} \n}
+User -> MonPix : /deconnexion
+note left: clic sur entrée de menu \n "Se déconnecter"
+MonPix -> API : POST /revoke, token=<JWT>
+API -> MonPix : 204 / { access_token: <JWT> , user_id: <USER-ID>}
+@enduml

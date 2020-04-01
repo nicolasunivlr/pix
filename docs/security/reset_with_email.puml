@@ -1,0 +1,30 @@
+@startuml
+actor User #blue
+participant MonPix
+participant API
+participant SendInBlue
+User -> MonPix : /connexion
+note left: Connexion à app.pix.fr
+User -> MonPix : /mdp-oublie
+note left: Clic sur "Mot de passe oublié ?"
+MonPix -> API : POST /password-reset-demands
+API -> MonPix : 200/OK
+note left: Saisie email et clic sur "Réinitialiser"
+User -> MonPix : /mdp-oublie
+MonPix -> API : POST /  password-reset-demands + {email:}
+API -> MonPix : 201/Created
+note left: envoi email
+API -> SendInBlue : token
+SendInBlue -> User: lien r.email.pix.fr/tr/cl/<linkId>
+note left: Clic sur le lien de l'email
+User -> SendInBlue : <linkId>
+SendInBlue -> User: 302/Redirect + token
+User -> MonPix: /changer-mot-de-passe + token
+MonPix -> API : GET /password-reset-demands/<token>
+API -> MonPix : { user }
+User -> MonPix:
+note left: Saisie nouveau mot de passe + clic sur Envoyer
+MonPix -> API : PATCH /users/{id}/password-update&temporaryKey=<token>
+
+User -> MonPix : /connexion
+@enduml
