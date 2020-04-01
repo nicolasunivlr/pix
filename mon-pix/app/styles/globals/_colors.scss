@@ -48,6 +48,10 @@ $information-dark: #F24645;
 $information-light: #F1A141;
 $security-dark: #AC008D;
 $security-light: #FF3F94;
+// status
+$error: #FF4B00;
+$success: #57C884;
+$warning: #FFBE00;
 
 // below color to refactor
 $alabaster-grey: #FAFAFA;
@@ -88,7 +92,6 @@ $jade: #0BA86D;
 $eucalyptus: #228C5E;
 
 $mandy-red: #E14956;
-$vermilion: #FF4B00;
 $pomegranate: #F52222;
 $red-error: #E62600;
 $monza: #D60606;
@@ -100,7 +103,6 @@ $purple: #985FFF;
   Area Colors
  */
 
-$emerald: #57C884;
 $butterfly-bush: #574DA6;
 $cerulean-dark: #3D68FF;
 /*
@@ -108,8 +110,8 @@ $cerulean-dark: #3D68FF;
  */
 $pix-blue-to-purple-gradient: linear-gradient(to right, $dodger-blue, $purple);
 $pix-blue-to-purple-gradient-top-left-to-bottom-right: linear-gradient(-225deg, $dodger-blue 0%, $purple 100%);
-$pix-emerald-to-emerald-dark-gradient: linear-gradient(to right, $emerald, $content-dark);
-$pix-emerald-to-emerald-dark-gradient-bottom-to-top: linear-gradient(to top, $emerald, $content-dark);
+$pix-emerald-to-emerald-dark-gradient: linear-gradient(to right, $success, $content-dark);
+$pix-emerald-to-emerald-dark-gradient-bottom-to-top: linear-gradient(to top, $success, $content-dark);
 $pix-yellow-to-orange-gradient: linear-gradient(180deg, $bright-yellow 0%, $pizazz-orange 100%);
 $pix-yellow-to-jaffa-gradient: linear-gradient(180deg, $yellow 0%, $information-light 100%);
 
