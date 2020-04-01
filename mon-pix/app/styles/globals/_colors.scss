@@ -1,9 +1,11 @@
-/*
-  Colors name From:
-    - http://www.colorhexa.com
-    - http://chir.ag/projects/name-that-color
-*/
+// See https://zeroheight.com/8dd127da7/p/839645-couleurs/b/21317a
+
+// primary
+$blue-zodia: #505F79;
+$yellow: #FFBE00;
 $white: #ffffff;
+$black: #07142E;
+
 $alabaster-grey: #FAFAFA;
 $porcelain-grey: #f2f3f4;
 $mercury-grey: #e6e6e6;
@@ -19,7 +21,6 @@ $tundora-grey: #4A4A4A;
 $charcoal-grey: #3e4149;
 $grayish-grey: #39393A;
 $nero: #222222;
-$black: #000000;
 
 $periwinkle-blue: #c3d0ff;
 $jordy-blue: #8D9EF7;
@@ -31,7 +32,6 @@ $pix-grey-hover: #414657;
 
 $bright-yellow: #fedc41;
 $pix-yellow: #ffcb00;
-$pix-yellow-hover: #ffbe00;
 $nugget-yellow: #CF9C24;
 $dark-orange: #FF9400;
 $pizazz-orange: #ff8800;
@@ -95,7 +95,7 @@ $pix-blue-to-purple-gradient-top-left-to-bottom-right: linear-gradient(-225deg, 
 $pix-emerald-to-emerald-dark-gradient: linear-gradient(to right, $emerald, $emerald-dark);
 $pix-emerald-to-emerald-dark-gradient-bottom-to-top: linear-gradient(to top, $emerald, $emerald-dark);
 $pix-yellow-to-orange-gradient: linear-gradient(180deg, $bright-yellow 0%, $pizazz-orange 100%);
-$pix-yellow-to-jaffa-gradient: linear-gradient(180deg, $pix-yellow-hover 0%, $jaffa 100%);
+$pix-yellow-to-jaffa-gradient: linear-gradient(180deg, $yellow 0%, $jaffa 100%);
 
 /*
   Box Shadows
