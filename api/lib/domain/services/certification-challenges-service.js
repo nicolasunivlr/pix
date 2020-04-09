@@ -1,4 +1,5 @@
 const certificationChallengeRepository = require('../../infrastructure/repositories/certification-challenge-repository');
+const CertificationChallenge = require('../models/CertificationChallenge');
 
 module.exports = {
 
@@ -6,7 +7,13 @@ module.exports = {
     const saveChallengePromises = [];
     userCompetences.forEach((userCompetence) => {
       userCompetence.challenges.forEach((challenge) => {
-        saveChallengePromises.push(certificationChallengeRepository.save(challenge, certificationCourse));
+        const certificationChallenge = new CertificationChallenge({
+          challengeId: challenge.id,
+          competenceId: challenge.competenceId,
+          associatedSkillName: challenge.testedSkill,
+          courseId: certificationCourse.id,
+        });
+        saveChallengePromises.push(certificationChallengeRepository.save(certificationChallenge));
       });
     });
 

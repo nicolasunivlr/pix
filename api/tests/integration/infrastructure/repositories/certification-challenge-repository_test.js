@@ -1,4 +1,4 @@
-const { expect, knex, domainBuilder, databaseBuilder } = require('../../../test-helper');
+const { expect, knex, domainBuilder, databaseBuilder, catchErr } = require('../../../test-helper');
 const _ = require('lodash');
 
 const CertificationChallenge = require('../../../../lib/domain/models/CertificationChallenge');
@@ -8,28 +8,26 @@ const certificationChallengeRepository = require('../../../../lib/infrastructure
 describe('Integration | Repository | Certification Challenge', function() {
 
   describe('#save', () => {
+    let certificationChallengeToSave;
 
-    let certificationCourseObject;
-    let certificationChallenge;
+    beforeEach(() => {
+      const certificationCourseId = databaseBuilder.factory.buildCertificationCourse().id;
 
-    beforeEach(async () => {
-      certificationCourseObject = databaseBuilder.factory.buildCertificationCourse();
-
-      certificationChallenge = domainBuilder.buildCertificationChallenge();
-      await databaseBuilder.commit();
+      certificationChallengeToSave = domainBuilder.buildCertificationChallenge({ courseId: certificationCourseId });
+      certificationChallengeToSave.id = undefined;
+      return databaseBuilder.commit();
     });
 
     afterEach(() => {
       return knex('certification-challenges').delete();
     });
 
-    it('should return certification challenge object', () => {
-      const promise = certificationChallengeRepository.save(certificationChallenge, certificationCourseObject);
+    it('should return certification challenge object', async () => {
+      const savedCertificationChallenge = await certificationChallengeRepository.save(certificationChallengeToSave);
 
       // then
-      return promise.then((savedCertificationChallenge) => {
-        expect(savedCertificationChallenge.challengeId).to.deep.equal(certificationChallenge.id);
-      });
+      expect(savedCertificationChallenge).to.be.an.instanceOf(CertificationChallenge);
+      expect(savedCertificationChallenge).to.have.property('id').and.not.null;
     });
   });
 
@@ -108,14 +106,14 @@ describe('Integration | Repository | Certification Challenge', function() {
         await databaseBuilder.commit();
       });
 
-      it('should reject the promise if no non answered challenge is found', function() {
+      it('should reject the promise if no non answered challenge is found', async () => {
         // when
-        const promise = certificationChallengeRepository.getNonAnsweredChallengeByCourseId(
+        const error = await catchErr(certificationChallengeRepository.getNonAnsweredChallengeByCourseId)(
           assessmentId, certificationCourseId,
         );
 
         // then
-        return expect(promise).to.be.rejectedWith(AssessmentEndedError);
+        return expect(error).to.be.instanceOf(AssessmentEndedError);
       });
 
     });
@@ -124,7 +122,8 @@ describe('Integration | Repository | Certification Challenge', function() {
 
       let certificationCourseId, assessmentId;
       let unansweredChallenge;
-      before(async () => {
+
+      beforeEach(async () => {
         // given
         const userId = databaseBuilder.factory.buildUser({}).id;
         certificationCourseId = databaseBuilder.factory.buildCertificationCourse({ userId }).id;

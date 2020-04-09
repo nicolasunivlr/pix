@@ -8,12 +8,12 @@ describe('Unit | Service | Certification Challenge Service', function() {
 
     const challenge1 = {
       id: 'challenge1',
-      competence: 'Savoir tester',
+      competenceId: 'competence1Id',
       testedSkill: '@skill1'
     };
     const challenge2 = {
       id: 'challenge2',
-      competence: 'Savoir debugguer',
+      competenceId: 'competence2Id',
       testedSkill: '@skill2'
     };
 
@@ -40,43 +40,61 @@ describe('Unit | Service | Certification Challenge Service', function() {
     });
 
     context('when profile return one competence with two challenges', () => {
-      it('should call certification Challenge Repository save twice', () => {
+      it('should call certification Challenge Repository save twice', async () => {
         //When
-        const promise = certificationChallengesService.saveChallenges(certificationProfileWithOneCompetence, certificationCourse);
+        await certificationChallengesService.saveChallenges(certificationProfileWithOneCompetence, certificationCourse);
 
         //Then
-        return promise.then(() => {
-          sinon.assert.calledTwice(certificationChallengeRepository.save);
-          sinon.assert.calledWith(certificationChallengeRepository.save,challenge1 ,certificationCourse);
-          sinon.assert.calledWith(certificationChallengeRepository.save,challenge2 ,certificationCourse);
-        });
+        sinon.assert.calledTwice(certificationChallengeRepository.save);
+        const firstCall = certificationChallengeRepository.save.getCall(0);
+        expect(firstCall.calledWithMatch({
+          challengeId: challenge1.id,
+          competenceId: challenge1.competenceId,
+          associatedSkillName: challenge1.testedSkill,
+          courseId: certificationCourse.id,
+        })).to.be.true;
+        const secondCall = certificationChallengeRepository.save.getCall(1);
+        expect(secondCall.calledWithMatch({
+          challengeId: challenge2.id,
+          competenceId: challenge2.competenceId,
+          associatedSkillName: challenge2.testedSkill,
+          courseId: certificationCourse.id,
+        })).to.be.true;
       });
     });
 
     context('when profile return two competences with one challenge', () => {
-      it('should call certification Challenge Repository save twice', () => {
+      it('should call certification Challenge Repository save twice', async () => {
         //When
-        const promise = certificationChallengesService.saveChallenges(certificationProfileWithTwoCompetence, certificationCourse);
+        await certificationChallengesService.saveChallenges(certificationProfileWithTwoCompetence, certificationCourse);
 
         //Then
-        return promise.then(() => {
-          sinon.assert.calledTwice(certificationChallengeRepository.save);
-          sinon.assert.calledWith(certificationChallengeRepository.save,challenge1 ,certificationCourse);
-          sinon.assert.calledWith(certificationChallengeRepository.save,challenge2 ,certificationCourse);
-        });
+        sinon.assert.calledTwice(certificationChallengeRepository.save);
+        const firstCall = certificationChallengeRepository.save.getCall(0);
+        expect(firstCall.calledWithMatch({
+          challengeId: challenge1.id,
+          competenceId: challenge1.competenceId,
+          associatedSkillName: challenge1.testedSkill,
+          courseId: certificationCourse.id,
+        })).to.be.true;
+        const secondCall = certificationChallengeRepository.save.getCall(1);
+        expect(secondCall.calledWithMatch({
+          challengeId: challenge2.id,
+          competenceId: challenge2.competenceId,
+          associatedSkillName: challenge2.testedSkill,
+          courseId: certificationCourse.id,
+        })).to.be.true;
       });
     });
 
-    it('should return the certification course with its challenges', function() {
+    it('should return the certification course with its challenges', async () => {
       // when
-      const promise = certificationChallengesService.saveChallenges(certificationProfileWithTwoCompetence, certificationCourse);
+      const updatedCertificationCourse = await certificationChallengesService.saveChallenges(certificationProfileWithTwoCompetence, certificationCourse);
 
       // then
-      return promise.then((certificationCourse) => {
-        expect(certificationCourse).to.deep.equal({
-          id :'certification-course-id',
-          challenges : ['challenge', 'challenge'],
-        });
+      expect(updatedCertificationCourse).to.deep.equal({
+        id :'certification-course-id',
+        challenges : ['challenge', 'challenge'],
       });
     });
 

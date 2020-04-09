@@ -12,17 +12,10 @@ const logContext = {
 
 module.exports = {
 
-  // TODO modifier pour que cela prenne un CertificationChallenge en entrée
-  async save(challenge, certificationCourse) {
-    const certificationChallenge = new CertificationChallengeBookshelf({
-      challengeId: challenge.id,
-      competenceId: challenge.competenceId,
-      associatedSkillName: challenge.testedSkill,
-      associatedSkillId: undefined, // TODO: Add skillId
-      courseId: certificationCourse.id,
-    });
+  async save(certificationChallenge) {
+    const certificationChallengeBookshelf = new CertificationChallengeBookshelf(certificationChallenge);
 
-    const savedCertificationChallenge = await certificationChallenge.save();
+    const savedCertificationChallenge = await certificationChallengeBookshelf.save();
     return bookshelfToDomainConverter.buildDomainObject(CertificationChallengeBookshelf, savedCertificationChallenge);
   },
 
