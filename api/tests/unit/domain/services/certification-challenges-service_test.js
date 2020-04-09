@@ -9,12 +9,12 @@ describe('Unit | Service | Certification Challenge Service', function() {
     const challenge1 = {
       id: 'challenge1',
       competenceId: 'competence1Id',
-      testedSkill: '@skill1'
+      testedSkill: { id: 'skill1Id', name: 'skill1Name' },
     };
     const challenge2 = {
       id: 'challenge2',
       competenceId: 'competence2Id',
-      testedSkill: '@skill2'
+      testedSkill: { id: 'skill2Id', name: 'skill2Name' },
     };
 
     const certificationProfileWithOneCompetence = [
@@ -50,14 +50,16 @@ describe('Unit | Service | Certification Challenge Service', function() {
         expect(firstCall.calledWithMatch({
           challengeId: challenge1.id,
           competenceId: challenge1.competenceId,
-          associatedSkillName: challenge1.testedSkill,
+          associatedSkillName: challenge1.testedSkill.name,
+          associatedSkillId: challenge1.testedSkill.id,
           courseId: certificationCourse.id,
         })).to.be.true;
         const secondCall = certificationChallengeRepository.save.getCall(1);
         expect(secondCall.calledWithMatch({
           challengeId: challenge2.id,
           competenceId: challenge2.competenceId,
-          associatedSkillName: challenge2.testedSkill,
+          associatedSkillName: challenge2.testedSkill.name,
+          associatedSkillId: challenge2.testedSkill.id,
           courseId: certificationCourse.id,
         })).to.be.true;
       });
@@ -74,14 +76,16 @@ describe('Unit | Service | Certification Challenge Service', function() {
         expect(firstCall.calledWithMatch({
           challengeId: challenge1.id,
           competenceId: challenge1.competenceId,
-          associatedSkillName: challenge1.testedSkill,
+          associatedSkillName: challenge1.testedSkill.name,
+          associatedSkillId: challenge1.testedSkill.id,
           courseId: certificationCourse.id,
         })).to.be.true;
         const secondCall = certificationChallengeRepository.save.getCall(1);
         expect(secondCall.calledWithMatch({
           challengeId: challenge2.id,
           competenceId: challenge2.competenceId,
-          associatedSkillName: challenge2.testedSkill,
+          associatedSkillName: challenge2.testedSkill.name,
+          associatedSkillId: challenge2.testedSkill.id,
           courseId: certificationCourse.id,
         })).to.be.true;
       });

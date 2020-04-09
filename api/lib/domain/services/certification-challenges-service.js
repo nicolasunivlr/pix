@@ -10,7 +10,8 @@ module.exports = {
         const certificationChallenge = new CertificationChallenge({
           challengeId: challenge.id,
           competenceId: challenge.competenceId,
-          associatedSkillName: challenge.testedSkill,
+          associatedSkillName: challenge.testedSkill.name,
+          associatedSkillId: challenge.testedSkill.id,
           courseId: certificationCourse.id,
         });
         saveChallengePromises.push(certificationChallengeRepository.save(certificationChallenge));
