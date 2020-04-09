@@ -15,7 +15,7 @@ function _toDomain(model) {
     id: model.get('id'),
     challengeId: model.get('challengeId'),
     competenceId: model.get('competenceId'),
-    associatedSkillName: model.get('associatedSkill'),
+    associatedSkillName: model.get('associatedSkillName'),
     associatedSkillId: model.get('associatedSkillId'),
     courseId: model.get('courseId'),
   });
@@ -28,7 +28,7 @@ module.exports = {
     const certificationChallenge = new CertificationChallengeBookshelf({
       challengeId: challenge.id,
       competenceId: challenge.competenceId,
-      associatedSkill: challenge.testedSkill,
+      associatedSkillName: challenge.testedSkill,
       associatedSkillId: undefined, // TODO: Add skillId
       courseId: certificationCourse.id,
     });
