@@ -3,7 +3,7 @@ const BookshelfBadgeAcquisition = require('../../infrastructure/data/badge-acqui
 
 module.exports = {
 
-  async create(domainTransaction, { badgeId, userId }) {
+  async create({ badgeId, userId }, domainTransaction = {}) {
     const result = await new BookshelfBadgeAcquisition({
       badgeId,
       userId

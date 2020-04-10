@@ -110,14 +110,14 @@ module.exports = {
   },
 
   abortByAssessmentId(assessmentId) {
-    return this._updateStateById(null, { id: assessmentId, state: Assessment.states.ABORTED });
+    return this._updateStateById({ id: assessmentId, state: Assessment.states.ABORTED });
   },
 
-  completeByAssessmentId(domainTransaction, assessmentId) {
-    return this._updateStateById(domainTransaction.knexTransaction, { id: assessmentId, state: Assessment.states.COMPLETED });
+  completeByAssessmentId(assessmentId, domainTransaction = {}) {
+    return this._updateStateById({ id: assessmentId, state: Assessment.states.COMPLETED }, domainTransaction.knexTransaction);
   },
 
-  async _updateStateById(knexTransaction, { id, state }) {
+  async _updateStateById({ id, state }, knexTransaction) {
     const assessment = await BookshelfAssessment
       .where({ id })
       .save({ state }, { require: true, patch: true, transacting: knexTransaction });
