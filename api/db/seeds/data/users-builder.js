@@ -45,13 +45,21 @@ module.exports = function usersBuilder({ databaseBuilder }) {
     cgu: true,
   });
 
-  const userShouldChangePassword = {
+  databaseBuilder.factory.buildUser.withUnencryptedPassword({
     firstName: 'Joffrey',
     lastName: 'Baratheon',
     email: null,
     username: 'username123',
     rawPassword: 'Password123',
     shouldChangePassword: true
-  };
-  databaseBuilder.factory.buildUser.withUnencryptedPassword(userShouldChangePassword);
+  });
+
+  databaseBuilder.factory.buildUser.withUnencryptedPassword({
+    id: 200,
+    firstName: 'Pix',
+    lastName: 'Masteur',
+    rawPassword: 'pix123',
+    email: 'pixmasteur@example.net',
+    cgu: true,
+  });
 };
