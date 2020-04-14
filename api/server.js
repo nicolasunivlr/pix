@@ -2,6 +2,8 @@
 // https://www.npmjs.com/package/dotenv#usage
 require('dotenv').config();
 const Hapi = require('@hapi/hapi');
+const logger = require('./lib/infrastructure/logger');
+
 
 const preResponseUtils = require('./lib/application/pre-response-utils');
 
@@ -29,7 +31,26 @@ const createServer = async () => {
     }
   });
 
+
+
   server.ext('onPreResponse', preResponseUtils.handleDomainAndHttpErrors);
+
+  server.events.on('response', function (request) {
+
+    const trackId = request.headers['request-id'];
+
+    const payloadRequest = request.payload || 'undefined';
+    payloadRequest.trackId = trackId;
+    payloadRequest.type = 'request';
+
+    const payloadResponse = request.response.source || 'undefined';
+    payloadResponse.trackId = trackId;
+    payloadResponse.type = 'response';
+
+    logger.debug(payloadRequest);
+    logger.debug(payloadResponse);
+
+  });
 
   server.auth.scheme('jwt-access-token', security.scheme);
   server.auth.strategy('default', 'jwt-access-token');
