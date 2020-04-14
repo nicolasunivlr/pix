@@ -275,6 +275,19 @@ module.exports = {
       });
   },
 
+  updateTemporaryPassword(id, hashedPassword) {
+    return BookshelfUser
+      .where({ id })
+      .save({ password: hashedPassword, shouldChangePassword: true }, { patch: true, method: 'update' })
+      .then((bookshelfUser) => bookshelfUser.toDomainEntity())
+      .catch((err) => {
+        if (err instanceof BookshelfUser.NoRowsUpdatedError) {
+          throw new UserNotFoundError(`User not found for ID ${id}`);
+        }
+        throw err;
+      });
+  },
+
   async isPixMaster(id) {
     const user = await BookshelfUser
       .where({ 'users.id': id, 'users_pix_roles.user_id': id })
