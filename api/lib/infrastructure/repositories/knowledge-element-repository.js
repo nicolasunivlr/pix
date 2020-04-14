@@ -1,8 +1,10 @@
 const KnowledgeElement = require('../../domain/models/KnowledgeElement');
 const BookshelfKnowledgeElement = require('../data/knowledge-element');
+const BookshelfTargetProfileSkill = require('../data/target-profile-skill');
+const scoringService = require('../../domain/services/scoring/scoring-service');
+
 const _ = require('lodash');
 const Bookshelf = require('../bookshelf');
-const scoringService = require('../../domain/services/scoring/scoring-service');
 
 function _toDomain(knowledgeElementBookshelf) {
   const knowledgeElements = knowledgeElementBookshelf.toJSON();
@@ -89,5 +91,36 @@ module.exports = {
       });
   },
 
-};
+  fetchAssessedSkill: async function(campaignId) {
+    return await BookshelfTargetProfileSkill.query(
+      (qb) => {
+        qb.innerJoin('campaigns', 'campaigns.targetProfileId', 'target-profiles_skills.targetProfileId')
+          .where({ 'campaigns.id': campaignId });
+      })
+      .fetchAll()
+      .then(({ models }) => {
+        return models.map((targetProfileSkill) => targetProfileSkill.attributes.skillId);
+      });
+  },
 
+  async findByCampaignIdForSharedCampaignParticipation(campaignId) {
+
+    const targetedSkills = await this.fetchAssessedSkill(campaignId);
+
+    return  Bookshelf.knex.with('ranked-knowledge-elements',
+      (qb) => {
+        qb.select('knowledge-elements.*', Bookshelf.knex.raw('ROW_NUMBER() OVER (PARTITION BY ??, ?? ORDER BY ?? DESC) AS rank', ['knowledge-elements.userId', 'knowledge-elements.skillId', 'knowledge-elements.createdAt']));
+        qb.from('knowledge-elements');
+        qb.innerJoin('campaign-participations', function() {
+          this.on({ 'campaign-participations.userId':  'knowledge-elements.userId' })
+            .andOn('knowledge-elements.createdAt', '<=', 'campaign-participations.sharedAt');
+        });
+        qb.whereIn('knowledge-elements.skillId', targetedSkills);
+        qb.where({ 'campaign-participations.isShared': true });
+        qb.where({ 'campaign-participations.campaignId': campaignId });
+        qb.where({ status: 'validated' });
+      })
+      .from('ranked-knowledge-elements')
+      .where({ rank: 1 });
+  }
+};
