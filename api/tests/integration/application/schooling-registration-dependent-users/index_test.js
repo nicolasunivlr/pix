@@ -11,7 +11,7 @@ describe('Integration | Application | Route | schooling-registration-dependent-u
   beforeEach(() => {
     sinon.stub(securityController, 'checkUserBelongsToScoOrganizationAndManagesStudents').callsFake((request, h) => h.response(true));
     sinon.stub(schoolingRegistrationDependentUserController, 'createAndAssociateUserToSchoolingRegistration').callsFake((request, h) => h.response('ok').code(201));
-    sinon.stub(schoolingRegistrationDependentUserController, 'updatePassword').callsFake((request, h) => h.response('ok').code(200));
+    sinon.stub(schoolingRegistrationDependentUserController, 'generatePassword').callsFake((request, h) => h.response('ok').code(200));
     httpTestServer = new HttpTestServer(moduleUnderTest);
   });
 
@@ -51,9 +51,8 @@ describe('Integration | Application | Route | schooling-registration-dependent-u
       const payload = {
         data: {
           attributes: {
-            'student-id': 1,
-            'organization-id': 3,
-            'password': 'P@ssw0rd'
+            'schooling-registration-id': 1,
+            'organization-id': 3
           }
         }
       };

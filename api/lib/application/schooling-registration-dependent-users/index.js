@@ -1,8 +1,6 @@
 const schoolingRegistrationDependentUserController = require('./schooling-registration-dependent-user-controller');
 const securityController = require('../../interfaces/controllers/security-controller');
 const Joi = require('@hapi/joi');
-const { passwordValidationPattern } = require('../../config').account;
-const XRegExp = require('xregexp');
 
 exports.register = async function(server) {
   server.route([
@@ -27,7 +25,7 @@ exports.register = async function(server) {
           method: securityController.checkUserBelongsToScoOrganizationAndManagesStudents,
           assign: 'belongsToScoOrganizationAndManageStudents'
         }],
-        handler: schoolingRegistrationDependentUserController.updatePassword,
+        handler: schoolingRegistrationDependentUserController.generatePassword,
         validate: {
           options: {
             allowUnknown: true
@@ -36,8 +34,7 @@ exports.register = async function(server) {
             data: {
               attributes: {
                 'organization-id': Joi.number().required(),
-                'student-id': Joi.number().required(),
-                password: Joi.string().pattern(XRegExp(passwordValidationPattern)).required(),
+                'schooling-registration-id': Joi.number().required()
               }
             }
           })
