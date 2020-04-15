@@ -6,7 +6,7 @@ const { expect, sinon, domainBuilder, streamToPromise } = require('../../../test
 const startWritingCampaignAssessmentResultsToStream = require('../../../../lib/domain/usecases/start-writing-campaign-assessment-results-to-stream');
 const Area = require('../../../../lib/domain/models/Area');
 
-describe('Unit | Domain | Use Cases | start-writing-campaign-assessment-results-to-stream', () => {
+describe.only('Unit | Domain | Use Cases | start-writing-campaign-assessment-results-to-stream', () => {
 
   describe('#startWritingCampaignAssessmentResultsToStream', () => {
 
