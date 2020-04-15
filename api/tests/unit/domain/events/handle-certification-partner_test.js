@@ -4,17 +4,16 @@ const events = require('../../../../lib/domain/events');
 const AssessmentResult = require('../../../../lib/domain/models/AssessmentResult');
 const Assessment = require('../../../../lib/domain/models/Assessment');
 const Badge = require('../../../../lib/domain/models/Badge');
-const AssessmentCompleted = require('../../../../lib/domain/events/AssessmentCompleted');
+const CertificationScoringCompleted = require('../../../../lib/domain/events/CertificationScoringCompleted');
 
 describe('Unit | Domain | Events | handle-certification-partner', () => {
   const scoringCertificationService = { calculateAssessmentScore: _.noop };
   const assessmentRepository = { get: _.noop };
   const assessmentResultRepository = { save: _.noop };
-  const badgeAcquisitionRepository = { hasAcquiredBadgeWithKey:  _.noop };
+  const badgeAcquisitionRepository = { hasAcquiredBadgeWithKey: _.noop };
   const certificationPartnerAcquisitionRepository = { save: _.noop };
   const domainTransaction = {};
 
-  let assessmentCompletedEvent;
   let certificationScoringEvent;
 
   const dependencies = {
@@ -30,18 +29,12 @@ describe('Unit | Domain | Events | handle-certification-partner', () => {
     beforeEach(() => {
       certificationAssessment = _buildCertificationAssessment();
       sinon.stub(assessmentRepository, 'get').withArgs(certificationAssessment.id).resolves(certificationAssessment);
-      assessmentCompletedEvent = new AssessmentCompleted(
-        certificationAssessment.id,
-        Symbol('userId'),
-        null, //Symbol('targetProfileId'),
-        null, //Symbol('campaignParticipationId'),
-        true,
-      );
 
-      certificationScoringEvent = {
-        percentageCorrectAnswers: null,
-        certificationCourseId: certificationAssessment.certificationCourseId
-      };
+      certificationScoringEvent = new CertificationScoringCompleted({
+        certificationCourseId: Symbol('certificationCourseId'),
+        userId: Symbol('userId'),
+        isCertification: true,
+      });
 
     });
 
@@ -76,7 +69,7 @@ describe('Unit | Domain | Events | handle-certification-partner', () => {
 
               // when
               await events.handleCertificationAcquisitionForPartner({
-                assessmentCompletedEvent, certificationScoringEvent,  ...dependencies, domainTransaction
+                certificationScoringEvent, ...dependencies, domainTransaction
               });
 
               // then
@@ -84,7 +77,7 @@ describe('Unit | Domain | Events | handle-certification-partner', () => {
               expect(certificationPartnerAcquisitionRepository.save).to.have.been.calledWithMatch(
                 {
                   partnerKey: Badge.keys.PIX_EMPLOI_CLEA,
-                  certificationCourseId: certificationAssessment.certificationCourseId,
+                  certificationCourseId: certificationScoringEvent.certificationCourseId,
                 },
                 domainTransaction);
             })
@@ -98,7 +91,7 @@ describe('Unit | Domain | Events | handle-certification-partner', () => {
 
               // when
               await events.handleCertificationAcquisitionForPartner({
-                assessmentCompletedEvent, certificationScoringEvent, ...dependencies, domainTransaction
+                certificationScoringEvent, ...dependencies, domainTransaction
               });
 
               // then
@@ -107,6 +100,29 @@ describe('Unit | Domain | Events | handle-certification-partner', () => {
             })
           );
         });
+
+        // context('when user has obtain partner certif', () => {
+        //   it('for xxx it should obtain CleA certification', async () => {
+        //     // given
+        //     sinon.stub(certificationPartnerAcquisitionRepository, 'save').resolves();
+        //     certificationScoringEvent.percentageCorrectAnswers = reproducabilityRate;
+        //
+        //     // when
+        //     await events.handleCertificationAcquisitionForPartner({
+        //       assessmentCompletedEvent, certificationScoringEvent,  ...dependencies, domainTransaction
+        //     });
+        //
+        //     // then
+        //     expect(badgeAcquisitionRepository.hasAcquiredBadgeWithKey).to.have.been.called;
+        //     expect(certificationPartnerAcquisitionRepository.save).to.have.been.calledWithMatch(
+        //       {
+        //         partnerKey: Badge.keys.PIX_EMPLOI_CLEA,
+        //         certificationCourseId: certificationAssessment.certificationCourseId,
+        //       },
+        //       domainTransaction);
+        //   });
+        //
+        // });
 
       });
 

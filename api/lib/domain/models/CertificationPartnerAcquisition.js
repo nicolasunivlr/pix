@@ -8,19 +8,17 @@ class CertificationPartnerAcquisition {
     {
       certificationCourseId,
       partnerKey,
-      hasAcquiredBadge,
-      percentageCorrectAnswers,
 
     } = {}) {
     this.certificationCourseId = certificationCourseId;
     this.partnerKey = partnerKey;
-    this.hasAcquiredBadge = hasAcquiredBadge;
-    this.percentageCorrectAnswers = percentageCorrectAnswers;
   }
 
-  hasAcquiredCertification() {
-    if (this.hasAcquiredBadge) {
-      switch (this._getPartnerCertificationObtentionArea(this.percentageCorrectAnswers)) {
+  hasAcquiredCertification({
+    hasAcquiredBadge = false,
+    percentageCorrectAnswers = 0 }) {
+    if (hasAcquiredBadge) {
+      switch (this._getPartnerCertificationObtentionArea(percentageCorrectAnswers)) {
         case CERTIF_GREEN_ZONE:
           return true;
         case CERTIF_RED_ZONE:

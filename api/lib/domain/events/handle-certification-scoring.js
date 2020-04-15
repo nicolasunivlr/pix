@@ -1,3 +1,4 @@
+const CertificationScoringCompleted = require('./CertificationScoringCompleted.js');
 const AssessmentResult = require('../models/AssessmentResult');
 const CompetenceMark = require('../models/CompetenceMark');
 const Promise = require('bluebird');
@@ -46,7 +47,7 @@ async function _calculateCertificationScore({
       competenceMarkRepository,
     });
 
-    return { userId: assessmentCompletedEvent.userId, isCertification: assessmentCompletedEvent.isCertification, certificationCourseId: assessment.certificationCourseId, percentageCorrectAnswers: assessmentScore.percentageCorrectAnswers };
+    return new CertificationScoringCompleted({ userId: assessmentCompletedEvent.userId, isCertification: assessmentCompletedEvent.isCertification, certificationCourseId: assessment.certificationCourseId, percentageCorrectAnswers: assessmentScore.percentageCorrectAnswers });
 
   }
   catch (error) {
