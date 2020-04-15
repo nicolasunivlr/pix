@@ -5,3 +5,5 @@ location ~ ^/(?<app>[^/]+)/.*$ {
 
   expires -1;
 }
+
+add_header X-Frame-Options "SAMEORIGIN";
