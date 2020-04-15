@@ -2,7 +2,13 @@ const CertificationPartnerAcquisitionBookshelf = require('../data/certification-
 
 module.exports = {
 
-  async save(certificationPartnerAcquisition, domainTransaction = {}) {
-    return await new CertificationPartnerAcquisitionBookshelf(certificationPartnerAcquisition).save(null , { transacting: domainTransaction.knexTransaction });
+  async save({
+    certificationCourseId,
+    partnerKey,
+  }, domainTransaction = {}) {
+    return await new CertificationPartnerAcquisitionBookshelf({
+      certificationCourseId,
+      partnerKey,
+    }).save(null , { transacting: domainTransaction.knexTransaction });
   },
 };
