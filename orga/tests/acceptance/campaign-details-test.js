@@ -69,7 +69,7 @@ module('Acceptance | Campaign Details', function(hooks) {
 
       // when
       await visit('/campagnes/1');
-      await click('.navbar-item:nth-child(2)');
+      await click('nav a[href="/campagnes/1/participants"]');
 
       // then
       assert.dom('.navbar-item.active').hasText('Participants (2)');
@@ -107,7 +107,7 @@ module('Acceptance | Campaign Details', function(hooks) {
 
       // when
       await visit('/campagnes/1');
-      await click('.navbar-item:nth-child(3)');
+      await click('nav a[href="/campagnes/1/resultats-collectifs"]');
 
       // then
       assert.dom('.navbar-item.active').hasText('Résultats collectifs');

@@ -49,6 +49,9 @@
       Détails
     </LinkTo>
     {{#if @campaign.isTypeAssessment}}
+      <LinkTo @route="authenticated.campaigns.details.analysis" class="navbar-item" @model={{@campaign}} >
+        Analyse
+      </LinkTo>
       <LinkTo @route="authenticated.campaigns.details.participants" @model={{@campaign}} class="navbar-item">
         Participants ({{@campaign.campaignReport.participationsCount}})
       </LinkTo>
