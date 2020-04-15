@@ -1,4 +1,4 @@
-const Tutorial = require('../../../../lib/domain/models/Tutorial');
+const Tutorial = require('$root/lib/domain/models/Tutorial');
 
 module.exports = function buildTutorial({
   id = 'recTuto1',

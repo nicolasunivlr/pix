@@ -1,7 +1,7 @@
 const faker = require('faker');
-const Organization = require('../../../../lib/domain/models/Organization');
-const User = require('../../../../lib/domain/models/User');
-const SchoolingRegistration = require('../../../../lib/domain/models/SchoolingRegistration');
+const Organization = require('$root/lib/domain/models/Organization');
+const User = require('$root/lib/domain/models/User');
+const SchoolingRegistration = require('$root/lib/domain/models/SchoolingRegistration');
 
 function _buildMember(
   {

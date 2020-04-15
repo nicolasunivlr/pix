@@ -1,6 +1,6 @@
 const faker = require('faker');
-const Answer = require('../../../../lib/domain/models/Answer');
-const AnswerStatus = require('../../../../lib/domain/models/AnswerStatus');
+const Answer = require('$root/lib/domain/models/Answer');
+const AnswerStatus = require('$root/lib/domain/models/AnswerStatus');
 
 function buildAnswer({
   id = faker.random.number(),

@@ -1,5 +1,5 @@
-const { expect } = require('../../../test-helper');
-const service = require('../../../../lib/domain/services/email-validator');
+const { expect } = require('$root/tests/test-helper');
+const service = require('$root/lib/domain/services/email-validator');
 
 describe('Unit | Service | email-validator', function() {
 

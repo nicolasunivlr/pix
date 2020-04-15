@@ -1,5 +1,5 @@
-const { expect, databaseBuilder, generateValidRequestAuthorizationHeader, insertUserWithRolePixMaster } = require('../../../test-helper');
-const createServer = require('../../../../server');
+const { expect, databaseBuilder, generateValidRequestAuthorizationHeader, insertUserWithRolePixMaster } = require('$root/tests/test-helper');
+const createServer = require('$root/server');
 
 describe('Acceptance | Controller | session-controller-get', () => {
 
@@ -94,7 +94,7 @@ describe('Acceptance | Controller | session-controller-get', () => {
     });
 
     context('when user is not connected', () => {
-      
+
       it('should return 401 HTTP status code if user is not authenticated', async () => {
         // when
         const response = await server.inject(options);

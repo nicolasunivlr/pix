@@ -1,5 +1,5 @@
-const CampaignCompetenceCollectiveResult = require('../../../../lib/domain/models/CampaignCompetenceCollectiveResult');
-const { expect } = require('../../../test-helper');
+const CampaignCompetenceCollectiveResult = require('$root/lib/domain/models/CampaignCompetenceCollectiveResult');
+const { expect } = require('$root/tests/test-helper');
 
 describe('Unit | Domain | Models | CampaignCompetenceCollectiveResult', () => {
 

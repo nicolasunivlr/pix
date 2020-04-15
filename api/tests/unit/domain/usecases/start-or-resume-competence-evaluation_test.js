@@ -1,8 +1,8 @@
-const { expect, sinon, catchErr } = require('../../../test-helper');
-const Assessment = require('../../../../lib/domain/models/Assessment');
-const CompetenceEvaluation = require('../../../../lib/domain/models/CompetenceEvaluation');
-const usecases = require('../../../../lib/domain/usecases');
-const { NotFoundError } = require('../../../../lib/domain/errors');
+const { expect, sinon, catchErr } = require('$root/tests/test-helper');
+const Assessment = require('$root/lib/domain/models/Assessment');
+const CompetenceEvaluation = require('$root/lib/domain/models/CompetenceEvaluation');
+const usecases = require('$root/lib/domain/usecases');
+const { NotFoundError } = require('$root/lib/domain/errors');
 const _ = require('lodash');
 
 describe('Unit | UseCase | start-or-resume-competence-evaluation', () => {

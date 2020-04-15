@@ -1,10 +1,10 @@
-const { expect } = require('../../../test-helper');
+const { expect } = require('$root/tests/test-helper');
 
-const service = require('../../../../lib/domain/services/solution-service-qcm');
-const Answer = require('../../../../lib/infrastructure/data/answer');
-const AnswerStatus = require('../../../../lib/domain/models/AnswerStatus');
-const Solution = require('../../../../lib/domain/models/Solution');
-const _ = require('../../../../lib/infrastructure/utils/lodash-utils');
+const service = require('$root/lib/domain/services/solution-service-qcm');
+const Answer = require('$root/lib/infrastructure/data/answer');
+const AnswerStatus = require('$root/lib/domain/models/AnswerStatus');
+const Solution = require('$root/lib/domain/models/Solution');
+const _ = require('$root/lib/infrastructure/utils/lodash-utils');
 
 describe('Unit | Service | SolutionServiceQCM ', function() {
 

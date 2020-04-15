@@ -1,4 +1,4 @@
-const CampaignParticipationResult = require('../../../../lib/domain/models/CampaignParticipationResult');
+const CampaignParticipationResult = require('$root/lib/domain/models/CampaignParticipationResult');
 
 const faker = require('faker');
 

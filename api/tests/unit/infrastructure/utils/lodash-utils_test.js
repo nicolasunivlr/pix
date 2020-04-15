@@ -1,6 +1,6 @@
-const { expect } = require('../../../test-helper');
+const { expect } = require('$root/tests/test-helper');
 const original_lodash = require('lodash');
-const _ = require('../../../../lib/infrastructure/utils/lodash-utils');
+const _ = require('$root/lib/infrastructure/utils/lodash-utils');
 
 describe('Unit | Utils | lodash-utils', function() {
 

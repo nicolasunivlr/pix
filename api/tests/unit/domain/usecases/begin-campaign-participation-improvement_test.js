@@ -1,8 +1,8 @@
-const { expect, sinon, domainBuilder } = require('../../../test-helper');
+const { expect, sinon, domainBuilder } = require('$root/tests/test-helper');
 
-const Assessment = require('../../../../lib/domain/models/Assessment');
-const usecases = require('../../../../lib/domain/usecases');
-const { AlreadySharedCampaignParticipationError, UserNotAuthorizedToAccessEntity } = require('../../../../lib/domain/errors');
+const Assessment = require('$root/lib/domain/models/Assessment');
+const usecases = require('$root/lib/domain/usecases');
+const { AlreadySharedCampaignParticipationError, UserNotAuthorizedToAccessEntity } = require('$root/lib/domain/errors');
 
 describe('Unit | Usecase | begin-campaign-participation-improvement', () => {
 

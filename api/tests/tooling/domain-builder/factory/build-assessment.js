@@ -1,7 +1,7 @@
 const faker = require('faker');
 const _ = require('lodash');
-const Assessment = require('../../../../lib/domain/models/Assessment');
-const SmartPlacementAssessment = require('../../../../lib/domain/models/SmartPlacementAssessment');
+const Assessment = require('$root/lib/domain/models/Assessment');
+const SmartPlacementAssessment = require('$root/lib/domain/models/SmartPlacementAssessment');
 
 const buildAnswer = require('./build-answer');
 const buildCourse = require('./build-course');

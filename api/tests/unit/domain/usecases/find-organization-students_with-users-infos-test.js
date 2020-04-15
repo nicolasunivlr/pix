@@ -1,5 +1,5 @@
-const { expect, sinon } = require('../../../test-helper');
-const findUserWithSchoolingRegistrations = require('../../../../lib/domain/usecases/find-user-with-schooling-registrations');
+const { expect, sinon } = require('$root/tests/test-helper');
+const findUserWithSchoolingRegistrations = require('$root/lib/domain/usecases/find-user-with-schooling-registrations');
 
 describe('Unit | UseCase | findUserWithSchoolingRegistrations', () => {
 

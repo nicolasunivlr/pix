@@ -1,6 +1,6 @@
 const faker = require('faker');
 const buildSkill = require('./build-skill');
-const CertificationChallenge = require('../../../../lib/domain/models/CertificationChallenge');
+const CertificationChallenge = require('$root/lib/domain/models/CertificationChallenge');
 
 module.exports = function buildCertificationChallenge({
   id = faker.random.number(),

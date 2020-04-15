@@ -1,8 +1,8 @@
-const { expect, sinon, domainBuilder, HttpTestServer } = require('../../../test-helper');
-const usecases = require('../../../../lib/domain/usecases');
-const Membership = require('../../../../lib/domain/models/Membership');
-const securityController = require('../../../../lib/interfaces/controllers/security-controller');
-const moduleUnderTest = require('../../../../lib/application/memberships');
+const { expect, sinon, domainBuilder, HttpTestServer } = require('$root/tests/test-helper');
+const usecases = require('$root/lib/domain/usecases');
+const Membership = require('$root/lib/domain/models/Membership');
+const securityController = require('$root/lib/interfaces/controllers/security-controller');
+const moduleUnderTest = require('$root/lib/application/memberships');
 
 describe('Integration | Application | Memberships | membership-controller', () => {
 

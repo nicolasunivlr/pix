@@ -1,8 +1,8 @@
-const { domainBuilder, databaseBuilder, expect, sinon } = require('../../../../test-helper');
+const { domainBuilder, databaseBuilder, expect, sinon } = require('$root/tests/test-helper');
 
-const service = require('../../../../../lib/domain/services/solution-service');
-const Answer = require('../../../../../lib/infrastructure/data/answer');
-const solutionRepository = require('../../../../../lib/infrastructure/repositories/solution-repository');
+const service = require('$root/lib/domain/services/solution-service');
+const Answer = require('$root/lib/infrastructure/data/answer');
+const solutionRepository = require('$root/lib/infrastructure/repositories/solution-repository');
 const _ = require('lodash');
 
 describe('Integration | Service | SolutionService', function() {

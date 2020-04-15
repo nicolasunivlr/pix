@@ -1,7 +1,7 @@
-const { sinon, expect } = require('../../../test-helper');
-const { UserNotAuthorizedToAccessEntity } = require('../../../../lib/domain/errors');
-const Scorecard = require('../../../../lib/domain/models/Scorecard');
-const getScorecard = require('../../../../lib/domain/usecases/get-scorecard');
+const { sinon, expect } = require('$root/tests/test-helper');
+const { UserNotAuthorizedToAccessEntity } = require('$root/lib/domain/errors');
+const Scorecard = require('$root/lib/domain/models/Scorecard');
+const getScorecard = require('$root/lib/domain/usecases/get-scorecard');
 
 describe('Unit | UseCase | get-scorecard', () => {
 

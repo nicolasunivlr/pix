@@ -1,5 +1,5 @@
-const { expect } = require('../../../test-helper');
-const { extractParameters } = require('../../../../lib/infrastructure/utils/query-params-utils');
+const { expect } = require('$root/tests/test-helper');
+const { extractParameters } = require('$root/lib/infrastructure/utils/query-params-utils');
 
 describe('Unit | Utils | Query Params Utils', function() {
 

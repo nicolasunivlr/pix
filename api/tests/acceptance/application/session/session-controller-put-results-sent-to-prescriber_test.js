@@ -1,7 +1,7 @@
 const {
   expect, generateValidRequestAuthorizationHeader, databaseBuilder,
-} = require('../../../test-helper');
-const createServer = require('../../../../server');
+} = require('$root/tests/test-helper');
+const createServer = require('$root/server');
 
 describe('PUT /api/sessions/:id/results-sent-to-prescriber', () => {
   let server;

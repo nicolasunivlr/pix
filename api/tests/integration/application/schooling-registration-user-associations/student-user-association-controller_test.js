@@ -1,9 +1,9 @@
-const { expect, sinon, domainBuilder, HttpTestServer } = require('../../../test-helper');
+const { expect, sinon, domainBuilder, HttpTestServer } = require('$root/tests/test-helper');
 
-const moduleUnderTest = require('../../../../lib/application/schooling-registration-user-associations');
+const moduleUnderTest = require('$root/lib/application/schooling-registration-user-associations');
 
-const usecases = require('../../../../lib/domain/usecases');
-const { NotFoundError } = require('../../../../lib/domain/errors');
+const usecases = require('$root/lib/domain/usecases');
+const { NotFoundError } = require('$root/lib/domain/errors');
 
 describe('Integration | Application | Schooling-registration-user-association | schooling-registration-user-association-controller', () => {
 

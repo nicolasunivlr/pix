@@ -1,5 +1,5 @@
 const faker = require('faker');
-const SmartPlacementAssessment = require('../../../../lib/domain/models/SmartPlacementAssessment');
+const SmartPlacementAssessment = require('$root/lib/domain/models/SmartPlacementAssessment');
 
 const buildCampaignParticipation = require('./build-campaign-participation');
 const buildSkillCollection = require('./build-skill-collection');

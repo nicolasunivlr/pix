@@ -1,8 +1,8 @@
-const { sinon, expect, hFake } = require('../../../test-helper');
-const samlController = require('../../../../lib/application/saml/saml-controller');
-const usecases = require('../../../../lib/domain/usecases');
-const saml = require('../../../../lib/infrastructure/saml');
-const tokenService = require('../../../../lib/domain/services/token-service');
+const { sinon, expect, hFake } = require('$root/tests/test-helper');
+const samlController = require('$root/lib/application/saml/saml-controller');
+const usecases = require('$root/lib/domain/usecases');
+const saml = require('$root/lib/infrastructure/saml');
+const tokenService = require('$root/lib/domain/services/token-service');
 
 describe('Unit | Application | Controller | Saml', () => {
 

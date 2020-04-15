@@ -1,4 +1,4 @@
-const AssessmentResult = require('../../../../lib/domain/models/AssessmentResult');
+const AssessmentResult = require('$root/lib/domain/models/AssessmentResult');
 
 module.exports = function buildAssessmentResult({
   pixScore = 31,

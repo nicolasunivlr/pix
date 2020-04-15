@@ -1,6 +1,6 @@
-const { expect } = require('../../../test-helper');
+const { expect } = require('$root/tests/test-helper');
 
-const campaignParticipationService = require('./../../../../lib/domain/services/campaign-participation-service');
+const campaignParticipationService = require('$root/lib/domain/services/campaign-participation-service');
 
 describe('Unit | Service | Campaign Participation Service',() => {
   describe('progress', () => {

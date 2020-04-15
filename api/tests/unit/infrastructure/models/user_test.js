@@ -1,8 +1,8 @@
-const { expect } = require('../../../test-helper');
+const { expect } = require('$root/tests/test-helper');
 
 const faker = require('faker');
 
-const User = require('../../../../lib/domain/models/User');
+const User = require('$root/lib/domain/models/User');
 
 describe('Unit | Domain | Models | User', () => {
 

@@ -1,6 +1,6 @@
-const { expect } = require('../../../../test-helper');
+const { expect } = require('$root/tests/test-helper');
 
-const csvSerializer = require('../../../../../lib/infrastructure/serializers/csv/csv-serializer');
+const csvSerializer = require('$root/lib/infrastructure/serializers/csv/csv-serializer');
 
 describe('Unit | Serializer | CSV | csv-serializer', () => {
 

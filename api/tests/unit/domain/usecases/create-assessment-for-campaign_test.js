@@ -1,10 +1,10 @@
-const { expect, sinon, domainBuilder } = require('../../../test-helper');
+const { expect, sinon, domainBuilder } = require('$root/tests/test-helper');
 
 const faker = require('faker');
 
-const createAssessmentForCampaign = require('../../../../lib/domain/usecases/create-assessment-for-campaign');
-const CampaignParticipation = require('../../../../lib/domain/models/CampaignParticipation');
-const { CampaignCodeError } = require('../../../../lib/domain/errors');
+const createAssessmentForCampaign = require('$root/lib/domain/usecases/create-assessment-for-campaign');
+const CampaignParticipation = require('$root/lib/domain/models/CampaignParticipation');
+const { CampaignCodeError } = require('$root/lib/domain/errors');
 
 describe('Unit | UseCase | create-assessment-for-campaign', () => {
 

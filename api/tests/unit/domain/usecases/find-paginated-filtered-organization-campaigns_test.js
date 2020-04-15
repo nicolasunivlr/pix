@@ -1,6 +1,6 @@
-const { expect, domainBuilder, sinon } = require('../../../test-helper');
+const { expect, domainBuilder, sinon } = require('$root/tests/test-helper');
 
-const findPaginatedFilteredOrganizationCampaigns = require('../../../../lib/domain/usecases/find-paginated-filtered-organization-campaigns');
+const findPaginatedFilteredOrganizationCampaigns = require('$root/lib/domain/usecases/find-paginated-filtered-organization-campaigns');
 
 describe('Unit | Domain | Use Cases | find-paginated-filtered-organization-campaigns', () => {
 

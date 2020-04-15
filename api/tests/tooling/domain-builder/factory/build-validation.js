@@ -1,6 +1,6 @@
-const AnswerStatus = require('../../../../lib/domain/models/AnswerStatus');
+const AnswerStatus = require('$root/lib/domain/models/AnswerStatus');
 const faker = require('faker');
-const Validation = require('../../../../lib/domain/models/Validation');
+const Validation = require('$root/lib/domain/models/Validation');
 
 module.exports = function(
   {

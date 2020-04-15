@@ -1,7 +1,7 @@
-const { expect, sinon } = require('../../../test-helper');
+const { expect, sinon } = require('$root/tests/test-helper');
 const Hapi = require('@hapi/hapi');
-const securityController = require('../../../../lib/interfaces/controllers/security-controller');
-const certificationCoursesController = require('../../../../lib/application/certification-courses/certification-course-controller');
+const securityController = require('$root/lib/interfaces/controllers/security-controller');
+const certificationCoursesController = require('$root/lib/application/certification-courses/certification-course-controller');
 
 describe('Unit | Application | Certifications Course | Route', function() {
 
@@ -18,7 +18,7 @@ describe('Unit | Application | Certifications Course | Route', function() {
 
     server = Hapi.server();
 
-    return server.register(require('../../../../lib/application/certification-courses'));
+    return server.register(require('$root/lib/application/certification-courses'));
   });
 
   describe('GET /api/admin/certifications/{id}/details', () => {

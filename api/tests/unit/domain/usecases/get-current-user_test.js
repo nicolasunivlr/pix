@@ -1,5 +1,5 @@
-const { expect, sinon } = require('../../../test-helper');
-const getCurrentUser = require('../../../../lib/domain/usecases/get-current-user');
+const { expect, sinon } = require('$root/tests/test-helper');
+const getCurrentUser = require('$root/lib/domain/usecases/get-current-user');
 
 describe('Unit | UseCase | get-current-user', () => {
 

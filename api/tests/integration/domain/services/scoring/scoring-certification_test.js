@@ -1,6 +1,6 @@
-const { expect, domainBuilder, sinon } = require('../../../../test-helper');
-const certificationService = require('../../../../../lib/domain/services/certification-service');
-const scoringCertificationService = require('../../../../../lib/domain/services/scoring/scoring-certification-service');
+const { expect, domainBuilder, sinon } = require('$root/tests/test-helper');
+const certificationService = require('$root/lib/domain/services/certification-service');
+const scoringCertificationService = require('$root/lib/domain/services/scoring/scoring-certification-service');
 
 describe('Integration | Domain | services | scoring | scoring-certification-service', () => {
 

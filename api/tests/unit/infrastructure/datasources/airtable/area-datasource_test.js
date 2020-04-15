@@ -1,6 +1,6 @@
-const { expect, domainBuilder } = require('../../../../test-helper');
-const areaDatasource = require('../../../../../lib/infrastructure/datasources/airtable/area-datasource');
-const areaRawAirTableFixture = require('../../../../tooling/fixtures/infrastructure/areaRawAirTableFixture');
+const { expect, domainBuilder } = require('$root/tests/test-helper');
+const areaDatasource = require('$root/lib/infrastructure/datasources/airtable/area-datasource');
+const areaRawAirTableFixture = require('$root/tests/tooling/fixtures/infrastructure/areaRawAirTableFixture');
 
 describe('Unit | Infrastructure | Datasource | Airtable | AreaDatasource', () => {
 

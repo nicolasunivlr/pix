@@ -3,10 +3,10 @@ const {
   expect,
   catchErr,
   domainBuilder,
-} = require('../../../test-helper');
+} = require('$root/tests/test-helper');
 
-const finalizeSession = require('../../../../lib/domain/usecases/finalize-session');
-const { SessionAlreadyFinalizedError, InvalidCertificationReportForFinalization } = require('../../../../lib/domain/errors');
+const finalizeSession = require('$root/lib/domain/usecases/finalize-session');
+const { SessionAlreadyFinalizedError, InvalidCertificationReportForFinalization } = require('$root/lib/domain/errors');
 
 describe('Unit | UseCase | finalize-session', () => {
 

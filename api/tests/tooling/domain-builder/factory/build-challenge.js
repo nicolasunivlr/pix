@@ -1,6 +1,6 @@
 const faker = require('faker');
-const Challenge = require('../../../../lib/domain/models/Challenge');
-const Validator = require('../../../../lib/domain/models/Validator');
+const Challenge = require('$root/lib/domain/models/Challenge');
+const Validator = require('$root/lib/domain/models/Validator');
 const buildSkillCollection = require('./build-skill-collection');
 
 module.exports = function buildChallenge(

@@ -1,7 +1,7 @@
-const { expect, knex, domainBuilder, databaseBuilder } = require('../../../test-helper');
-const Organization = require('../../../../lib/domain/models/Organization');
-const BookshelfOrganization = require('../../../../lib/infrastructure/data/organization');
-const organizationRepository = require('../../../../lib/infrastructure/repositories/organization-repository');
+const { expect, knex, domainBuilder, databaseBuilder } = require('$root/tests/test-helper');
+const Organization = require('$root/lib/domain/models/Organization');
+const BookshelfOrganization = require('$root/lib/infrastructure/data/organization');
+const organizationRepository = require('$root/lib/infrastructure/repositories/organization-repository');
 const _ = require('lodash');
 
 describe('Integration | Repository | Organization', function() {

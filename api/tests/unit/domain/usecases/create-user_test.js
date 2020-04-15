@@ -1,8 +1,8 @@
-const { expect, sinon, catchErr } = require('../../../test-helper');
-const createUser = require('../../../../lib/domain/usecases/create-user');
-const { AlreadyRegisteredEmailError, InvalidRecaptchaTokenError, EntityValidationError } = require('../../../../lib/domain/errors');
-const User = require('../../../../lib/domain/models/User');
-const userValidator = require('../../../../lib/domain/validators/user-validator');
+const { expect, sinon, catchErr } = require('$root/tests/test-helper');
+const createUser = require('$root/lib/domain/usecases/create-user');
+const { AlreadyRegisteredEmailError, InvalidRecaptchaTokenError, EntityValidationError } = require('$root/lib/domain/errors');
+const User = require('$root/lib/domain/models/User');
+const userValidator = require('$root/lib/domain/validators/user-validator');
 
 describe('Unit | UseCase | create-user', () => {
 

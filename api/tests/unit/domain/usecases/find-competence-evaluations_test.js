@@ -1,6 +1,6 @@
-const { expect, sinon, catchErr } = require('../../../test-helper');
-const findCompetenceEvaluations = require('../../../../lib/domain/usecases/find-competence-evaluations');
-const { UserNotAuthorizedToAccessEntity } = require('../../../../lib/domain/errors');
+const { expect, sinon, catchErr } = require('$root/tests/test-helper');
+const findCompetenceEvaluations = require('$root/lib/domain/usecases/find-competence-evaluations');
+const { UserNotAuthorizedToAccessEntity } = require('$root/lib/domain/errors');
 
 describe('Unit | UseCase | find-competence-evaluations', () => {
 

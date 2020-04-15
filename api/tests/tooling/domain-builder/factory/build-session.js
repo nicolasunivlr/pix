@@ -1,6 +1,6 @@
 const faker = require('faker');
 const moment = require('moment');
-const Session = require('../../../../lib/domain/models/Session');
+const Session = require('$root/lib/domain/models/Session');
 
 module.exports = function buildSession({
   id = faker.random.number(),

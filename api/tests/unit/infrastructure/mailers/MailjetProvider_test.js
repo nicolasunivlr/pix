@@ -1,8 +1,8 @@
 const nodeMailjet = require('node-mailjet');
-const { sinon } = require('../../../test-helper');
-const MailjetProvider = require('../../../../lib/infrastructure/mailers/MailjetProvider');
-const mailCheck = require('../../../../lib/infrastructure/mail-check');
-const { mailing } = require('../../../../lib/config');
+const { sinon } = require('$root/tests/test-helper');
+const MailjetProvider = require('$root/lib/infrastructure/mailers/MailjetProvider');
+const mailCheck = require('$root/lib/infrastructure/mail-check');
+const { mailing } = require('$root/lib/config');
 
 describe('Unit | Class | MailjetProvider', function() {
 

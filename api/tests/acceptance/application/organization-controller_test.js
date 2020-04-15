@@ -3,13 +3,13 @@ const _ = require('lodash');
 const {
   expect, knex, nock, databaseBuilder,
   generateValidRequestAuthorizationHeader, insertUserWithRolePixMaster,
-} = require('../../test-helper');
+} = require('$root/tests/test-helper');
 
-const createServer = require('../../../server');
+const createServer = require('$root/server');
 const areaRawAirTableFixture = require('../../tooling/fixtures/infrastructure/areaRawAirTableFixture');
 
-const Membership = require('../../../lib/domain/models/Membership');
-const OrganizationInvitation = require('../../../lib/domain/models/OrganizationInvitation');
+const Membership = require('$root/lib/domain/models/Membership');
+const OrganizationInvitation = require('$root/lib/domain/models/OrganizationInvitation');
 
 describe('Acceptance | Application | organization-controller', () => {
 

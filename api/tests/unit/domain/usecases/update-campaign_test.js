@@ -1,6 +1,6 @@
-const { expect, sinon } = require('../../../test-helper');
-const updateCampaign = require('../../../../lib/domain/usecases/update-campaign');
-const { UserNotAuthorizedToUpdateResourceError } = require('../../../../lib/domain/errors');
+const { expect, sinon } = require('$root/tests/test-helper');
+const updateCampaign = require('$root/lib/domain/usecases/update-campaign');
+const { UserNotAuthorizedToUpdateResourceError } = require('$root/lib/domain/errors');
 
 describe('Unit | UseCase | update-campaign', () => {
   let originalCampaign;

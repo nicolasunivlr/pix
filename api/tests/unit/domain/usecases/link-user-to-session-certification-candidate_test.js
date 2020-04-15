@@ -1,7 +1,7 @@
-const { catchErr, expect, sinon } = require('../../../test-helper');
-const CertificationCandidate = require('../../../../lib/domain/models/CertificationCandidate');
-const certificationCandidateRepository = require('../../../../lib/infrastructure/repositories/certification-candidate-repository');
-const usecases = require('../../../../lib/domain/usecases');
+const { catchErr, expect, sinon } = require('$root/tests/test-helper');
+const CertificationCandidate = require('$root/lib/domain/models/CertificationCandidate');
+const certificationCandidateRepository = require('$root/lib/infrastructure/repositories/certification-candidate-repository');
+const usecases = require('$root/lib/domain/usecases');
 const {
   CertificationCandidateAlreadyLinkedToUserError,
   CertificationCandidateByPersonalInfoNotFoundError,
@@ -9,7 +9,7 @@ const {
   CertificationCandidatePersonalInfoFieldMissingError,
   CertificationCandidatePersonalInfoWrongFormat,
   UserAlreadyLinkedToCandidateInSessionError,
-} = require('../../../../lib/domain/errors');
+} = require('$root/lib/domain/errors');
 
 describe('Unit | Domain | Use Cases | link-user-to-session-certification-candidate', () => {
   const sessionId = 'sessionId';

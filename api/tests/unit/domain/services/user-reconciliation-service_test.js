@@ -1,8 +1,8 @@
-const { expect, sinon, domainBuilder, catchErr } = require('../../../test-helper');
-const userReconciliationService = require('../../../../lib/domain/services/user-reconciliation-service');
+const { expect, sinon, domainBuilder, catchErr } = require('$root/tests/test-helper');
+const userReconciliationService = require('$root/lib/domain/services/user-reconciliation-service');
 const {
   NotFoundError, SchoolingRegistrationAlreadyLinkedToUserError, AlreadyRegisteredUsernameError
-} = require('../../../../lib/domain/errors');
+} = require('$root/lib/domain/errors');
 
 describe('Unit | Service | user-reconciliation-service', () => {
 

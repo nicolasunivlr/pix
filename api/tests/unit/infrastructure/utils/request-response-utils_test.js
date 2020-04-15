@@ -1,6 +1,6 @@
-const { expect, generateValidRequestAuthorizationHeader } = require('../../../test-helper');
-const { escapeFileName, extractUserIdFromRequest, extractLocaleFromRequest } = require('../../../../lib/infrastructure/utils/request-response-utils');
-const { FRENCH_FRANCE, FRENCH_SPOKEN } = require('../../../../lib/domain/constants').LOCALE;
+const { expect, generateValidRequestAuthorizationHeader } = require('$root/tests/test-helper');
+const { escapeFileName, extractUserIdFromRequest, extractLocaleFromRequest } = require('$root/lib/infrastructure/utils/request-response-utils');
+const { FRENCH_FRANCE, FRENCH_SPOKEN } = require('$root/lib/domain/constants').LOCALE;
 
 describe('Unit | Utils | Request Utils', function() {
 

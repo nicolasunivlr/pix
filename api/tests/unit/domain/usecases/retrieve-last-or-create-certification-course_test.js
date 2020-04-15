@@ -1,15 +1,15 @@
-const { expect, sinon, domainBuilder, catchErr } = require('../../../test-helper');
+const { expect, sinon, domainBuilder, catchErr } = require('$root/tests/test-helper');
 
-const { UserNotAuthorizedToCertifyError, NotFoundError } = require('../../../../lib/domain/errors');
-const certificationChallengesService = require('../../../../lib/domain/services/certification-challenges-service');
-const userService = require('../../../../lib/domain/services/user-service');
-const retrieveLastOrCreateCertificationCourse = require('../../../../lib/domain/usecases/retrieve-last-or-create-certification-course');
-const certificationCandidateRepository = require('../../../../lib/infrastructure/repositories/certification-candidate-repository');
-const certificationCourseRepository = require('../../../../lib/infrastructure/repositories/certification-course-repository');
-const assessmentRepository = require('../../../../lib/infrastructure/repositories/assessment-repository');
-const sessionRepository = require('../../../../lib/infrastructure/repositories/session-repository');
-const CertificationProfile = require('../../../../lib/domain/models/CertificationProfile');
-const UserCompetence = require('../../../../lib/domain/models/UserCompetence');
+const { UserNotAuthorizedToCertifyError, NotFoundError } = require('$root/lib/domain/errors');
+const certificationChallengesService = require('$root/lib/domain/services/certification-challenges-service');
+const userService = require('$root/lib/domain/services/user-service');
+const retrieveLastOrCreateCertificationCourse = require('$root/lib/domain/usecases/retrieve-last-or-create-certification-course');
+const certificationCandidateRepository = require('$root/lib/infrastructure/repositories/certification-candidate-repository');
+const certificationCourseRepository = require('$root/lib/infrastructure/repositories/certification-course-repository');
+const assessmentRepository = require('$root/lib/infrastructure/repositories/assessment-repository');
+const sessionRepository = require('$root/lib/infrastructure/repositories/session-repository');
+const CertificationProfile = require('$root/lib/domain/models/CertificationProfile');
+const UserCompetence = require('$root/lib/domain/models/UserCompetence');
 
 describe('Unit | UseCase | retrieve-last-or-create-certification-course', () => {
 

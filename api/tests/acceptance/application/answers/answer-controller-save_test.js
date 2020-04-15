@@ -1,6 +1,6 @@
-const { expect, knex, nock, databaseBuilder, airtableBuilder, generateValidRequestAuthorizationHeader } = require('../../../test-helper');
-const createServer = require('../../../../server');
-const BookshelfAnswer = require('../../../../lib/infrastructure/data/answer');
+const { expect, knex, nock, databaseBuilder, airtableBuilder, generateValidRequestAuthorizationHeader } = require('$root/tests/test-helper');
+const createServer = require('$root/server');
+const BookshelfAnswer = require('$root/lib/infrastructure/data/answer');
 
 describe('Acceptance | Controller | answer-controller-save', () => {
 

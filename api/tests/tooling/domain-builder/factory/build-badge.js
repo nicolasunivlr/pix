@@ -1,4 +1,4 @@
-const Badge = require('../../../../lib/domain/models/Badge');
+const Badge = require('$root/lib/domain/models/Badge');
 
 const buildBadgePartnerCompetence = require('./build-badge-partner-competence');
 

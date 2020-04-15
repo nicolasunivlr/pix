@@ -1,12 +1,12 @@
-const { expect, sinon, domainBuilder } = require('../../../test-helper');
-const getAssessment = require('../../../../lib/domain/usecases/get-assessment');
-const assessmentRepository = require('../../../../lib/infrastructure/repositories/assessment-repository');
-const campaignRepository = require('../../../../lib/infrastructure/repositories/campaign-repository');
-const competenceRepository = require('../../../../lib/infrastructure/repositories/competence-repository');
-const courseRepository = require('../../../../lib/infrastructure/repositories/course-repository');
+const { expect, sinon, domainBuilder } = require('$root/tests/test-helper');
+const getAssessment = require('$root/lib/domain/usecases/get-assessment');
+const assessmentRepository = require('$root/lib/infrastructure/repositories/assessment-repository');
+const campaignRepository = require('$root/lib/infrastructure/repositories/campaign-repository');
+const competenceRepository = require('$root/lib/infrastructure/repositories/competence-repository');
+const courseRepository = require('$root/lib/infrastructure/repositories/course-repository');
 
-const Assessment = require('../../../../lib/domain/models/Assessment');
-const { NotFoundError } = require('../../../../lib/domain/errors');
+const Assessment = require('$root/lib/domain/models/Assessment');
+const { NotFoundError } = require('$root/lib/domain/errors');
 
 describe('Unit | UseCase | get-assessment', () => {
 

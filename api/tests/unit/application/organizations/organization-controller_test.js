@@ -1,21 +1,21 @@
-const { expect, sinon, domainBuilder, hFake } = require('../../../test-helper');
+const { expect, sinon, domainBuilder, hFake } = require('$root/tests/test-helper');
 
-const Organization = require('../../../../lib/domain/models/Organization');
+const Organization = require('$root/lib/domain/models/Organization');
 
-const organizationController = require('../../../../lib/application/organizations/organization-controller');
+const organizationController = require('$root/lib/application/organizations/organization-controller');
 
-const usecases = require('../../../../lib/domain/usecases');
-const organizationService = require('../../../../lib/domain/services/organization-service');
+const usecases = require('$root/lib/domain/usecases');
+const organizationService = require('$root/lib/domain/services/organization-service');
 
-const organizationSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/organization-serializer');
-const campaignSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/campaign-serializer');
-const targetProfileSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/target-profile-serializer');
-const studentSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/student-serializer');
-const userWithSchoolingRegistrationSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/user-with-schooling-registration-serializer');
+const organizationSerializer = require('$root/lib/infrastructure/serializers/jsonapi/organization-serializer');
+const campaignSerializer = require('$root/lib/infrastructure/serializers/jsonapi/campaign-serializer');
+const targetProfileSerializer = require('$root/lib/infrastructure/serializers/jsonapi/target-profile-serializer');
+const studentSerializer = require('$root/lib/infrastructure/serializers/jsonapi/student-serializer');
+const userWithSchoolingRegistrationSerializer = require('$root/lib/infrastructure/serializers/jsonapi/user-with-schooling-registration-serializer');
 
-const organizationInvitationSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/organization-invitation-serializer');
+const organizationInvitationSerializer = require('$root/lib/infrastructure/serializers/jsonapi/organization-invitation-serializer');
 
-const queryParamsUtils = require('../../../../lib/infrastructure/utils/query-params-utils');
+const queryParamsUtils = require('$root/lib/infrastructure/utils/query-params-utils');
 
 describe('Unit | Application | Organizations | organization-controller', () => {
 

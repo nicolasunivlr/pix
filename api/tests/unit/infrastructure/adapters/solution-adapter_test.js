@@ -1,6 +1,6 @@
-const { expect, domainBuilder } = require('../../../test-helper');
-const solutionAdapter = require('../../../../lib/infrastructure/adapters/solution-adapter');
-const Solution = require('../../../../lib/domain/models/Solution');
+const { expect, domainBuilder } = require('$root/tests/test-helper');
+const solutionAdapter = require('$root/lib/infrastructure/adapters/solution-adapter');
+const Solution = require('$root/lib/domain/models/Solution');
 
 describe('Unit | Adapter | Solution', () => {
 

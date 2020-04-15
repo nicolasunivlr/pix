@@ -1,7 +1,7 @@
-const { expect, sinon, domainBuilder, hFake } = require('../../../test-helper');
+const { expect, sinon, domainBuilder, hFake } = require('$root/tests/test-helper');
 
-const usecases = require('../../../../lib/domain/usecases');
-const progressionController = require('../../../../lib/application/progressions/progression-controller');
+const usecases = require('$root/lib/domain/usecases');
+const progressionController = require('$root/lib/application/progressions/progression-controller');
 
 describe('Unit | Controller | progression-controller', () => {
   const userId = 60;

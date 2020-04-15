@@ -1,5 +1,5 @@
-const { expect } = require('../../../test-helper');
-const { injectDependencies } = require('../../../../lib/infrastructure/utils/dependency-injection');
+const { expect } = require('$root/tests/test-helper');
+const { injectDependencies } = require('$root/lib/infrastructure/utils/dependency-injection');
 
 describe('Unit | Utils | #injectDependencies', function() {
 

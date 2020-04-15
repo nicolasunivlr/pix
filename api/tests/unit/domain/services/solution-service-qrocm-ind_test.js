@@ -1,7 +1,7 @@
-const { expect } = require('../../../test-helper');
+const { expect } = require('$root/tests/test-helper');
 
-const AnswerStatus = require('../../../../lib/domain/models/AnswerStatus');
-const service = require('../../../../lib/domain/services/solution-service-qrocm-ind');
+const AnswerStatus = require('$root/lib/domain/models/AnswerStatus');
+const service = require('$root/lib/domain/services/solution-service-qrocm-ind');
 
 const ANSWER_OK = AnswerStatus.OK;
 const ANSWER_KO = AnswerStatus.KO;

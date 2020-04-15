@@ -1,8 +1,8 @@
-const { expect, sinon } = require('../../../test-helper');
+const { expect, sinon } = require('$root/tests/test-helper');
 const Hapi = require('@hapi/hapi');
-const securityController = require('../../../../lib/interfaces/controllers/security-controller');
-const feedbackController = require('../../../../lib/application/feedbacks/feedback-controller');
-const route = require('../../../../lib/application/feedbacks');
+const securityController = require('$root/lib/interfaces/controllers/security-controller');
+const feedbackController = require('$root/lib/application/feedbacks/feedback-controller');
+const route = require('$root/lib/application/feedbacks');
 
 describe('Unit | Router | feedback-router', () => {
 

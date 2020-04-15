@@ -1,9 +1,9 @@
-const { expect, sinon } = require('../../../test-helper');
+const { expect, sinon } = require('$root/tests/test-helper');
 const AirtableRecord = require('airtable').Record;
-const airtable = require('../../../../lib/infrastructure/airtable');
-const Tube = require('../../../../lib/domain/models/Tube');
-const tubeDatasource = require('../../../../lib/infrastructure/datasources/airtable/tube-datasource');
-const tubeRepository = require('../../../../lib/infrastructure/repositories/tube-repository');
+const airtable = require('$root/lib/infrastructure/airtable');
+const Tube = require('$root/lib/domain/models/Tube');
+const tubeDatasource = require('$root/lib/infrastructure/datasources/airtable/tube-datasource');
+const tubeRepository = require('$root/lib/infrastructure/repositories/tube-repository');
 
 describe('Unit | Repository | tube-repository', () => {
   const rawTube1 = new AirtableRecord('Tubes', 'recTube1',{

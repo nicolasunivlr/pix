@@ -1,8 +1,8 @@
-const { expect, domainBuilder } = require('../../../test-helper');
+const { expect, domainBuilder } = require('$root/tests/test-helper');
 const moment = require('moment');
 const _ = require('lodash');
 
-const improvementService = require('../../../../lib/domain/services/improvement-service');
+const improvementService = require('$root/lib/domain/services/improvement-service');
 
 describe('Unit | Service | ImprovementService', () => {
 

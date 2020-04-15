@@ -1,6 +1,6 @@
 const databaseBuffer = require('./database-buffer');
 const factory = require('./factory/index');
-const knexDatabaseConnection = require('../../../db/knex-database-connection');
+const knexDatabaseConnection = require('$root/db/knex-database-connection');
 const _ = require('lodash');
 
 module.exports = class DatabaseBuilder {

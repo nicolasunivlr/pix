@@ -1,7 +1,7 @@
-const { expect, domainBuilder } = require('../../../../test-helper');
-const TargetProfile = require('../../../../../lib/domain/models/TargetProfile');
-const skillsFilter = require('../../../../../lib/domain/services/smart-random/skills-filter');
-const Tube = require('../../../../../lib/domain/models/Tube');
+const { expect, domainBuilder } = require('$root/tests/test-helper');
+const TargetProfile = require('$root/lib/domain/models/TargetProfile');
+const skillsFilter = require('$root/lib/domain/services/smart-random/skills-filter');
+const Tube = require('$root/lib/domain/models/Tube');
 
 const KNOWLEDGE_ELEMENT_STATUS = {
   VALIDATED: 'validated',

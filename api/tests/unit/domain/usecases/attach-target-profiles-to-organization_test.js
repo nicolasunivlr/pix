@@ -1,7 +1,7 @@
-const { expect, sinon, catchErr } = require('../../../test-helper');
-const { NotFoundError } = require('../../../../lib/domain/errors');
+const { expect, sinon, catchErr } = require('$root/tests/test-helper');
+const { NotFoundError } = require('$root/lib/domain/errors');
 
-const attachTargetProfilesToOrganization = require('../../../../lib/domain/usecases/attach-target-profiles-to-organization');
+const attachTargetProfilesToOrganization = require('$root/lib/domain/usecases/attach-target-profiles-to-organization');
 
 describe('Unit | UseCase | attach-target-profiles-to-organization', () => {
 

@@ -1,8 +1,8 @@
-const { sinon, databaseBuilder, expect, domainBuilder } = require('../../../test-helper');
-const BookshelfTargetProfile = require('../../../../lib/infrastructure/data/target-profile');
-const BookshelfTargetProfileShare = require('../../../../lib/infrastructure/data/target-profile-share');
-const TargetProfile = require('../../../../lib/domain/models/TargetProfile');
-const targetProfileAdapter = require('../../../../lib/infrastructure/adapters/target-profile-adapter');
+const { sinon, databaseBuilder, expect, domainBuilder } = require('$root/tests/test-helper');
+const BookshelfTargetProfile = require('$root/lib/infrastructure/data/target-profile');
+const BookshelfTargetProfileShare = require('$root/lib/infrastructure/data/target-profile-share');
+const TargetProfile = require('$root/lib/domain/models/TargetProfile');
+const targetProfileAdapter = require('$root/lib/infrastructure/adapters/target-profile-adapter');
 
 describe('Unit | Infrastructure | Adapter | targetSkillAdapter', () => {
 

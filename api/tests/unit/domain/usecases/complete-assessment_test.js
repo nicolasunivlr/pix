@@ -1,9 +1,9 @@
 const _ = require('lodash');
-const { expect, sinon, domainBuilder, catchErr } = require('../../../test-helper');
-const completeAssessment = require('../../../../lib/domain/usecases/complete-assessment');
-const Assessment = require('../../../../lib/domain/models/Assessment');
-const { AlreadyRatedAssessmentError } = require('../../../../lib/domain/errors');
-const AssessmentCompleted = require('../../../../lib/domain/events/AssessmentCompleted');
+const { expect, sinon, domainBuilder, catchErr } = require('$root/tests/test-helper');
+const completeAssessment = require('$root/lib/domain/usecases/complete-assessment');
+const Assessment = require('$root/lib/domain/models/Assessment');
+const { AlreadyRatedAssessmentError } = require('$root/lib/domain/errors');
+const AssessmentCompleted = require('$root/lib/domain/events/AssessmentCompleted');
 
 describe('Unit | UseCase | complete-assessment', () => {
   const scoringCertificationService = { calculateAssessmentScore: _.noop };

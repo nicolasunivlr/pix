@@ -1,7 +1,7 @@
-const { expect, sinon } = require('../../../test-helper');
+const { expect, sinon } = require('$root/tests/test-helper');
 const Hapi = require('@hapi/hapi');
-const ChallengeRepository = require('../../../../lib/infrastructure/repositories/challenge-repository');
-const ChallengeSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/challenge-serializer');
+const ChallengeRepository = require('$root/lib/infrastructure/repositories/challenge-repository');
+const ChallengeSerializer = require('$root/lib/infrastructure/serializers/jsonapi/challenge-serializer');
 
 describe('Unit | Controller | challenge-controller', function() {
 
@@ -14,7 +14,7 @@ describe('Unit | Controller | challenge-controller', function() {
     ChallengeSerializerStub = sinon.stub(ChallengeSerializer, 'serialize');
     server = Hapi.server();
 
-    return server.register(require('../../../../lib/application/challenges'));
+    return server.register(require('$root/lib/application/challenges'));
   });
 
   describe('#get', function() {

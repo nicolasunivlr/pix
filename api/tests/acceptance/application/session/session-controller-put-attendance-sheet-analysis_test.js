@@ -1,10 +1,10 @@
 const {
   expect, generateValidRequestAuthorizationHeader, databaseBuilder,
-} = require('../../../test-helper');
+} = require('$root/tests/test-helper');
 const FormData = require('form-data');
 const streamToPromise = require('stream-to-promise');
 const fs = require('fs');
-const createServer = require('../../../../server');
+const createServer = require('$root/server');
 
 describe('PUT /api/sessions/:id/certifications/attendance-sheet-analysis', () => {
 

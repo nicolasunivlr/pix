@@ -1,6 +1,6 @@
-const Correction = require('../../../../lib/domain/models/Correction');
-const Hint = require('../../../../lib/domain/models/Hint');
-const { expect } = require('../../../test-helper');
+const Correction = require('$root/lib/domain/models/Correction');
+const Hint = require('$root/lib/domain/models/Hint');
+const { expect } = require('$root/tests/test-helper');
 
 describe('Unit | Domain | Models | Correction', () => {
 

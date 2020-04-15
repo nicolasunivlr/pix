@@ -1,5 +1,5 @@
 const faker = require('faker');
-const Solution = require('../../../../lib/domain/models/Solution');
+const Solution = require('$root/lib/domain/models/Solution');
 
 module.exports = function buildSolution({
   id = `rec${faker.random.uuid()}`,

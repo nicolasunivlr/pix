@@ -1,7 +1,7 @@
-const { expect } = require('../../../test-helper');
+const { expect } = require('$root/tests/test-helper');
 
-const BookshelfCampaignParticipation = require('../../../../lib/infrastructure/data/campaign-participation');
-const BookshelfKnowledgeElement = require('../../../../lib/infrastructure/data/knowledge-element');
+const BookshelfCampaignParticipation = require('$root/lib/infrastructure/data/campaign-participation');
+const BookshelfKnowledgeElement = require('$root/lib/infrastructure/data/knowledge-element');
 
 describe('Unit | Infrastructure | Data | knowledge-element', () => {
 

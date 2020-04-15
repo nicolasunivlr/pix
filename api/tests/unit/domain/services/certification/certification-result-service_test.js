@@ -1,17 +1,17 @@
-const { expect, sinon, domainBuilder } = require('../../../../test-helper');
+const { expect, sinon, domainBuilder } = require('$root/tests/test-helper');
 const _ = require('lodash');
-const certificationResultService = require('../../../../../lib/domain/services/certification-result-service');
+const certificationResultService = require('$root/lib/domain/services/certification-result-service');
 
-const Assessment = require('../../../../../lib/domain/models/Assessment');
-const CertificationCourse = require('../../../../../lib/domain/models/CertificationCourse');
-const Answer = require('../../../../../lib/domain/models/Answer');
+const Assessment = require('$root/lib/domain/models/Assessment');
+const CertificationCourse = require('$root/lib/domain/models/CertificationCourse');
+const Answer = require('$root/lib/domain/models/Answer');
 
-const answersRepository = require('../../../../../lib/infrastructure/repositories/answer-repository');
-const certificationChallengesRepository = require('../../../../../lib/infrastructure/repositories/certification-challenge-repository');
-const certificationCourseRepository = require('../../../../../lib/infrastructure/repositories/certification-course-repository');
-const challengeRepository = require('../../../../../lib/infrastructure/repositories/challenge-repository');
-const competenceRepository = require('../../../../../lib/infrastructure/repositories/competence-repository');
-const userService = require('../../../../../lib/domain/services/user-service');
+const answersRepository = require('$root/lib/infrastructure/repositories/answer-repository');
+const certificationChallengesRepository = require('$root/lib/infrastructure/repositories/certification-challenge-repository');
+const certificationCourseRepository = require('$root/lib/infrastructure/repositories/certification-course-repository');
+const challengeRepository = require('$root/lib/infrastructure/repositories/challenge-repository');
+const competenceRepository = require('$root/lib/infrastructure/repositories/competence-repository');
+const userService = require('$root/lib/domain/services/user-service');
 
 function _buildUserCompetence(competence, pixScore, estimatedLevel) {
   return { ...competence, estimatedLevel, pixScore, };

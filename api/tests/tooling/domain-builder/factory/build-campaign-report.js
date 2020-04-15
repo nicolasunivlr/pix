@@ -1,4 +1,4 @@
-const CampaignReport = require('../../../../lib/domain/models/CampaignReport');
+const CampaignReport = require('$root/lib/domain/models/CampaignReport');
 const faker = require('faker');
 
 module.exports = function buildCampaignReport(

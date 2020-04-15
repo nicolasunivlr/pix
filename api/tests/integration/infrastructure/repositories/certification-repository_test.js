@@ -1,9 +1,9 @@
-const { expect, domainBuilder, databaseBuilder, catchErr, knex } = require('../../../test-helper');
-const certificationRepository = require('../../../../lib/infrastructure/repositories/certification-repository');
-const { NotFoundError, CertificationCourseNotPublishableError } = require('../../../../lib/domain/errors');
-const Assessment = require('../../../../lib/domain/models/Assessment');
+const { expect, domainBuilder, databaseBuilder, catchErr, knex } = require('$root/tests/test-helper');
+const certificationRepository = require('$root/lib/infrastructure/repositories/certification-repository');
+const { NotFoundError, CertificationCourseNotPublishableError } = require('$root/lib/domain/errors');
+const Assessment = require('$root/lib/domain/models/Assessment');
 
-const CertificationCourseBookshelf = require('../../../../lib/infrastructure/data/certification-course');
+const CertificationCourseBookshelf = require('$root/lib/infrastructure/data/certification-course');
 const PARTNER_CLEA_KEY = 'BANANA';
 
 describe('Integration | Repository | Certification ', () => {

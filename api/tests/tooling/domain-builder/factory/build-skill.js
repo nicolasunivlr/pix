@@ -1,5 +1,5 @@
 const faker = require('faker');
-const Skill = require('../../../../lib/domain/models/Skill');
+const Skill = require('$root/lib/domain/models/Skill');
 
 const buildSkill = function buildSkill({
   id = `rec${faker.random.uuid()}`,

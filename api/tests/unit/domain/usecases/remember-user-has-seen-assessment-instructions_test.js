@@ -1,6 +1,6 @@
-const { expect, sinon } = require('../../../test-helper');
-const rememberUserHasSeenAssessmentInstructions = require('../../../../lib/domain/usecases/remember-user-has-seen-assessment-instructions');
-const userRepository = require('../../../../lib/infrastructure/repositories/user-repository');
+const { expect, sinon } = require('$root/tests/test-helper');
+const rememberUserHasSeenAssessmentInstructions = require('$root/lib/domain/usecases/remember-user-has-seen-assessment-instructions');
+const userRepository = require('$root/lib/infrastructure/repositories/user-repository');
 
 describe('Unit | UseCase | remember-user-has-seen-assessment-instructions', () => {
 

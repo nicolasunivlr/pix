@@ -1,5 +1,5 @@
 const faker = require('faker');
-const Course = require('../../../../lib/domain/models/Course');
+const Course = require('$root/lib/domain/models/Course');
 
 module.exports = function buildCourse({
   id = faker.random.number(),

@@ -1,9 +1,9 @@
-const { expect, sinon, domainBuilder } = require('../../../test-helper');
-const Area = require('../../../../lib/domain/models/Area');
-const areaDatasource = require('../../../../lib/infrastructure/datasources/airtable/area-datasource');
-const competenceRepository = require('../../../../lib/infrastructure/repositories/competence-repository');
+const { expect, sinon, domainBuilder } = require('$root/tests/test-helper');
+const Area = require('$root/lib/domain/models/Area');
+const areaDatasource = require('$root/lib/infrastructure/datasources/airtable/area-datasource');
+const competenceRepository = require('$root/lib/infrastructure/repositories/competence-repository');
 
-const areaRepository = require('../../../../lib/infrastructure/repositories/area-repository');
+const areaRepository = require('$root/lib/infrastructure/repositories/area-repository');
 
 describe('Unit | Repository | area-repository', function() {
 

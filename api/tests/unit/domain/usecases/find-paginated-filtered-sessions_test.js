@@ -1,5 +1,5 @@
-const { expect, sinon } = require('../../../test-helper');
-const usecases = require('../../../../lib/domain/usecases');
+const { expect, sinon } = require('$root/tests/test-helper');
+const usecases = require('$root/lib/domain/usecases');
 
 describe('Unit | UseCase | find-paginated-filtered-sessions', () => {
   let sessionRepository;

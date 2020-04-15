@@ -1,7 +1,7 @@
-const { databaseBuilder, expect, generateValidRequestAuthorizationHeader, knex } = require('../../../test-helper');
-const Assessment = require('../../../../lib/domain/models/Assessment');
-const createServer = require('../../../../server');
-const cache = require('../../../../lib/infrastructure/caches/learning-content-cache');
+const { databaseBuilder, expect, generateValidRequestAuthorizationHeader, knex } = require('$root/tests/test-helper');
+const Assessment = require('$root/lib/domain/models/Assessment');
+const createServer = require('$root/server');
+const cache = require('$root/lib/infrastructure/caches/learning-content-cache');
 
 describe('Acceptance | Controller | assessment-controller-complete-assessment', () => {
 

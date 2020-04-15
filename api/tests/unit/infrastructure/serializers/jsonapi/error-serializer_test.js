@@ -1,7 +1,7 @@
-const { expect } = require('../../../../test-helper');
+const { expect } = require('$root/tests/test-helper');
 const JSONAPIError = require('jsonapi-serializer').Error;
-const { MissingQueryParamError } = require('../../../../../lib/application/http-errors');
-const serializer = require('../../../../../lib/infrastructure/serializers/jsonapi/error-serializer');
+const { MissingQueryParamError } = require('$root/lib/application/http-errors');
+const serializer = require('$root/lib/infrastructure/serializers/jsonapi/error-serializer');
 
 describe('Unit | Serializer | JSONAPI | error-serializer', () => {
 

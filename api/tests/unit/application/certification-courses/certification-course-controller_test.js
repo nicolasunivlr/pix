@@ -1,14 +1,14 @@
-const { sinon, expect, hFake, generateValidRequestAuthorizationHeader } = require('../../../test-helper');
+const { sinon, expect, hFake, generateValidRequestAuthorizationHeader } = require('$root/tests/test-helper');
 const Hapi = require('@hapi/hapi');
-const certificationCourseController = require('../../../../lib/application/certification-courses/certification-course-controller');
-const certificationService = require('../../../../lib/domain/services/certification-service');
-const certificationCourseService = require('../../../../lib/domain/services/certification-course-service');
-const certificationSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/certification-serializer');
-const usecases = require('../../../../lib/domain/usecases');
-const certificationCourseSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/certification-course-serializer');
+const certificationCourseController = require('$root/lib/application/certification-courses/certification-course-controller');
+const certificationService = require('$root/lib/domain/services/certification-service');
+const certificationCourseService = require('$root/lib/domain/services/certification-course-service');
+const certificationSerializer = require('$root/lib/infrastructure/serializers/jsonapi/certification-serializer');
+const usecases = require('$root/lib/domain/usecases');
+const certificationCourseSerializer = require('$root/lib/infrastructure/serializers/jsonapi/certification-course-serializer');
 
-const CertificationCourse = require('../../../../lib/domain/models/CertificationCourse');
-const Assessment = require('../../../../lib/domain/models/Assessment');
+const CertificationCourse = require('$root/lib/domain/models/CertificationCourse');
+const Assessment = require('$root/lib/domain/models/Assessment');
 
 describe('Unit | Controller | certification-course-controller', () => {
 
@@ -172,7 +172,7 @@ describe('Unit | Controller | certification-course-controller', () => {
       sinon.stub(certificationCourseSerializer, 'serialize');
 
       server = this.server = Hapi.server();
-      return server.register(require('../../../../lib/application/certification-courses'));
+      return server.register(require('$root/lib/application/certification-courses'));
     });
 
     context('when certification course needs to be created', function() {

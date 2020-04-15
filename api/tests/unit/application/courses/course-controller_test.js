@@ -1,10 +1,10 @@
-const { expect, sinon, hFake, generateValidRequestAuthorizationHeader } = require('../../../test-helper');
+const { expect, sinon, hFake, generateValidRequestAuthorizationHeader } = require('$root/tests/test-helper');
 const Hapi = require('@hapi/hapi');
 
-const courseController = require('../../../../lib/application/courses/course-controller');
-const Course = require('../../../../lib/domain/models/Course');
-const courseService = require('../../../../lib/domain/services/course-service');
-const courseSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/course-serializer');
+const courseController = require('$root/lib/application/courses/course-controller');
+const Course = require('$root/lib/domain/models/Course');
+const courseService = require('$root/lib/domain/services/course-service');
+const courseSerializer = require('$root/lib/infrastructure/serializers/jsonapi/course-serializer');
 
 describe('Unit | Controller | course-controller', () => {
 
@@ -15,7 +15,7 @@ describe('Unit | Controller | course-controller', () => {
     sinon.stub(courseSerializer, 'serialize');
 
     server = this.server = Hapi.server();
-    return server.register(require('../../../../lib/application/courses'));
+    return server.register(require('$root/lib/application/courses'));
   });
 
   describe('#get', () => {

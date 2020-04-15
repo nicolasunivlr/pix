@@ -1,7 +1,7 @@
-const { expect, sinon } = require('../../../test-helper');
+const { expect, sinon } = require('$root/tests/test-helper');
 const Hapi = require('@hapi/hapi');
-const ChallengeController = require('../../../../lib/application/challenges/challenge-controller');
-const route = require('../../../../lib/application/challenges');
+const ChallengeController = require('$root/lib/application/challenges/challenge-controller');
+const route = require('$root/lib/application/challenges');
 
 describe('Unit | Router | challenge-router', function() {
 

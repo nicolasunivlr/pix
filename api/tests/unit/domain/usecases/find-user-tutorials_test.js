@@ -1,5 +1,5 @@
-const { sinon, expect, domainBuilder } = require('../../../test-helper');
-const findUserTutorials = require('../../../../lib/domain/usecases/find-user-tutorials');
+const { sinon, expect, domainBuilder } = require('$root/tests/test-helper');
+const findUserTutorials = require('$root/lib/domain/usecases/find-user-tutorials');
 
 describe('Unit | UseCase | find-user-tutorials', () => {
 

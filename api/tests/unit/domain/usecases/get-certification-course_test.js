@@ -1,5 +1,5 @@
-const { expect, sinon } = require('../../../test-helper');
-const getCertificationCourse = require('../../../../lib/domain/usecases/get-certification-course');
+const { expect, sinon } = require('$root/tests/test-helper');
+const getCertificationCourse = require('$root/lib/domain/usecases/get-certification-course');
 
 describe('Unit | UseCase | get-certification-course', () => {
 

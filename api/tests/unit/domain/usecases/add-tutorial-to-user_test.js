@@ -1,6 +1,6 @@
-const { sinon, expect, domainBuilder, catchErr } = require('../../../test-helper');
-const addTutorialToUser = require('../../../../lib/domain/usecases/add-tutorial-to-user');
-const AirtableNotFoundError = require('../../../../lib/infrastructure/datasources/airtable/AirtableResourceNotFound');
+const { sinon, expect, domainBuilder, catchErr } = require('$root/tests/test-helper');
+const addTutorialToUser = require('$root/lib/domain/usecases/add-tutorial-to-user');
+const AirtableNotFoundError = require('$root/lib/infrastructure/datasources/airtable/AirtableResourceNotFound');
 
 describe('Unit | UseCase | add-tutorial-to-user', () => {
 

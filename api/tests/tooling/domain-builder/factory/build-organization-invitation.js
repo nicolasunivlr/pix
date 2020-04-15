@@ -1,5 +1,5 @@
 const faker = require('faker');
-const OrganizationInvitation = require('../../../../lib/domain/models/OrganizationInvitation');
+const OrganizationInvitation = require('$root/lib/domain/models/OrganizationInvitation');
 
 module.exports = function buildOrganizationInvitation({
   id = faker.random.number(),

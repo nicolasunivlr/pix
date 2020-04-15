@@ -1,7 +1,7 @@
-const { expect, sinon } = require('../../../test-helper');
+const { expect, sinon } = require('$root/tests/test-helper');
 
-const mailService = require('../../../../lib/domain/services/mail-service');
-const { createOrganizationInvitation } = require('../../../../lib/domain/services/organization-invitation-service');
+const mailService = require('$root/lib/domain/services/mail-service');
+const { createOrganizationInvitation } = require('$root/lib/domain/services/organization-invitation-service');
 
 describe('Unit | Service | Organization-Invitation Service', () => {
 

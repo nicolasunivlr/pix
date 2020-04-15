@@ -6,7 +6,7 @@ const buildArea = require('./build-area');
 const {
   MINIMUM_CERTIFIABLE_COMPETENCES_FOR_CERTIFIABILITY,
   MAX_CHALLENGES_PER_SKILL_FOR_CERTIFICATION,
-} = require('../../../../lib/domain/constants');
+} = require('$root/lib/domain/constants');
 const _ = require('lodash');
 
 module.exports = function buildCertificationPrerequisites() {

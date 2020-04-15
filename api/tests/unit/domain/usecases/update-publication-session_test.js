@@ -2,10 +2,10 @@ const {
   sinon,
   expect,
   catchErr,
-} = require('../../../test-helper');
+} = require('$root/tests/test-helper');
 
-const updatePublicationSession = require('../../../../lib/domain/usecases/update-publication-session');
-const { InvalidParametersForSessionPublication } = require('../../../../lib/domain/errors');
+const updatePublicationSession = require('$root/lib/domain/usecases/update-publication-session');
+const { InvalidParametersForSessionPublication } = require('$root/lib/domain/errors');
 
 describe('Unit | UseCase | update-publication-session', () => {
 

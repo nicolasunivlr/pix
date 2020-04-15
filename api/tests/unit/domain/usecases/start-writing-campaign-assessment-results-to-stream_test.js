@@ -1,10 +1,10 @@
 const { PassThrough } = require('stream');
 const moment = require('moment');
 
-const { expect, sinon, domainBuilder, streamToPromise } = require('../../../test-helper');
+const { expect, sinon, domainBuilder, streamToPromise } = require('$root/tests/test-helper');
 
-const startWritingCampaignAssessmentResultsToStream = require('../../../../lib/domain/usecases/start-writing-campaign-assessment-results-to-stream');
-const Area = require('../../../../lib/domain/models/Area');
+const startWritingCampaignAssessmentResultsToStream = require('$root/lib/domain/usecases/start-writing-campaign-assessment-results-to-stream');
+const Area = require('$root/lib/domain/models/Area');
 
 describe('Unit | Domain | Use Cases | start-writing-campaign-assessment-results-to-stream', () => {
 

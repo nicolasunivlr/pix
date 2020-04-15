@@ -1,6 +1,6 @@
-const { expect, sinon, domainBuilder } = require('../../../test-helper');
-const AnswerStatus = require('../../../../lib/domain/models/AnswerStatus');
-const KnowledgeElement = require('../../../../lib/domain/models/KnowledgeElement');
+const { expect, sinon, domainBuilder } = require('$root/tests/test-helper');
+const AnswerStatus = require('$root/lib/domain/models/AnswerStatus');
+const KnowledgeElement = require('$root/lib/domain/models/KnowledgeElement');
 const moment = require('moment');
 
 describe('Unit | Domain | Models | KnowledgeElement', () => {

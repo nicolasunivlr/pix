@@ -1,5 +1,5 @@
-const { expect, domainBuilder } = require('../../../test-helper');
-const sessionValidator = require('../../../../lib/domain/validators/session-validator');
+const { expect, domainBuilder } = require('$root/tests/test-helper');
+const sessionValidator = require('$root/lib/domain/validators/session-validator');
 
 const MISSING_VALUE = '';
 

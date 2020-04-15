@@ -1,6 +1,6 @@
-const { expect } = require('../../../../test-helper');
-const serializer = require('../../../../../lib/infrastructure/serializers/jsonapi/campaign-participation-serializer');
-const CampaignParticipation = require('../../../../../lib/domain/models/CampaignParticipation');
+const { expect } = require('$root/tests/test-helper');
+const serializer = require('$root/lib/infrastructure/serializers/jsonapi/campaign-participation-serializer');
+const CampaignParticipation = require('$root/lib/domain/models/CampaignParticipation');
 
 describe('Unit | Serializer | JSONAPI | campaign-participation-serializer', function() {
 

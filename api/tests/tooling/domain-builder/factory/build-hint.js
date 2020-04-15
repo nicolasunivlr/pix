@@ -1,4 +1,4 @@
-const Hint = require('../../../../lib/domain/models/Hint');
+const Hint = require('$root/lib/domain/models/Hint');
 
 module.exports = function buildHint({
   skillName = '@web2',

@@ -1,6 +1,6 @@
 const { expect } = require('chai');
 
-const JSONAPI = require('../../../../lib/interfaces/jsonapi');
+const JSONAPI = require('$root/lib/interfaces/jsonapi');
 
 describe('Unit | Interfaces | JSONAPI | Internal Error', () => {
 

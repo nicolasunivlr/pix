@@ -1,11 +1,11 @@
-const { expect, sinon } = require('../../../test-helper');
-const Area = require('../../../../lib/domain/models/Area');
-const areaDatasource = require('../../../../lib/infrastructure/datasources/airtable/area-datasource');
-const Competence = require('../../../../lib/domain/models/Competence');
-const competenceDatasource = require('../../../../lib/infrastructure/datasources/airtable/competence-datasource');
-const competenceRepository = require('../../../../lib/infrastructure/repositories/competence-repository');
-const { NotFoundError } = require('../../../../lib/domain/errors');
-const AirtableNotFoundError = require('../../../../lib/infrastructure/datasources/airtable/AirtableResourceNotFound');
+const { expect, sinon } = require('$root/tests/test-helper');
+const Area = require('$root/lib/domain/models/Area');
+const areaDatasource = require('$root/lib/infrastructure/datasources/airtable/area-datasource');
+const Competence = require('$root/lib/domain/models/Competence');
+const competenceDatasource = require('$root/lib/infrastructure/datasources/airtable/competence-datasource');
+const competenceRepository = require('$root/lib/infrastructure/repositories/competence-repository');
+const { NotFoundError } = require('$root/lib/domain/errors');
+const AirtableNotFoundError = require('$root/lib/infrastructure/datasources/airtable/AirtableResourceNotFound');
 
 describe('Unit | Repository | competence-repository', () => {
 

@@ -1,15 +1,15 @@
 const _ = require('lodash');
-const { expect, sinon, hFake } = require('../../../test-helper');
+const { expect, sinon, hFake } = require('$root/tests/test-helper');
 
-const sessionController = require('../../../../lib/application/sessions/session-controller');
-const usecases = require('../../../../lib/domain/usecases');
-const Session = require('../../../../lib/domain/models/Session');
+const sessionController = require('$root/lib/application/sessions/session-controller');
+const usecases = require('$root/lib/domain/usecases');
+const Session = require('$root/lib/domain/models/Session');
 
-const sessionSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/session-serializer');
-const certificationCandidateSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/certification-candidate-serializer');
-const certificationResultSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/certification-result-serializer');
-const certificationReportSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/certification-report-serializer');
-const queryParamsUtils = require('../../../../lib/infrastructure/utils/query-params-utils');
+const sessionSerializer = require('$root/lib/infrastructure/serializers/jsonapi/session-serializer');
+const certificationCandidateSerializer = require('$root/lib/infrastructure/serializers/jsonapi/certification-candidate-serializer');
+const certificationResultSerializer = require('$root/lib/infrastructure/serializers/jsonapi/certification-result-serializer');
+const certificationReportSerializer = require('$root/lib/infrastructure/serializers/jsonapi/certification-report-serializer');
+const queryParamsUtils = require('$root/lib/infrastructure/utils/query-params-utils');
 
 describe('Unit | Controller | sessionController', () => {
 

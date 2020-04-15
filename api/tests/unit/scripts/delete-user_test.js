@@ -1,6 +1,6 @@
-const { expect, sinon } = require('../../test-helper');
+const { expect, sinon } = require('$root/tests/test-helper');
 
-const { ScriptQueryBuilder, ClientQueryAdapter, UserEraser } = require('../../../scripts/delete-user');
+const { ScriptQueryBuilder, ClientQueryAdapter, UserEraser } = require('$root/scripts/delete-user');
 
 describe('Delete User Script', () => {
 

@@ -1,9 +1,9 @@
-const { expect, sinon, domainBuilder, catchErr } = require('../../../test-helper');
-const usecases = require('../../../../lib/domain/usecases');
-const Campaign = require('../../../../lib/domain/models/Campaign');
-const campaignRepository = require('../../../../lib/infrastructure/repositories/campaign-repository');
-const organizationRepository = require('../../../../lib/infrastructure/repositories/organization-repository');
-const { NotFoundError } = require('../../../../lib/domain/errors');
+const { expect, sinon, domainBuilder, catchErr } = require('$root/tests/test-helper');
+const usecases = require('$root/lib/domain/usecases');
+const Campaign = require('$root/lib/domain/models/Campaign');
+const campaignRepository = require('$root/lib/infrastructure/repositories/campaign-repository');
+const organizationRepository = require('$root/lib/infrastructure/repositories/organization-repository');
+const { NotFoundError } = require('$root/lib/domain/errors');
 
 describe('Unit | UseCase | retrieve-campaign-information', () => {
 

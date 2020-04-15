@@ -1,15 +1,15 @@
 /* eslint-disable no-useless-escape */
 const {
   airtableBuilder, expect, domainBuilder, databaseBuilder
-} = require('../../../test-helper');
+} = require('$root/tests/test-helper');
 
-const Assessment = require('../../../../lib/domain/models/Assessment');
-const SmartPlacementAssessment = require('../../../../lib/domain/models/SmartPlacementAssessment');
+const Assessment = require('$root/lib/domain/models/Assessment');
+const SmartPlacementAssessment = require('$root/lib/domain/models/SmartPlacementAssessment');
 const smartPlacementAssessmentRepository =
-  require('../../../../lib/infrastructure/repositories/smart-placement-assessment-repository');
-const KnowledgeElement = require('../../../../lib/domain/models/KnowledgeElement');
-require('../../../../lib/infrastructure/repositories/target-profile-repository');
-const { NotFoundError } = require('../../../../lib/domain/errors');
+  require('$root/lib/infrastructure/repositories/smart-placement-assessment-repository');
+const KnowledgeElement = require('$root/lib/domain/models/KnowledgeElement');
+require('$root/lib/infrastructure/repositories/target-profile-repository');
+const { NotFoundError } = require('$root/lib/domain/errors');
 
 describe('Integration | Repository | SmartPlacementAssessmentRepository', () => {
 

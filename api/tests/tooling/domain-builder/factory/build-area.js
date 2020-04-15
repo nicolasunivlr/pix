@@ -1,5 +1,5 @@
 const faker = require('faker');
-const Area = require('../../../../lib/domain/models/Area');
+const Area = require('$root/lib/domain/models/Area');
 
 module.exports = function buildArea({
   id = faker.random.uuid(),

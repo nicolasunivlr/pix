@@ -1,10 +1,10 @@
-const { expect, knex, databaseBuilder, catchErr } = require('../../../test-helper');
+const { expect, knex, databaseBuilder, catchErr } = require('$root/tests/test-helper');
 const _ = require('lodash');
-const membershipRepository = require('../../../../lib/infrastructure/repositories/membership-repository');
-const { MembershipCreationError, MembershipUpdateError } = require('../../../../lib/domain/errors');
-const Membership = require('../../../../lib/domain/models/Membership');
-const Organization = require('../../../../lib/domain/models/Organization');
-const User = require('../../../../lib/domain/models/User');
+const membershipRepository = require('$root/lib/infrastructure/repositories/membership-repository');
+const { MembershipCreationError, MembershipUpdateError } = require('$root/lib/domain/errors');
+const Membership = require('$root/lib/domain/models/Membership');
+const Organization = require('$root/lib/domain/models/Organization');
+const User = require('$root/lib/domain/models/User');
 
 describe('Integration | Infrastructure | Repository | membership-repository', () => {
 

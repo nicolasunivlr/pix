@@ -1,5 +1,5 @@
-const CampaignTubeRecommendation = require('../../../../lib/domain/models/CampaignTubeRecommendation');
-const { expect } = require('../../../test-helper');
+const CampaignTubeRecommendation = require('$root/lib/domain/models/CampaignTubeRecommendation');
+const { expect } = require('$root/tests/test-helper');
 
 describe('Unit | Domain | Models | CampaignTubeRecommendation', () => {
 

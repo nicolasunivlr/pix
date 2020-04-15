@@ -1,6 +1,6 @@
-const { expect, sinon } = require('../../../test-helper');
-const acceptPixOrgaTermsOfService = require('../../../../lib/domain/usecases/accept-pix-orga-terms-of-service');
-const userRepository = require('../../../../lib/infrastructure/repositories/user-repository');
+const { expect, sinon } = require('$root/tests/test-helper');
+const acceptPixOrgaTermsOfService = require('$root/lib/domain/usecases/accept-pix-orga-terms-of-service');
+const userRepository = require('$root/lib/infrastructure/repositories/user-repository');
 
 describe('Unit | UseCase | accept-pix-orga-terms-of-service', () => {
 

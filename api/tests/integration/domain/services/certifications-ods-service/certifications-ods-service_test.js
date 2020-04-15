@@ -1,5 +1,5 @@
-const { expect } = require('../../../../test-helper');
-const certificationsOdsService = require('../../../../../lib/domain/services/certifications-ods-service');
+const { expect } = require('$root/tests/test-helper');
+const certificationsOdsService = require('$root/lib/domain/services/certifications-ods-service');
 const fs = require('fs');
 
 describe('Integration | Services | extractCertificationsDataFromAttendanceSheet', () => {

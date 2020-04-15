@@ -1,4 +1,4 @@
-const BadgePartnerCompetence = require('../../../../lib/domain/models/BadgePartnerCompetence');
+const BadgePartnerCompetence = require('$root/lib/domain/models/BadgePartnerCompetence');
 const faker = require('faker');
 
 module.exports = function buildBadgePartnerCompetence(

@@ -1,15 +1,15 @@
-const { expect, sinon } = require('../../../test-helper');
-const getAttendanceSheet = require('../../../../lib/domain/usecases/get-attendance-sheet');
+const { expect, sinon } = require('$root/tests/test-helper');
+const getAttendanceSheet = require('$root/lib/domain/usecases/get-attendance-sheet');
 const {
   ATTENDANCE_SHEET_SESSION_TEMPLATE_VALUES,
   ATTENDANCE_SHEET_CANDIDATE_TEMPLATE_VALUES,
   EXTRA_EMPTY_CANDIDATE_ROWS
-} = require('../../../../lib/infrastructure/files/attendance-sheet/attendance-sheet-placeholders');
-const writeOdsUtils = require('../../../../lib/infrastructure/utils/ods/write-ods-utils');
-const readOdsUtils  = require('../../../../lib/infrastructure/utils/ods/read-ods-utils');
-const sessionXmlService = require('../../../../lib/domain/services/session-xml-service');
+} = require('$root/lib/infrastructure/files/attendance-sheet/attendance-sheet-placeholders');
+const writeOdsUtils = require('$root/lib/infrastructure/utils/ods/write-ods-utils');
+const readOdsUtils  = require('$root/lib/infrastructure/utils/ods/read-ods-utils');
+const sessionXmlService = require('$root/lib/domain/services/session-xml-service');
 const _ = require('lodash');
-const { UserNotAuthorizedToAccessEntity } = require('../../../../lib/domain/errors');
+const { UserNotAuthorizedToAccessEntity } = require('$root/lib/domain/errors');
 
 describe('Unit | UseCase | get-attendance-sheet-in-ods-format', () => {
 

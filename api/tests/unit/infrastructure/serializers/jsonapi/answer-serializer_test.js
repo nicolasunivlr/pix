@@ -1,7 +1,7 @@
-const { expect, domainBuilder } = require('../../../../test-helper');
-const AnswerStatus = require('../../../../../lib/domain/models/AnswerStatus');
-const answerStatusJSONAPIAdapter = require('../../../../../lib/infrastructure/adapters/answer-status-json-api-adapter');
-const serializer = require('../../../../../lib/infrastructure/serializers/jsonapi/answer-serializer');
+const { expect, domainBuilder } = require('$root/tests/test-helper');
+const AnswerStatus = require('$root/lib/domain/models/AnswerStatus');
+const answerStatusJSONAPIAdapter = require('$root/lib/infrastructure/adapters/answer-status-json-api-adapter');
+const serializer = require('$root/lib/infrastructure/serializers/jsonapi/answer-serializer');
 
 describe('Unit | Serializer | JSONAPI | answer-serializer', () => {
 

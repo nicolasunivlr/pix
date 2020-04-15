@@ -1,5 +1,5 @@
 const faker = require('faker');
-const KnowledgeElement = require('../../../../lib/domain/models/KnowledgeElement');
+const KnowledgeElement = require('$root/lib/domain/models/KnowledgeElement');
 
 module.exports = function buildKnowledgeElement({
   id = faker.random.number(),

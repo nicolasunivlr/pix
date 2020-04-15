@@ -1,5 +1,5 @@
-const Validator = require('../../../../lib/domain/models/Validator');
-const ValidatorQCU = require('../../../../lib/domain/models/ValidatorQCU');
+const Validator = require('$root/lib/domain/models/Validator');
+const ValidatorQCU = require('$root/lib/domain/models/ValidatorQCU');
 const buildSolution = require('./build-solution');
 
 function buildValidator({

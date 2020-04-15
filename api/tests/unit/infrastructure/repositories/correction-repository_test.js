@@ -1,10 +1,10 @@
-const { expect, sinon, domainBuilder } = require('../../../test-helper');
-const correctionRepository = require('../../../../lib/infrastructure/repositories/correction-repository');
-const challengeDatasource = require('../../../../lib/infrastructure/datasources/airtable/challenge-datasource');
-const skillDatasource = require('../../../../lib/infrastructure/datasources/airtable/skill-datasource');
-const tutorialRepository = require('../../../../lib/infrastructure/repositories/tutorial-repository');
-const Correction = require('../../../../lib/domain/models/Correction');
-const Hint = require('../../../../lib/domain/models/Hint');
+const { expect, sinon, domainBuilder } = require('$root/tests/test-helper');
+const correctionRepository = require('$root/lib/infrastructure/repositories/correction-repository');
+const challengeDatasource = require('$root/lib/infrastructure/datasources/airtable/challenge-datasource');
+const skillDatasource = require('$root/lib/infrastructure/datasources/airtable/skill-datasource');
+const tutorialRepository = require('$root/lib/infrastructure/repositories/tutorial-repository');
+const Correction = require('$root/lib/domain/models/Correction');
+const Hint = require('$root/lib/domain/models/Hint');
 const ChallengeAirtableDataObjectFixture = require('../../../tooling/fixtures/infrastructure/challengeAirtableDataObjectFixture');
 const SkillAirtableDataObjectFixture = require('../../../tooling/fixtures/infrastructure/skillAirtableDataObjectFixture');
 

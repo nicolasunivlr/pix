@@ -1,10 +1,10 @@
-const { expect, sinon, domainBuilder, catchErr } = require('../../../test-helper');
-const usecases = require('../../../../lib/domain/usecases');
-const SchoolingRegistration = require('../../../../lib/domain/models/SchoolingRegistration');
-const userReconciliationService = require('../../../../lib/domain/services/user-reconciliation-service');
-const campaignRepository = require('../../../../lib/infrastructure/repositories/campaign-repository');
-const schoolingRegistrationRepository = require('../../../../lib/infrastructure/repositories/schooling-registration-repository');
-const { CampaignCodeError, NotFoundError } = require('../../../../lib/domain/errors');
+const { expect, sinon, domainBuilder, catchErr } = require('$root/tests/test-helper');
+const usecases = require('$root/lib/domain/usecases');
+const SchoolingRegistration = require('$root/lib/domain/models/SchoolingRegistration');
+const userReconciliationService = require('$root/lib/domain/services/user-reconciliation-service');
+const campaignRepository = require('$root/lib/infrastructure/repositories/campaign-repository');
+const schoolingRegistrationRepository = require('$root/lib/infrastructure/repositories/schooling-registration-repository');
+const { CampaignCodeError, NotFoundError } = require('$root/lib/domain/errors');
 
 describe('Unit | UseCase | link-user-to-schooling-registration-data', () => {
 

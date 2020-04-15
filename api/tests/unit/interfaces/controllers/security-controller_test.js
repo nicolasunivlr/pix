@@ -1,12 +1,12 @@
-const { expect, sinon, hFake } = require('../../../test-helper');
+const { expect, sinon, hFake } = require('$root/tests/test-helper');
 
-const securityController = require('../../../../lib/interfaces/controllers/security-controller');
-const tokenService = require('../../../../lib/domain/services/token-service');
-const checkUserIsAuthenticatedUseCase = require('../../../../lib/application/usecases/checkUserIsAuthenticated');
-const checkUserHasRolePixMasterUseCase = require('../../../../lib/application/usecases/checkUserHasRolePixMaster');
-const checkUserIsAdminInOrganizationUseCase = require('../../../../lib/application/usecases/checkUserIsAdminInOrganization');
-const checkUserBelongsToScoOrganizationAndManagesStudentsUseCase = require('../../../../lib/application/usecases/checkUserBelongsToScoOrganizationAndManagesStudents');
-const checkUserBelongsToOrganizationUseCase = require('../../../../lib/application/usecases/checkUserBelongsToOrganization');
+const securityController = require('$root/lib/interfaces/controllers/security-controller');
+const tokenService = require('$root/lib/domain/services/token-service');
+const checkUserIsAuthenticatedUseCase = require('$root/lib/application/usecases/checkUserIsAuthenticated');
+const checkUserHasRolePixMasterUseCase = require('$root/lib/application/usecases/checkUserHasRolePixMaster');
+const checkUserIsAdminInOrganizationUseCase = require('$root/lib/application/usecases/checkUserIsAdminInOrganization');
+const checkUserBelongsToScoOrganizationAndManagesStudentsUseCase = require('$root/lib/application/usecases/checkUserBelongsToScoOrganizationAndManagesStudents');
+const checkUserBelongsToOrganizationUseCase = require('$root/lib/application/usecases/checkUserBelongsToOrganization');
 
 describe('Unit | Interfaces | Controllers | SecurityController', () => {
 

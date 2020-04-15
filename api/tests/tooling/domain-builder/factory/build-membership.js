@@ -1,7 +1,7 @@
 const faker = require('faker');
-const Membership = require('../../../../lib/domain/models/Membership');
-const Organization = require('../../../../lib/domain/models/Organization');
-const User = require('../../../../lib/domain/models/User');
+const Membership = require('$root/lib/domain/models/Membership');
+const Organization = require('$root/lib/domain/models/Organization');
+const User = require('$root/lib/domain/models/User');
 
 /*
  * /!\ We can not use standard entity builders because of bidirectional relationships (a.k.a. cyclic dependencies)

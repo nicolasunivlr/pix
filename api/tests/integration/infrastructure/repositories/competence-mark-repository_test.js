@@ -1,8 +1,8 @@
-const { expect, knex, domainBuilder, databaseBuilder } = require('../../../test-helper');
+const { expect, knex, domainBuilder, databaseBuilder } = require('$root/tests/test-helper');
 const _ = require('lodash');
 
-const CompetenceMark = require('../../../../lib/domain/models/CompetenceMark');
-const CompetenceMarkRepository = require('../../../../lib/infrastructure/repositories/competence-mark-repository');
+const CompetenceMark = require('$root/lib/domain/models/CompetenceMark');
+const CompetenceMarkRepository = require('$root/lib/infrastructure/repositories/competence-mark-repository');
 
 describe('Integration | Repository | CompetenceMark', () => {
 

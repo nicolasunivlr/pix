@@ -1,6 +1,6 @@
-const { expect, generateValidRequestAuthorizationHeader, nock, databaseBuilder } = require('../../test-helper');
-const createServer = require('../../../server');
-const cache = require('../../../lib/infrastructure/caches/learning-content-cache');
+const { expect, generateValidRequestAuthorizationHeader, nock, databaseBuilder } = require('$root/tests/test-helper');
+const createServer = require('$root/server');
+const cache = require('$root/lib/infrastructure/caches/learning-content-cache');
 
 describe('Acceptance | Controller | target-profile-controller', () => {
 

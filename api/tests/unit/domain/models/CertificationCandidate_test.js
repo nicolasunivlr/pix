@@ -1,6 +1,6 @@
-const { expect, domainBuilder } = require('../../../test-helper');
-const CertificationCandidate = require('../../../../lib/domain/models/CertificationCandidate');
-const { InvalidCertificationCandidate } = require('../../../../lib/domain/errors');
+const { expect, domainBuilder } = require('$root/tests/test-helper');
+const CertificationCandidate = require('$root/lib/domain/models/CertificationCandidate');
+const { InvalidCertificationCandidate } = require('$root/lib/domain/errors');
 const { ValidationError } = require('@hapi/joi');
 
 describe('Unit | Domain | Models | Certification Candidate', () => {

@@ -1,12 +1,12 @@
-const { sinon, expect, domainBuilder, generateValidRequestAuthorizationHeader } = require('../../../test-helper');
-const assessmentController = require('../../../../lib/application/assessments/assessment-controller');
-const assessmentRepository = require('../../../../lib/infrastructure/repositories/assessment-repository');
-const challengeRepository = require('../../../../lib/infrastructure/repositories/challenge-repository');
-const certificationChallengeRepository = require('../../../../lib/infrastructure/repositories/certification-challenge-repository');
-const usecases = require('../../../../lib/domain/usecases');
-const { AssessmentEndedError } = require('../../../../lib/domain/errors');
-const Assessment = require('../../../../lib/domain/models/Assessment');
-const { FRENCH_FRANCE, FRENCH_SPOKEN } = require('../../../../lib/domain/constants').LOCALE;
+const { sinon, expect, domainBuilder, generateValidRequestAuthorizationHeader } = require('$root/tests/test-helper');
+const assessmentController = require('$root/lib/application/assessments/assessment-controller');
+const assessmentRepository = require('$root/lib/infrastructure/repositories/assessment-repository');
+const challengeRepository = require('$root/lib/infrastructure/repositories/challenge-repository');
+const certificationChallengeRepository = require('$root/lib/infrastructure/repositories/certification-challenge-repository');
+const usecases = require('$root/lib/domain/usecases');
+const { AssessmentEndedError } = require('$root/lib/domain/errors');
+const Assessment = require('$root/lib/domain/models/Assessment');
+const { FRENCH_FRANCE, FRENCH_SPOKEN } = require('$root/lib/domain/constants').LOCALE;
 
 describe('Unit | Controller | assessment-controller-get-next-challenge', () => {
 

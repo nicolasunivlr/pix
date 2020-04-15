@@ -1,6 +1,6 @@
-const createServer = require('../../../server');
-const { expect, databaseBuilder, airtableBuilder, generateValidRequestAuthorizationHeader } = require('../../test-helper');
-const cache = require('../../../lib/infrastructure/caches/learning-content-cache');
+const createServer = require('$root/server');
+const { expect, databaseBuilder, airtableBuilder, generateValidRequestAuthorizationHeader } = require('$root/tests/test-helper');
+const cache = require('$root/lib/infrastructure/caches/learning-content-cache');
 const _ = require('lodash');
 
 describe('Acceptance | API | Campaign Participation Result', () => {

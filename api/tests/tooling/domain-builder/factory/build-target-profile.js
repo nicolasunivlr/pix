@@ -1,6 +1,6 @@
 const faker = require('faker');
 const buildSkill = require('./build-skill');
-const TargetProfile = require('../../../../lib/domain/models/TargetProfile');
+const TargetProfile = require('$root/lib/domain/models/TargetProfile');
 
 module.exports = function buildTargetProfile({
   id = faker.random.number(),

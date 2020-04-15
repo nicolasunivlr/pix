@@ -1,7 +1,7 @@
-const { sinon, expect, hFake } = require('../../../test-helper');
-const userTutorialsController = require('../../../../lib/application/user-tutorials/user-tutorials-controller');
-const usecases = require('../../../../lib/domain/usecases');
-const userTutorialRepository = require('../../../../lib/infrastructure/repositories/user-tutorial-repository');
+const { sinon, expect, hFake } = require('$root/tests/test-helper');
+const userTutorialsController = require('$root/lib/application/user-tutorials/user-tutorials-controller');
+const usecases = require('$root/lib/domain/usecases');
+const userTutorialRepository = require('$root/lib/infrastructure/repositories/user-tutorial-repository');
 
 describe('Unit | Controller | User-tutorials', function() {
   describe('#add', function() {

@@ -1,8 +1,8 @@
 const os = require('os');
-const { expect, sinon, HttpTestServer } = require('../../../test-helper');
-const securityController = require('../../../../lib/interfaces/controllers/security-controller');
-const systemController = require('../../../../lib/application/system/system-controller');
-const moduleUnderTest = require('../../../../lib/application/system');
+const { expect, sinon, HttpTestServer } = require('$root/tests/test-helper');
+const securityController = require('$root/lib/interfaces/controllers/security-controller');
+const systemController = require('$root/lib/application/system/system-controller');
+const moduleUnderTest = require('$root/lib/application/system');
 
 describe('Integration | Application | System | system-controller', () => {
 

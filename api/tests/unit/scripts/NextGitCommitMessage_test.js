@@ -1,7 +1,7 @@
-const { expect, sinon } = require('../../test-helper');
+const { expect, sinon } = require('$root/tests/test-helper');
 const fs = require('fs');
 
-const NextGitCommitMessage = require('../../../scripts/NextGitCommitMessage');
+const NextGitCommitMessage = require('$root/scripts/NextGitCommitMessage');
 
 describe('NextGitCommitMessage', () => {
 

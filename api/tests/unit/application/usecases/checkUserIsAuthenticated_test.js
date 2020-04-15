@@ -1,7 +1,7 @@
-const { expect, sinon } = require('../../../test-helper');
-const useCase = require('../../../../lib/application/usecases/checkUserIsAuthenticated');
-const tokenService = require('../../../../lib/domain/services/token-service');
-const { InvalidTemporaryKeyError } = require('../../../../lib/domain/errors');
+const { expect, sinon } = require('$root/tests/test-helper');
+const useCase = require('$root/lib/application/usecases/checkUserIsAuthenticated');
+const tokenService = require('$root/lib/domain/services/token-service');
+const { InvalidTemporaryKeyError } = require('$root/lib/domain/errors');
 
 describe('Unit | Application | Use Case | CheckUserIsAuthenticated', () => {
 

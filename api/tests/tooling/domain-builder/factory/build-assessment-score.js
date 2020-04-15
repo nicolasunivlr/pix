@@ -1,5 +1,5 @@
 const faker = require('faker');
-const AssessmentScore = require('../../../../lib/domain/models/AssessmentScore');
+const AssessmentScore = require('$root/lib/domain/models/AssessmentScore');
 
 module.exports = function buildAssessmentScore({
 

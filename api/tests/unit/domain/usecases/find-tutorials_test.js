@@ -1,8 +1,8 @@
-const { sinon, expect, domainBuilder } = require('../../../test-helper');
-const { UserNotAuthorizedToAccessEntity } = require('../../../../lib/domain/errors');
-const KnowledgeElement = require('../../../../lib/domain/models/KnowledgeElement');
-const Scorecard = require('../../../../lib/domain/models/Scorecard');
-const findTutorials = require('../../../../lib/domain/usecases/find-tutorials');
+const { sinon, expect, domainBuilder } = require('$root/tests/test-helper');
+const { UserNotAuthorizedToAccessEntity } = require('$root/lib/domain/errors');
+const KnowledgeElement = require('$root/lib/domain/models/KnowledgeElement');
+const Scorecard = require('$root/lib/domain/models/Scorecard');
+const findTutorials = require('$root/lib/domain/usecases/find-tutorials');
 
 describe('Unit | UseCase | find-tutorials', () => {
 

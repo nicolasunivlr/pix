@@ -1,6 +1,6 @@
-const { expect, sinon } = require('../../../test-helper');
-const usecases = require('../../../../lib/domain/usecases');
-const Organization = require('../../../../lib/domain/models/Organization');
+const { expect, sinon } = require('$root/tests/test-helper');
+const usecases = require('$root/lib/domain/usecases');
+const Organization = require('$root/lib/domain/models/Organization');
 
 describe('Unit | UseCase | find-paginated-filtered-organizations', () => {
 

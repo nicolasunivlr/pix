@@ -1,11 +1,11 @@
-const { expect, sinon, hFake } = require('../../../test-helper');
+const { expect, sinon, hFake } = require('$root/tests/test-helper');
 const Hapi = require('@hapi/hapi');
 const _ = require('lodash');
-const Feedback = require('../../../../lib/infrastructure/data/feedback');
-const feedbackController = require('../../../../lib/application/feedbacks/feedback-controller');
-const feedbackRepository = require('../../../../lib/infrastructure/repositories/feedback-repository');
-const feedbackSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/feedback-serializer');
-const route = require('../../../../lib/application/feedbacks');
+const Feedback = require('$root/lib/infrastructure/data/feedback');
+const feedbackController = require('$root/lib/application/feedbacks/feedback-controller');
+const feedbackRepository = require('$root/lib/infrastructure/repositories/feedback-repository');
+const feedbackSerializer = require('$root/lib/infrastructure/serializers/jsonapi/feedback-serializer');
+const route = require('$root/lib/application/feedbacks');
 
 describe('Unit | Controller | feedback-controller', function() {
 

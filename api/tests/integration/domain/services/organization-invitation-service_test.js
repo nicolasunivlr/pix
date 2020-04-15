@@ -1,12 +1,12 @@
 const _ = require('lodash');
-const { expect, databaseBuilder, knex } = require('../../../test-helper');
+const { expect, databaseBuilder, knex } = require('$root/tests/test-helper');
 
-const organizationInvitationRepository = require('../../../../lib/infrastructure/repositories/organization-invitation-repository');
-const organizationRepository = require('../../../../lib/infrastructure/repositories/organization-repository');
+const organizationInvitationRepository = require('$root/lib/infrastructure/repositories/organization-invitation-repository');
+const organizationRepository = require('$root/lib/infrastructure/repositories/organization-repository');
 
-const OrganizationInvitation = require('../../../../lib/domain/models/OrganizationInvitation');
+const OrganizationInvitation = require('$root/lib/domain/models/OrganizationInvitation');
 
-const { createOrganizationInvitation } = require('../../../../lib/domain/services/organization-invitation-service');
+const { createOrganizationInvitation } = require('$root/lib/domain/services/organization-invitation-service');
 
 describe('Integration | Service | Organization-Invitation Service', () => {
 

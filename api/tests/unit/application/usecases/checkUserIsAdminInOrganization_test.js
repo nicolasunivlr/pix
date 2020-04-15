@@ -1,7 +1,7 @@
-const { expect, sinon, domainBuilder } = require('../../../test-helper');
-const useCase = require('../../../../lib/application/usecases/checkUserIsAdminInOrganization');
-const membershipRepository = require('../../../../lib/infrastructure/repositories/membership-repository');
-const Membership = require('../../../../lib/domain/models/Membership');
+const { expect, sinon, domainBuilder } = require('$root/tests/test-helper');
+const useCase = require('$root/lib/application/usecases/checkUserIsAdminInOrganization');
+const membershipRepository = require('$root/lib/infrastructure/repositories/membership-repository');
+const Membership = require('$root/lib/domain/models/Membership');
 
 describe('Unit | Application | Use Case | CheckUserIsAdminInOrganization', () => {
 

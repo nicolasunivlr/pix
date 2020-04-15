@@ -1,5 +1,5 @@
-const Session = require('../../../../lib/domain/models/Session');
-const { expect } = require('../../../test-helper');
+const Session = require('$root/lib/domain/models/Session');
+const { expect } = require('$root/tests/test-helper');
 const _ = require('lodash');
 
 const SESSION_PROPS = [

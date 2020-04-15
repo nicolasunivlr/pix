@@ -1,6 +1,6 @@
-const { expect, databaseBuilder, knex } = require('../../../test-helper');
+const { expect, databaseBuilder, knex } = require('$root/tests/test-helper');
 const _ = require('lodash');
-const targetProfileShareRepository = require('../../../../lib/infrastructure/repositories/target-profile-share-repository');
+const targetProfileShareRepository = require('$root/lib/infrastructure/repositories/target-profile-share-repository');
 
 describe('Integration | Repository | Target-profile-share', () => {
 

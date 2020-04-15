@@ -1,6 +1,6 @@
 const faker = require('faker');
 const moment = require('moment');
-const UserWithSchoolingRegistration = require('../../../../lib/domain/models/UserWithSchoolingRegistration');
+const UserWithSchoolingRegistration = require('$root/lib/domain/models/UserWithSchoolingRegistration');
 
 module.exports = function buildUserWithSchoolingRegistration(
   {

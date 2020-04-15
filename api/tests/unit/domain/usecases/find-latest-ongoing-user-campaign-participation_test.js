@@ -1,5 +1,5 @@
-const { expect, sinon, domainBuilder } = require('../../../test-helper');
-const findCampaignParticipationsRelatedToUser = require('../../../../lib/domain/usecases/find-latest-ongoing-user-campaign-participations');
+const { expect, sinon, domainBuilder } = require('$root/tests/test-helper');
+const findCampaignParticipationsRelatedToUser = require('$root/lib/domain/usecases/find-latest-ongoing-user-campaign-participations');
 
 describe('Unit | UseCase | find-latest-user-campaign-participations', () => {
 

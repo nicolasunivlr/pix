@@ -1,7 +1,7 @@
-const { sinon, expect } = require('../../../test-helper');
-const ResetPasswordDemandRepository = require('../../../../lib/infrastructure/repositories/reset-password-demands-repository');
-const ResetPasswordDemand = require('../../../../lib/infrastructure/data/reset-password-demand');
-const { PasswordResetDemandNotFoundError } = require('../../../../lib/domain/errors');
+const { sinon, expect } = require('$root/tests/test-helper');
+const ResetPasswordDemandRepository = require('$root/lib/infrastructure/repositories/reset-password-demands-repository');
+const ResetPasswordDemand = require('$root/lib/infrastructure/data/reset-password-demand');
+const { PasswordResetDemandNotFoundError } = require('$root/lib/domain/errors');
 
 describe('Unit | Repository | Reset Password Demand Repository', function() {
 

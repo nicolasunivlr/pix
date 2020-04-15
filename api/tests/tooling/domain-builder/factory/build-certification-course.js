@@ -1,6 +1,6 @@
 const faker = require('faker');
 const moment = require('moment');
-const CertificationCourse = require('../../../../lib/domain/models/CertificationCourse');
+const CertificationCourse = require('$root/lib/domain/models/CertificationCourse');
 
 module.exports = function buildCertificationCourse(
   {

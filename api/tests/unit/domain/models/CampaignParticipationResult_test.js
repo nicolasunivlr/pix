@@ -1,10 +1,10 @@
-const { expect, domainBuilder } = require('../../../test-helper');
-const Area = require('../../../../lib/domain/models/Area');
-const Badge = require('../../../../lib/domain/models/Badge');
-const BadgePartnerCompetence = require('../../../../lib/domain/models/BadgePartnerCompetence');
-const CampaignParticipationResult = require('../../../../lib/domain/models/CampaignParticipationResult');
-const CompetenceResult = require('../../../../lib/domain/models/CompetenceResult');
-const KnowledgeElement = require('../../../../lib/domain/models/KnowledgeElement');
+const { expect, domainBuilder } = require('$root/tests/test-helper');
+const Area = require('$root/lib/domain/models/Area');
+const Badge = require('$root/lib/domain/models/Badge');
+const BadgePartnerCompetence = require('$root/lib/domain/models/BadgePartnerCompetence');
+const CampaignParticipationResult = require('$root/lib/domain/models/CampaignParticipationResult');
+const CompetenceResult = require('$root/lib/domain/models/CompetenceResult');
+const KnowledgeElement = require('$root/lib/domain/models/KnowledgeElement');
 
 describe('Unit | Domain | Models | CampaignParticipationResult', () => {
 

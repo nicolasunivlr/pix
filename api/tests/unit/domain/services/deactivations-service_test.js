@@ -1,6 +1,6 @@
-const { expect } = require('../../../test-helper');
+const { expect } = require('$root/tests/test-helper');
 
-const service = require('../../../../lib/domain/services/deactivations-service');
+const service = require('$root/lib/domain/services/deactivations-service');
 
 describe('Unit | Service | DeactivationsService ', function() {
 

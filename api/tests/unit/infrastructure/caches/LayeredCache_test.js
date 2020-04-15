@@ -1,5 +1,5 @@
-const { expect, sinon } = require('../../../test-helper');
-const LayeredCache = require('../../../../lib/infrastructure/caches/LayeredCache');
+const { expect, sinon } = require('$root/tests/test-helper');
+const LayeredCache = require('$root/lib/infrastructure/caches/LayeredCache');
 
 describe('Unit | Infrastructure | Caches | LayeredCache', () => {
 

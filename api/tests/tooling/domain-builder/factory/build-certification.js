@@ -1,4 +1,4 @@
-const Certification = require('../../../../lib/domain/models/Certification');
+const Certification = require('$root/lib/domain/models/Certification');
 const buildAssessmentResult = require('./build-assessment-result');
 
 module.exports = function buildCertification({

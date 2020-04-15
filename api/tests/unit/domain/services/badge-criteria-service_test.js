@@ -1,6 +1,6 @@
-const { domainBuilder, expect } = require('../../../test-helper');
+const { domainBuilder, expect } = require('$root/tests/test-helper');
 
-const badgeCriteriaService = require('../../../../lib/domain/services/badge-criteria-service');
+const badgeCriteriaService = require('$root/lib/domain/services/badge-criteria-service');
 
 describe('Unit | Domain | Services | badge-criteria', () => {
 

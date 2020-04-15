@@ -1,4 +1,4 @@
-const CompetenceTree = require('../../../../lib/domain/models/CompetenceTree');
+const CompetenceTree = require('$root/lib/domain/models/CompetenceTree');
 
 const buildArea = require('./build-area');
 const buildCompetence = require('./build-competence');

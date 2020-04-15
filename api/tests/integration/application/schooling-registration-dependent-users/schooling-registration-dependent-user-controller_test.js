@@ -1,10 +1,10 @@
-const { expect, sinon, domainBuilder, HttpTestServer } = require('../../../test-helper');
+const { expect, sinon, domainBuilder, HttpTestServer } = require('$root/tests/test-helper');
 
-const moduleUnderTest = require('../../../../lib/application/schooling-registration-dependent-users');
+const moduleUnderTest = require('$root/lib/application/schooling-registration-dependent-users');
 
-const usecases = require('../../../../lib/domain/usecases');
-const securityController = require('../../../../lib/interfaces/controllers/security-controller');
-const { NotFoundError, UserNotAuthorizedToUpdateStudentPasswordError } = require('../../../../lib/domain/errors');
+const usecases = require('$root/lib/domain/usecases');
+const securityController = require('$root/lib/interfaces/controllers/security-controller');
+const { NotFoundError, UserNotAuthorizedToUpdateStudentPasswordError } = require('$root/lib/domain/errors');
 
 describe('Integration | Application | Schooling-registration-dependent-users | schooling-registration-dependent-user-controller', () => {
 

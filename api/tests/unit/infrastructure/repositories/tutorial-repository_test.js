@@ -1,10 +1,10 @@
-const { expect, sinon, catchErr } = require('../../../test-helper');
-const Tutorial = require('../../../../lib/domain/models/Tutorial');
-const AirtableNotFoundError = require('../../../../lib/infrastructure/datasources/airtable/AirtableResourceNotFound');
-const tutorialDatasource = require('../../../../lib/infrastructure/datasources/airtable/tutorial-datasource');
-const tutorialRepository = require('../../../../lib/infrastructure/repositories/tutorial-repository');
-const userTutorialRepository = require('../../../../lib/infrastructure/repositories/user-tutorial-repository');
-const { NotFoundError } = require('../../../../lib/domain/errors');
+const { expect, sinon, catchErr } = require('$root/tests/test-helper');
+const Tutorial = require('$root/lib/domain/models/Tutorial');
+const AirtableNotFoundError = require('$root/lib/infrastructure/datasources/airtable/AirtableResourceNotFound');
+const tutorialDatasource = require('$root/lib/infrastructure/datasources/airtable/tutorial-datasource');
+const tutorialRepository = require('$root/lib/infrastructure/repositories/tutorial-repository');
+const userTutorialRepository = require('$root/lib/infrastructure/repositories/user-tutorial-repository');
+const { NotFoundError } = require('$root/lib/domain/errors');
 
 describe('Unit | Repository | tutorial-repository', () => {
 

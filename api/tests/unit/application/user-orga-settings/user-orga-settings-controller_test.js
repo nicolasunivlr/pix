@@ -1,16 +1,16 @@
-const { sinon, expect, hFake, catchErr } = require('../../../test-helper');
+const { sinon, expect, hFake, catchErr } = require('$root/tests/test-helper');
 
-const UserOrgaSettings = require('../../../../lib/domain/models/UserOrgaSettings');
-const User = require('../../../../lib/domain/models/User');
-const Organization = require('../../../../lib/domain/models/Organization');
+const UserOrgaSettings = require('$root/lib/domain/models/UserOrgaSettings');
+const User = require('$root/lib/domain/models/User');
+const Organization = require('$root/lib/domain/models/Organization');
 
-const { UserNotAuthorizedToCreateResourceError } = require('../../../../lib/domain/errors');
+const { UserNotAuthorizedToCreateResourceError } = require('$root/lib/domain/errors');
 
-const userOrgaSettingsController = require('../../../../lib/application/user-orga-settings/user-orga-settings-controller');
+const userOrgaSettingsController = require('$root/lib/application/user-orga-settings/user-orga-settings-controller');
 
-const usecases = require('../../../../lib/domain/usecases');
+const usecases = require('$root/lib/domain/usecases');
 
-const userOrgaSettingsSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/user-orga-settings-serializer');
+const userOrgaSettingsSerializer = require('$root/lib/infrastructure/serializers/jsonapi/user-orga-settings-serializer');
 
 describe('Unit | Controller | user-orga-settings-controller', () => {
 

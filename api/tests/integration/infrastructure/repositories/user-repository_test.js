@@ -1,4 +1,4 @@
-const { expect, knex, databaseBuilder, domainBuilder, catchErr } = require('../../../test-helper');
+const { expect, knex, databaseBuilder, domainBuilder, catchErr } = require('$root/tests/test-helper');
 const faker = require('faker');
 const bcrypt = require('bcrypt');
 const _ = require('lodash');
@@ -6,14 +6,14 @@ const _ = require('lodash');
 const {
   AlreadyRegisteredEmailError, AlreadyRegisteredUsernameError, SchoolingRegistrationAlreadyLinkedToUserError,
   NotFoundError, UserNotFoundError
-} = require('../../../../lib/domain/errors');
-const userRepository = require('../../../../lib/infrastructure/repositories/user-repository');
-const User = require('../../../../lib/domain/models/User');
-const Membership = require('../../../../lib/domain/models/Membership');
-const UserOrgaSettings = require('../../../../lib/domain/models/UserOrgaSettings');
-const CertificationCenter = require('../../../../lib/domain/models/CertificationCenter');
-const CertificationCenterMembership = require('../../../../lib/domain/models/CertificationCenterMembership');
-const Organization = require('../../../../lib/domain/models/Organization');
+} = require('$root/lib/domain/errors');
+const userRepository = require('$root/lib/infrastructure/repositories/user-repository');
+const User = require('$root/lib/domain/models/User');
+const Membership = require('$root/lib/domain/models/Membership');
+const UserOrgaSettings = require('$root/lib/domain/models/UserOrgaSettings');
+const CertificationCenter = require('$root/lib/domain/models/CertificationCenter');
+const CertificationCenterMembership = require('$root/lib/domain/models/CertificationCenterMembership');
+const Organization = require('$root/lib/domain/models/Organization');
 
 describe('Integration | Infrastructure | Repository | UserRepository', () => {
 

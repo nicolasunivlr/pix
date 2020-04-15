@@ -1,6 +1,6 @@
-const { expect, sinon } = require('../../../test-helper');
-const { updateMembershipRole } = require('../../../../lib/domain/usecases');
-const Membership = require('../../../../lib/domain/models/Membership');
+const { expect, sinon } = require('$root/tests/test-helper');
+const { updateMembershipRole } = require('$root/lib/domain/usecases');
+const Membership = require('$root/lib/domain/models/Membership');
 
 describe('Unit | UseCase | update-membership-role', () => {
 

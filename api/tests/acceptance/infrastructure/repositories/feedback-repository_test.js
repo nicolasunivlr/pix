@@ -1,5 +1,5 @@
-const { expect, knex } = require('../../../test-helper');
-const feedbackRepository = require('../../../../lib/infrastructure/repositories/feedback-repository');
+const { expect, knex } = require('$root/tests/test-helper');
+const feedbackRepository = require('$root/lib/infrastructure/repositories/feedback-repository');
 
 describe('Acceptance | Infrastructure | Repositories | feedback-repository', () => {
 

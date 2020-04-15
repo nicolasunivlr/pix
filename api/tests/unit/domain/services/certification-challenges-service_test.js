@@ -1,6 +1,6 @@
-const { sinon, expect } = require('../../../test-helper');
-const certificationChallengesService = require('../../../../lib/domain/services/certification-challenges-service');
-const certificationChallengeRepository = require('../../../../lib/infrastructure/repositories/certification-challenge-repository');
+const { sinon, expect } = require('$root/tests/test-helper');
+const certificationChallengesService = require('$root/lib/domain/services/certification-challenges-service');
+const certificationChallengeRepository = require('$root/lib/infrastructure/repositories/certification-challenge-repository');
 
 describe('Unit | Service | Certification Challenge Service', function() {
 

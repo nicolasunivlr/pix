@@ -1,9 +1,9 @@
-const { expect, sinon, domainBuilder, catchErr } = require('../../../test-helper');
-const usecases = require('../../../../lib/domain/usecases');
-const SchoolingRegistration = require('../../../../lib/domain/models/SchoolingRegistration');
-const { CampaignCodeError, UserNotAuthorizedToAccessEntity } = require('../../../../lib/domain/errors');
-const campaignRepository = require('../../../../lib/infrastructure/repositories/campaign-repository');
-const schoolingRegistrationRepository = require('../../../../lib/infrastructure/repositories/schooling-registration-repository');
+const { expect, sinon, domainBuilder, catchErr } = require('$root/tests/test-helper');
+const usecases = require('$root/lib/domain/usecases');
+const SchoolingRegistration = require('$root/lib/domain/models/SchoolingRegistration');
+const { CampaignCodeError, UserNotAuthorizedToAccessEntity } = require('$root/lib/domain/errors');
+const campaignRepository = require('$root/lib/infrastructure/repositories/campaign-repository');
+const schoolingRegistrationRepository = require('$root/lib/infrastructure/repositories/schooling-registration-repository');
 
 describe('Unit | UseCase | find-association-between-user-and-schooling-registration', () => {
 

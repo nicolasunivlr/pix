@@ -1,6 +1,6 @@
-const { expect, databaseBuilder, generateValidRequestAuthorizationHeader } = require('../../../test-helper');
-const { types } = require('../../../../lib/domain/models/Assessment');
-const createServer = require('../../../../server');
+const { expect, databaseBuilder, generateValidRequestAuthorizationHeader } = require('$root/tests/test-helper');
+const { types } = require('$root/lib/domain/models/Assessment');
+const createServer = require('$root/server');
 
 describe('Acceptance | Controller | session-controller-get-certifications', () => {
 

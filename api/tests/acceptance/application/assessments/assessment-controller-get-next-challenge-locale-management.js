@@ -1,9 +1,9 @@
-const { airtableBuilder, databaseBuilder, expect, generateValidRequestAuthorizationHeader } = require('../../../test-helper');
-const cache = require('../../../../lib/infrastructure/caches/learning-content-cache');
-const createServer = require('../../../../server');
+const { airtableBuilder, databaseBuilder, expect, generateValidRequestAuthorizationHeader } = require('$root/tests/test-helper');
+const cache = require('$root/lib/infrastructure/caches/learning-content-cache');
+const createServer = require('$root/server');
 
-const Assessment = require('../../../../lib/domain/models/Assessment');
-const { FRENCH_FRANCE } = require('../../../../lib/domain/constants').LOCALE;
+const Assessment = require('$root/lib/domain/models/Assessment');
+const { FRENCH_FRANCE } = require('$root/lib/domain/constants').LOCALE;
 
 const competenceId = 'recCompetence';
 

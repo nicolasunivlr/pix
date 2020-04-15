@@ -1,7 +1,7 @@
-const { expect, sinon } = require('../../../test-helper');
+const { expect, sinon } = require('$root/tests/test-helper');
 const Hapi = require('@hapi/hapi');
-const securityController = require('../../../../lib/interfaces/controllers/security-controller');
-const courseController = require('../../../../lib/application/courses/course-controller');
+const securityController = require('$root/lib/interfaces/controllers/security-controller');
+const courseController = require('$root/lib/application/courses/course-controller');
 
 describe('Integration | Router | course-router', () => {
 
@@ -12,7 +12,7 @@ describe('Integration | Router | course-router', () => {
     sinon.stub(courseController, 'get').returns('ok');
 
     server = this.server = Hapi.server();
-    return server.register(require('../../../../lib/application/courses'));
+    return server.register(require('$root/lib/application/courses'));
   });
 
   describe('GET /api/courses/{id}', () => {

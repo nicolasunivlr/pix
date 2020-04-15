@@ -1,9 +1,9 @@
-const { expect, sinon } = require('../../../test-helper');
+const { expect, sinon } = require('$root/tests/test-helper');
 const Hapi = require('@hapi/hapi');
-const securityController = require('../../../../lib/interfaces/controllers/security-controller');
-const sessionController = require('../../../../lib/application/sessions/session-controller');
-const sessionAuthorization = require('../../../../lib/application/preHandlers/session-authorization');
-const route = require('../../../../lib/application/sessions');
+const securityController = require('$root/lib/interfaces/controllers/security-controller');
+const sessionController = require('$root/lib/application/sessions/session-controller');
+const sessionAuthorization = require('$root/lib/application/preHandlers/session-authorization');
+const route = require('$root/lib/application/sessions');
 const fs = require('fs');
 const FormData = require('form-data');
 const streamToPromise = require('stream-to-promise');

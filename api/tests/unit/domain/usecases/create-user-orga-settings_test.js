@@ -1,9 +1,9 @@
-const { domainBuilder, expect, sinon, catchErr } = require('../../../test-helper');
-const { createUserOrgaSettings } = require('../../../../lib/domain/usecases');
-const organizationRepository = require('../../../../lib/infrastructure/repositories/organization-repository');
-const userRepository = require('../../../../lib/infrastructure/repositories/user-repository');
-const userOrgaSettingsRepository = require('../../../../lib/infrastructure/repositories/user-orga-settings-repository');
-const {  NotFoundError, UserNotFoundError, UserOrgaSettingsCreationError } = require('../../../../lib/domain/errors');
+const { domainBuilder, expect, sinon, catchErr } = require('$root/tests/test-helper');
+const { createUserOrgaSettings } = require('$root/lib/domain/usecases');
+const organizationRepository = require('$root/lib/infrastructure/repositories/organization-repository');
+const userRepository = require('$root/lib/infrastructure/repositories/user-repository');
+const userOrgaSettingsRepository = require('$root/lib/infrastructure/repositories/user-orga-settings-repository');
+const {  NotFoundError, UserNotFoundError, UserOrgaSettingsCreationError } = require('$root/lib/domain/errors');
 
 describe('Unit | UseCase | create-user-orga-settings', () => {
 

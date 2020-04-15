@@ -1,19 +1,19 @@
-const { expect, sinon } = require('../../../../test-helper');
-const certificationService = require('../../../../../lib/domain/services/certification-service');
+const { expect, sinon } = require('$root/tests/test-helper');
+const certificationService = require('$root/lib/domain/services/certification-service');
 
-const Assessment = require('../../../../../lib/domain/models/Assessment');
-const AssessmentResult = require('../../../../../lib/domain/models/AssessmentResult');
-const CompetenceMarks = require('../../../../../lib/domain/models/CompetenceMark');
-const CertificationCourse = require('../../../../../lib/domain/models/CertificationCourse');
+const Assessment = require('$root/lib/domain/models/Assessment');
+const AssessmentResult = require('$root/lib/domain/models/AssessmentResult');
+const CompetenceMarks = require('$root/lib/domain/models/CompetenceMark');
+const CertificationCourse = require('$root/lib/domain/models/CertificationCourse');
 
-const assessmentRepository = require('../../../../../lib/infrastructure/repositories/assessment-repository');
-const assessmentResultRepository = require('../../../../../lib/infrastructure/repositories/assessment-result-repository');
-const answersRepository = require('../../../../../lib/infrastructure/repositories/answer-repository');
-const certificationChallengesRepository = require('../../../../../lib/infrastructure/repositories/certification-challenge-repository');
-const certificationCourseRepository = require('../../../../../lib/infrastructure/repositories/certification-course-repository');
-const competenceRepository = require('../../../../../lib/infrastructure/repositories/competence-repository');
-const challengeRepository = require('../../../../../lib/infrastructure/repositories/challenge-repository');
-const userService = require('../../../../../lib/domain/services/user-service');
+const assessmentRepository = require('$root/lib/infrastructure/repositories/assessment-repository');
+const assessmentResultRepository = require('$root/lib/infrastructure/repositories/assessment-result-repository');
+const answersRepository = require('$root/lib/infrastructure/repositories/answer-repository');
+const certificationChallengesRepository = require('$root/lib/infrastructure/repositories/certification-challenge-repository');
+const certificationCourseRepository = require('$root/lib/infrastructure/repositories/certification-course-repository');
+const competenceRepository = require('$root/lib/infrastructure/repositories/competence-repository');
+const challengeRepository = require('$root/lib/infrastructure/repositories/challenge-repository');
+const userService = require('$root/lib/domain/services/user-service');
 
 function _buildCompetenceMarks(level, score, area_code, competence_code) {
   return new CompetenceMarks({ level, score, area_code, competence_code });

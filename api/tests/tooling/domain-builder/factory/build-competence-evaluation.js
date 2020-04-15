@@ -1,4 +1,4 @@
-const CompetenceEvaluation = require('../../../../lib/domain/models/CompetenceEvaluation');
+const CompetenceEvaluation = require('$root/lib/domain/models/CompetenceEvaluation');
 const buildAssessment = require('./build-assessment');
 const buildUser = require('./build-user');
 

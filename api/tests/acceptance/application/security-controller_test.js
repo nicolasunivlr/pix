@@ -1,6 +1,6 @@
-const { expect, generateValidRequestAuthorizationHeader, databaseBuilder } = require('../../test-helper');
-const createServer = require('../../../server');
-const Membership = require('../../../lib/domain/models/Membership');
+const { expect, generateValidRequestAuthorizationHeader, databaseBuilder } = require('$root/tests/test-helper');
+const createServer = require('$root/server');
+const Membership = require('$root/lib/domain/models/Membership');
 
 describe('Acceptance | Interface | Controller | SecurityController', function() {
 

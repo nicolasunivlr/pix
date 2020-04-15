@@ -1,8 +1,8 @@
-const { expect, sinon } = require('../../../test-helper');
+const { expect, sinon } = require('$root/tests/test-helper');
 const Hapi = require('@hapi/hapi');
-const assessmentController = require('../../../../lib/application/assessments/assessment-controller');
-const assessmentAuthorization = require('../../../../lib/application/preHandlers/assessment-authorization');
-const securityController = require('../../../../lib/interfaces/controllers/security-controller');
+const assessmentController = require('$root/lib/application/assessments/assessment-controller');
+const assessmentAuthorization = require('$root/lib/application/preHandlers/assessment-authorization');
+const securityController = require('$root/lib/interfaces/controllers/security-controller');
 
 describe('Integration | Route | AssessmentRoute', () => {
 
@@ -30,7 +30,7 @@ describe('Integration | Route | AssessmentRoute', () => {
     // instance server
     server = this.server = Hapi.server();
 
-    return server.register(require('../../../../lib/application/assessments'));
+    return server.register(require('$root/lib/application/assessments'));
   });
 
   afterEach(() => {

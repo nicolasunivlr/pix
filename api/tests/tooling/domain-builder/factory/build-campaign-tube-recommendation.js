@@ -1,4 +1,4 @@
-const CampaignTubeRecommendation = require('../../../../lib/domain/models/CampaignTubeRecommendation');
+const CampaignTubeRecommendation = require('$root/lib/domain/models/CampaignTubeRecommendation');
 
 module.exports = function buildCampaignTubeRecommendation(
   {

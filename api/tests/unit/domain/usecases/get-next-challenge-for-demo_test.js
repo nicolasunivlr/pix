@@ -1,8 +1,8 @@
-const { expect, sinon, domainBuilder } = require('../../../test-helper');
+const { expect, sinon, domainBuilder } = require('$root/tests/test-helper');
 
-const { AssessmentEndedError } = require('../../../../lib/domain/errors');
+const { AssessmentEndedError } = require('$root/lib/domain/errors');
 
-const getNextChallengeForDemo = require('../../../../lib/domain/usecases/get-next-challenge-for-demo');
+const getNextChallengeForDemo = require('$root/lib/domain/usecases/get-next-challenge-for-demo');
 
 describe('Unit | Domain | Use Cases | get-next-challenge-for-demo', () => {
 

@@ -1,4 +1,4 @@
-const CertificationCenter = require('../../../../lib/domain/models/CertificationCenter');
+const CertificationCenter = require('$root/lib/domain/models/CertificationCenter');
 const faker = require('faker');
 
 module.exports = function buildCertificationCenter(

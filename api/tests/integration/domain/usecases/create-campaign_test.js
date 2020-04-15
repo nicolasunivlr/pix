@@ -1,15 +1,15 @@
-const { expect, databaseBuilder, domainBuilder, airtableBuilder, knex } = require('../../../test-helper');
+const { expect, databaseBuilder, domainBuilder, airtableBuilder, knex } = require('$root/tests/test-helper');
 const _ = require('lodash');
-const cache = require('../../../../lib/infrastructure/caches/learning-content-cache');
+const cache = require('$root/lib/infrastructure/caches/learning-content-cache');
 
-const campaignRepository = require('../../../../lib/infrastructure/repositories/campaign-repository');
-const userRepository = require('../../../../lib/infrastructure/repositories/user-repository');
-const organizationRepository = require('../../../../lib/infrastructure/repositories/organization-repository');
-const organizationService = require('../../../../lib/domain/services/organization-service');
+const campaignRepository = require('$root/lib/infrastructure/repositories/campaign-repository');
+const userRepository = require('$root/lib/infrastructure/repositories/user-repository');
+const organizationRepository = require('$root/lib/infrastructure/repositories/organization-repository');
+const organizationService = require('$root/lib/domain/services/organization-service');
 
-const createCampaign = require('../../../../lib/domain/usecases/create-campaign');
+const createCampaign = require('$root/lib/domain/usecases/create-campaign');
 
-const Campaign = require('../../../../lib/domain/models/Campaign');
+const Campaign = require('$root/lib/domain/models/Campaign');
 
 describe('Integration | UseCases | create-campaign', () => {
 

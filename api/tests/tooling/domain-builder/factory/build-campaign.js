@@ -1,4 +1,4 @@
-const Campaign = require('../../../../lib/domain/models/Campaign');
+const Campaign = require('$root/lib/domain/models/Campaign');
 const faker = require('faker');
 const buildTargetProfile = require('./build-target-profile');
 const buildUser = require('./build-user');

@@ -1,6 +1,6 @@
 const faker = require('faker');
 
-const Competence = require('../../../../lib/domain/models/Competence');
+const Competence = require('$root/lib/domain/models/Competence');
 const buildArea = require('./build-area');
 
 module.exports = function buildCompetence({

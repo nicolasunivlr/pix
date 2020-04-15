@@ -1,8 +1,8 @@
 const moment = require('moment');
-const { expect, sinon } = require('../../../test-helper');
-const KnowledgeElement = require('../../../../lib/domain/models/KnowledgeElement');
-const Scorecard = require('../../../../lib/domain/models/Scorecard');
-const constants = require('../../../../lib/domain/constants');
+const { expect, sinon } = require('$root/tests/test-helper');
+const KnowledgeElement = require('$root/lib/domain/models/KnowledgeElement');
+const Scorecard = require('$root/lib/domain/models/Scorecard');
+const constants = require('$root/lib/domain/constants');
 
 describe('Unit | Domain | Models | Scorecard', () => {
 

@@ -1,7 +1,7 @@
-const { expect, sinon, catchErr } = require('../../../test-helper');
-const Scorecard = require('../../../../lib/domain/models/Scorecard');
-const resetScorecard = require('../../../../lib/domain/usecases/reset-scorecard');
-const { CompetenceResetError } = require('../../../../lib/domain/errors');
+const { expect, sinon, catchErr } = require('$root/tests/test-helper');
+const Scorecard = require('$root/lib/domain/models/Scorecard');
+const resetScorecard = require('$root/lib/domain/usecases/reset-scorecard');
+const { CompetenceResetError } = require('$root/lib/domain/errors');
 
 describe('Unit | UseCase | reset-scorecard', () => {
 

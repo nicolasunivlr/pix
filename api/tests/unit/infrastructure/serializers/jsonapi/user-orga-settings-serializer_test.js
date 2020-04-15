@@ -1,6 +1,6 @@
-const { expect, domainBuilder } = require('../../../../test-helper');
-const serializer = require('../../../../../lib/infrastructure/serializers/jsonapi/user-orga-settings-serializer');
-const UserOrgaSettings = require('../../../../../lib/domain/models/UserOrgaSettings');
+const { expect, domainBuilder } = require('$root/tests/test-helper');
+const serializer = require('$root/lib/infrastructure/serializers/jsonapi/user-orga-settings-serializer');
+const UserOrgaSettings = require('$root/lib/domain/models/UserOrgaSettings');
 
 describe('Unit | Serializer | JSONAPI | user-orga-settings-serializer', () => {
 

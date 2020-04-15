@@ -1,10 +1,10 @@
 const _ = require('lodash');
-const { expect, knex, databaseBuilder, catchErr } = require('../../../test-helper');
+const { expect, knex, databaseBuilder, catchErr } = require('$root/tests/test-helper');
 
-const { NotFoundError } = require('../../../../lib/domain/errors');
-const OrganizationInvitation = require('../../../../lib/domain/models/OrganizationInvitation');
-const organizationInvitationRepository = require('../../../../lib/infrastructure/repositories/organization-invitation-repository');
-const BookshelfOrganizationInvitation = require('../../../../lib/infrastructure/data/organization-invitation');
+const { NotFoundError } = require('$root/lib/domain/errors');
+const OrganizationInvitation = require('$root/lib/domain/models/OrganizationInvitation');
+const organizationInvitationRepository = require('$root/lib/infrastructure/repositories/organization-invitation-repository');
+const BookshelfOrganizationInvitation = require('$root/lib/infrastructure/data/organization-invitation');
 
 describe('Integration | Repository | OrganizationInvitationRepository', () => {
 

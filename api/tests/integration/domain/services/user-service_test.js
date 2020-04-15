@@ -1,22 +1,22 @@
-const { expect, sinon, domainBuilder } = require('../../../test-helper');
+const { expect, sinon, domainBuilder } = require('$root/tests/test-helper');
 const _ = require('lodash');
 
-const assessmentRepository = require('../../../../lib/infrastructure/repositories/assessment-repository');
-const challengeRepository = require('../../../../lib/infrastructure/repositories/challenge-repository');
-const answerRepository = require('../../../../lib/infrastructure/repositories/answer-repository');
-const competenceRepository = require('../../../../lib/infrastructure/repositories/competence-repository');
-const knowledgeElementRepository = require('../../../../lib/infrastructure/repositories/knowledge-element-repository');
-const userService = require('../../../../lib/domain/services/user-service');
+const assessmentRepository = require('$root/lib/infrastructure/repositories/assessment-repository');
+const challengeRepository = require('$root/lib/infrastructure/repositories/challenge-repository');
+const answerRepository = require('$root/lib/infrastructure/repositories/answer-repository');
+const competenceRepository = require('$root/lib/infrastructure/repositories/competence-repository');
+const knowledgeElementRepository = require('$root/lib/infrastructure/repositories/knowledge-element-repository');
+const userService = require('$root/lib/domain/services/user-service');
 
-const Answer = require('../../../../lib/domain/models/Answer');
-const Assessment = require('../../../../lib/domain/models/Assessment');
-const AssessmentResult = require('../../../../lib/domain/models/AssessmentResult');
-const CertificationProfile = require('../../../../lib/domain/models/CertificationProfile');
-const Challenge = require('../../../../lib/domain/models/Challenge');
-const Competence = require('../../../../lib/domain/models/Competence');
-const KnowledgeElement = require('../../../../lib/domain/models/KnowledgeElement');
-const Skill = require('../../../../lib/domain/models/Skill');
-const UserCompetence = require('../../../../lib/domain/models/UserCompetence');
+const Answer = require('$root/lib/domain/models/Answer');
+const Assessment = require('$root/lib/domain/models/Assessment');
+const AssessmentResult = require('$root/lib/domain/models/AssessmentResult');
+const CertificationProfile = require('$root/lib/domain/models/CertificationProfile');
+const Challenge = require('$root/lib/domain/models/Challenge');
+const Competence = require('$root/lib/domain/models/Competence');
+const KnowledgeElement = require('$root/lib/domain/models/KnowledgeElement');
+const Skill = require('$root/lib/domain/models/Skill');
+const UserCompetence = require('$root/lib/domain/models/UserCompetence');
 
 describe('Integration | Service | User Service', function() {
 

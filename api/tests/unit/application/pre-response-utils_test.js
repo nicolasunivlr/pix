@@ -1,10 +1,10 @@
-const { expect, sinon, hFake } = require('../../test-helper');
+const { expect, sinon, hFake } = require('$root/tests/test-helper');
 
-const errorManager = require('../../../lib/application/error-manager');
-const { BaseHttpError } = require('../../../lib/application/http-errors');
-const { handleDomainAndHttpErrors } = require('../../../lib/application/pre-response-utils');
+const errorManager = require('$root/lib/application/error-manager');
+const { BaseHttpError } = require('$root/lib/application/http-errors');
+const { handleDomainAndHttpErrors } = require('$root/lib/application/pre-response-utils');
 
-const { DomainError } = require('../../../lib/domain/errors');
+const { DomainError } = require('$root/lib/domain/errors');
 
 describe('Unit | Application | PreResponse-utils', () => {
 

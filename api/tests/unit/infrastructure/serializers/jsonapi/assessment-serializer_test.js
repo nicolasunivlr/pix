@@ -1,6 +1,6 @@
-const { expect, domainBuilder } = require('../../../../test-helper');
-const serializer = require('../../../../../lib/infrastructure/serializers/jsonapi/assessment-serializer');
-const Assessment = require('../../../../../lib/domain/models/Assessment');
+const { expect, domainBuilder } = require('$root/tests/test-helper');
+const serializer = require('$root/lib/infrastructure/serializers/jsonapi/assessment-serializer');
+const Assessment = require('$root/lib/domain/models/Assessment');
 
 describe('Unit | Serializer | JSONAPI | assessment-serializer', function() {
 

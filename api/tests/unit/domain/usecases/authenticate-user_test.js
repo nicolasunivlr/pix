@@ -1,12 +1,12 @@
-const { expect, sinon, domainBuilder, catchErr } = require('../../../test-helper');
-const authenticateUser = require('../../../../lib/domain/usecases/authenticate-user');
-const User = require('../../../../lib/domain/models/User');
+const { expect, sinon, domainBuilder, catchErr } = require('$root/tests/test-helper');
+const authenticateUser = require('$root/lib/domain/usecases/authenticate-user');
+const User = require('$root/lib/domain/models/User');
 const {
   UserNotFoundError, MissingOrInvalidCredentialsError, ForbiddenAccess, UserShouldChangePasswordError
-} = require('../../../../lib/domain/errors');
+} = require('$root/lib/domain/errors');
 
-const authenticationService = require('../../../../lib/domain/services/authentication-service');
-const appMessages = require('../../../../lib/domain/constants');
+const authenticationService = require('$root/lib/domain/services/authentication-service');
+const appMessages = require('$root/lib/domain/constants');
 
 describe('Unit | Application | Use Case | authenticate-user', () => {
 

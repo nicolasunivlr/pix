@@ -1,14 +1,14 @@
-const { expect, sinon } = require('../../../test-helper');
+const { expect, sinon } = require('$root/tests/test-helper');
 
-const service = require('../../../../lib/domain/services/assessment-result-service');
+const service = require('$root/lib/domain/services/assessment-result-service');
 
-const assessmentResultRepository = require('../../../../lib/infrastructure/repositories/assessment-result-repository');
-const competenceMarkRepository = require('../../../../lib/infrastructure/repositories/competence-mark-repository');
+const assessmentResultRepository = require('$root/lib/infrastructure/repositories/assessment-result-repository');
+const competenceMarkRepository = require('$root/lib/infrastructure/repositories/competence-mark-repository');
 
-const AssessmentResult = require('../../../../lib/domain/models/AssessmentResult');
-const CompetenceMark = require('../../../../lib/domain/models/CompetenceMark');
+const AssessmentResult = require('$root/lib/domain/models/AssessmentResult');
+const CompetenceMark = require('$root/lib/domain/models/CompetenceMark');
 
-const { ObjectValidationError } = require('../../../../lib/domain/errors');
+const { ObjectValidationError } = require('$root/lib/domain/errors');
 
 describe('Unit | Domain | Services | assessment-results', () => {
 

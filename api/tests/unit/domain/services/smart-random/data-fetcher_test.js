@@ -1,5 +1,5 @@
-const { sinon, expect, domainBuilder } = require('../../../../test-helper');
-const dataFetcher = require('../../../../../lib/domain/services/smart-random/data-fetcher');
+const { sinon, expect, domainBuilder } = require('$root/tests/test-helper');
+const dataFetcher = require('$root/lib/domain/services/smart-random/data-fetcher');
 
 describe('Unit | Domain | services | smart-random | dataFetcher', () => {
 

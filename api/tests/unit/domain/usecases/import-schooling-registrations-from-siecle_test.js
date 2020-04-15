@@ -1,6 +1,6 @@
-const { expect, sinon, catchErr } = require('../../../test-helper');
-const importSchoolingRegistrationsFromSIECLE = require('../../../../lib/domain/usecases/import-schooling-registrations-from-siecle');
-const { FileValidationError, SchoolingRegistrationsCouldNotBeSavedError, SameNationalStudentIdInFileError, SameNationalStudentIdInOrganizationError } = require('../../../../lib/domain/errors');
+const { expect, sinon, catchErr } = require('$root/tests/test-helper');
+const importSchoolingRegistrationsFromSIECLE = require('$root/lib/domain/usecases/import-schooling-registrations-from-siecle');
+const { FileValidationError, SchoolingRegistrationsCouldNotBeSavedError, SameNationalStudentIdInFileError, SameNationalStudentIdInOrganizationError } = require('$root/lib/domain/errors');
 
 describe('Unit | UseCase | import-schooling-registrations-from-siecle', () => {
 

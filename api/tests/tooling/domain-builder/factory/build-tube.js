@@ -1,4 +1,4 @@
-const Tube = require('../../../../lib/domain/models/Tube');
+const Tube = require('$root/lib/domain/models/Tube');
 const faker = require('faker');
 
 const buildSkillCollection = require('./build-skill-collection');

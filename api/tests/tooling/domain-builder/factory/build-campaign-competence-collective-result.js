@@ -1,4 +1,4 @@
-const CampaignCompetenceCollectiveResult = require('../../../../lib/domain/models/CampaignCompetenceCollectiveResult');
+const CampaignCompetenceCollectiveResult = require('$root/lib/domain/models/CampaignCompetenceCollectiveResult');
 
 module.exports = function buildCampaignCompetenceCollectiveResult(
   {

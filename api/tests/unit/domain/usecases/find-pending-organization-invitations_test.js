@@ -1,6 +1,6 @@
-const { expect, sinon, domainBuilder } = require('../../../test-helper');
-const findPendingOrganizationInvitations = require('../../../../lib/domain/usecases/find-pending-organization-invitations');
-const OrganizationInvitation = require('../../../../lib/domain/models/OrganizationInvitation');
+const { expect, sinon, domainBuilder } = require('$root/tests/test-helper');
+const findPendingOrganizationInvitations = require('$root/lib/domain/usecases/find-pending-organization-invitations');
+const OrganizationInvitation = require('$root/lib/domain/models/OrganizationInvitation');
 
 describe('Unit | UseCase | find-pending-organization-invitations', () => {
 

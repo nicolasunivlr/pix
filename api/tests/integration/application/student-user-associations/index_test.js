@@ -1,7 +1,7 @@
-const { expect, sinon, HttpTestServer } = require('../../../test-helper');
+const { expect, sinon, HttpTestServer } = require('$root/tests/test-helper');
 
-const schoolingRegistrationUserAssociationController = require('../../../../lib/application/schooling-registration-user-associations/schooling-registration-user-association-controller');
-const moduleUnderTest = require('../../../../lib/application/student-user-associations');
+const schoolingRegistrationUserAssociationController = require('$root/lib/application/schooling-registration-user-associations/schooling-registration-user-association-controller');
+const moduleUnderTest = require('$root/lib/application/student-user-associations');
 
 describe('Integration | Application | Route | student-user-associations', () => {
 

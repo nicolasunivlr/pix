@@ -1,10 +1,10 @@
-const { expect, sinon, HttpTestServer } = require('../../../test-helper');
+const { expect, sinon, HttpTestServer } = require('$root/tests/test-helper');
 
-const securityController = require('../../../../lib/interfaces/controllers/security-controller');
-const organizationController = require('../../../../lib/application/organizations/organization-controller');
-const usecases = require ('../../../../lib/domain/usecases');
+const securityController = require('$root/lib/interfaces/controllers/security-controller');
+const organizationController = require('$root/lib/application/organizations/organization-controller');
+const usecases = require ('$root/lib/domain/usecases');
 
-const moduleUnderTest = require('../../../../lib/application/organizations');
+const moduleUnderTest = require('$root/lib/application/organizations');
 
 describe('Unit | Router | organization-router', () => {
 

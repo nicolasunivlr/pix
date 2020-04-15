@@ -1,25 +1,25 @@
-const { sinon, expect, hFake } = require('../../../test-helper');
+const { sinon, expect, hFake } = require('$root/tests/test-helper');
 
-const CertificationProfile = require('../../../../lib/domain/models/CertificationProfile');
-const User = require('../../../../lib/domain/models/User');
+const CertificationProfile = require('$root/lib/domain/models/CertificationProfile');
+const User = require('$root/lib/domain/models/User');
 
-const userController = require('../../../../lib/application/users/user-controller');
+const userController = require('$root/lib/application/users/user-controller');
 
-const userRepository = require('../../../../lib/infrastructure/repositories/user-repository');
-const queryParamsUtils = require('../../../../lib/infrastructure/utils/query-params-utils');
+const userRepository = require('$root/lib/infrastructure/repositories/user-repository');
+const queryParamsUtils = require('$root/lib/infrastructure/utils/query-params-utils');
 
-const encryptionService = require('../../../../lib/domain/services/encryption-service');
-const mailService = require('../../../../lib/domain/services/mail-service');
+const encryptionService = require('$root/lib/domain/services/encryption-service');
+const mailService = require('$root/lib/domain/services/mail-service');
 
-const usecases = require('../../../../lib/domain/usecases');
+const usecases = require('$root/lib/domain/usecases');
 
-const campaignParticipationSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/campaign-participation-serializer');
-const certificationCenterMembershipSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/certification-center-membership-serializer');
-const membershipSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/membership-serializer');
-const userOrgaSettingsSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/user-orga-settings-serializer');
-const scorecardSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/scorecard-serializer');
-const userSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/user-serializer');
-const validationErrorSerializer = require('../../../../lib/infrastructure/serializers/jsonapi/validation-error-serializer');
+const campaignParticipationSerializer = require('$root/lib/infrastructure/serializers/jsonapi/campaign-participation-serializer');
+const certificationCenterMembershipSerializer = require('$root/lib/infrastructure/serializers/jsonapi/certification-center-membership-serializer');
+const membershipSerializer = require('$root/lib/infrastructure/serializers/jsonapi/membership-serializer');
+const userOrgaSettingsSerializer = require('$root/lib/infrastructure/serializers/jsonapi/user-orga-settings-serializer');
+const scorecardSerializer = require('$root/lib/infrastructure/serializers/jsonapi/scorecard-serializer');
+const userSerializer = require('$root/lib/infrastructure/serializers/jsonapi/user-serializer');
+const validationErrorSerializer = require('$root/lib/infrastructure/serializers/jsonapi/validation-error-serializer');
 
 describe('Unit | Controller | user-controller', () => {
 

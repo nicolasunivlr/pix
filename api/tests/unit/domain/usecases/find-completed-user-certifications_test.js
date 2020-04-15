@@ -1,7 +1,7 @@
-const { expect, sinon } = require('../../../test-helper');
-const AssessmentResult = require('../../../../lib/domain/models/AssessmentResult');
-const Certification = require('../../../../lib/domain/models/Certification');
-const findCompletedUserCertifications = require('../../../../lib/domain/usecases/find-completed-user-certifications');
+const { expect, sinon } = require('$root/tests/test-helper');
+const AssessmentResult = require('$root/lib/domain/models/AssessmentResult');
+const Certification = require('$root/lib/domain/models/Certification');
+const findCompletedUserCertifications = require('$root/lib/domain/usecases/find-completed-user-certifications');
 
 describe('Unit | UseCase | find-completed-user-certifications', () => {
 

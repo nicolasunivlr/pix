@@ -1,10 +1,10 @@
-const { sinon, expect, hFake } = require('../../../test-helper');
+const { sinon, expect, hFake } = require('$root/tests/test-helper');
 
-const assessmentResultController = require('../../../../lib/application/assessment-results/assessment-result-controller');
-const assessmentResultService = require('../../../../lib/domain/services/assessment-result-service');
+const assessmentResultController = require('$root/lib/application/assessment-results/assessment-result-controller');
+const assessmentResultService = require('$root/lib/domain/services/assessment-result-service');
 
-const AssessmentResult = require('../../../../lib/domain/models/AssessmentResult');
-const CompetenceMark = require('../../../../lib/domain/models/CompetenceMark');
+const AssessmentResult = require('$root/lib/domain/models/AssessmentResult');
+const CompetenceMark = require('$root/lib/domain/models/CompetenceMark');
 
 describe('Unit | Controller | assessment-results', () => {
 

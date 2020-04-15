@@ -1,9 +1,9 @@
-const AnswerStatus = require('../../../../lib/domain/models/AnswerStatus');
-const solutionServiceQroc = require('../../../../lib/domain/services/solution-service-qroc');
-const Validation = require('../../../../lib/domain/models/Validation');
-const ValidatorQROC = require('../../../../lib/domain/models/ValidatorQROC');
+const AnswerStatus = require('$root/lib/domain/models/AnswerStatus');
+const solutionServiceQroc = require('$root/lib/domain/services/solution-service-qroc');
+const Validation = require('$root/lib/domain/models/Validation');
+const ValidatorQROC = require('$root/lib/domain/models/ValidatorQROC');
 
-const { expect, domainBuilder, sinon } = require('../../../test-helper');
+const { expect, domainBuilder, sinon } = require('$root/tests/test-helper');
 
 describe('Unit | Domain | Models | ValidatorQROC', () => {
 

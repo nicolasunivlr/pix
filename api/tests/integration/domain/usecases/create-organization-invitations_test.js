@@ -1,10 +1,10 @@
-const { expect, databaseBuilder, knex } = require('../../../test-helper');
+const { expect, databaseBuilder, knex } = require('$root/tests/test-helper');
 
-const organizationRepository = require('../../../../lib/infrastructure/repositories/organization-repository');
-const organizationInvitationRepository = require('../../../../lib/infrastructure/repositories/organization-invitation-repository');
-const OrganizationInvitation = require('../../../../lib/domain/models/OrganizationInvitation');
+const organizationRepository = require('$root/lib/infrastructure/repositories/organization-repository');
+const organizationInvitationRepository = require('$root/lib/infrastructure/repositories/organization-invitation-repository');
+const OrganizationInvitation = require('$root/lib/domain/models/OrganizationInvitation');
 
-const createOrganizationInvitations = require('../../../../lib/domain/usecases/create-organization-invitations');
+const createOrganizationInvitations = require('$root/lib/domain/usecases/create-organization-invitations');
 
 describe('Integration | UseCases | create-organization-invitations', () => {
 

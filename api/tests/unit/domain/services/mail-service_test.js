@@ -1,6 +1,6 @@
-const { sinon } = require('../../../test-helper');
-const mailer = require('../../../../lib/infrastructure/mailers/mailer');
-const mailService = require('../../../../lib/domain/services/mail-service');
+const { sinon } = require('$root/tests/test-helper');
+const mailer = require('$root/lib/infrastructure/mailers/mailer');
+const mailService = require('$root/lib/domain/services/mail-service');
 
 describe('Unit | Service | MailService', () => {
 

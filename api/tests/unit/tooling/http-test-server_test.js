@@ -1,4 +1,4 @@
-const { expect } = require('../../test-helper');
+const { expect } = require('$root/tests/test-helper');
 
 const HttpTestServer = require('../../tooling/server/http-test-server');
 

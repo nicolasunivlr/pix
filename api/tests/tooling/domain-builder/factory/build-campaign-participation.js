@@ -1,4 +1,4 @@
-const CampaignParticipation = require('../../../../lib/domain/models/CampaignParticipation');
+const CampaignParticipation = require('$root/lib/domain/models/CampaignParticipation');
 const buildCampaign = require('./build-campaign');
 const buildCampaignParticipationResult = require('./build-campaign-participation-result');
 

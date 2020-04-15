@@ -1,7 +1,7 @@
-const { expect } = require('../../../../test-helper');
-const serializer = require('../../../../../lib/infrastructure/serializers/jsonapi/validation-error-serializer');
+const { expect } = require('$root/tests/test-helper');
+const serializer = require('$root/lib/infrastructure/serializers/jsonapi/validation-error-serializer');
 
-const Bookshelf = require('../../../../../lib/infrastructure/bookshelf');
+const Bookshelf = require('$root/lib/infrastructure/bookshelf');
 
 describe('Unit | Serializer | JSONAPI | validation-error-serializer', () => {
 

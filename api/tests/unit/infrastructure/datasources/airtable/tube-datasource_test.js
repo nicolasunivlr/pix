@@ -1,11 +1,11 @@
 const _ = require('lodash');
-const { expect, sinon } = require('../../../../test-helper');
-const airtable = require('../../../../../lib/infrastructure/airtable');
-const tubeDatasource = require('../../../../../lib/infrastructure/datasources/airtable/tube-datasource');
-const tubeRawAirTableFixture = require('../../../../tooling/fixtures/infrastructure/tubeRawAirTableFixture');
-const tubeAirtableDataModelFixture = require('../../../../tooling/fixtures/infrastructure/tubeAirtableDataObjectFixture');
-const cache = require('../../../../../lib/infrastructure/caches/learning-content-cache');
-const makeAirtableFake = require('../../../../tooling/airtable-builder/make-airtable-fake');
+const { expect, sinon } = require('$root/tests/test-helper');
+const airtable = require('$root/lib/infrastructure/airtable');
+const tubeDatasource = require('$root/lib/infrastructure/datasources/airtable/tube-datasource');
+const tubeRawAirTableFixture = require('$root/tests/tooling/fixtures/infrastructure/tubeRawAirTableFixture');
+const tubeAirtableDataModelFixture = require('$root/tests/tooling/fixtures/infrastructure/tubeAirtableDataObjectFixture');
+const cache = require('$root/lib/infrastructure/caches/learning-content-cache');
+const makeAirtableFake = require('$root/tests/tooling/airtable-builder/make-airtable-fake');
 
 describe('Unit | Infrastructure | Datasource | Airtable | TubeDatasource', () => {
 

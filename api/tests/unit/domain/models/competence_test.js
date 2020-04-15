@@ -1,5 +1,5 @@
-const { expect } = require('../../../test-helper');
-const Competence = require('../../../../lib/domain/models/Competence');
+const { expect } = require('$root/tests/test-helper');
+const Competence = require('$root/lib/domain/models/Competence');
 
 describe('Unit | Domain | Models | Competence', () => {
 

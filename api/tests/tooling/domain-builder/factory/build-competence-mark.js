@@ -1,4 +1,4 @@
-const CompetenceMark = require('../../../../lib/domain/models/CompetenceMark');
+const CompetenceMark = require('$root/lib/domain/models/CompetenceMark');
 
 module.exports = function buildCompetenceMark({
   id,
