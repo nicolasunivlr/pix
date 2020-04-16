@@ -6,6 +6,7 @@ location ~ ^/(?<app>[^/]+)/.*$ {
   expires -1;
 }
 
+add_header Content-Security-Policy "default-src 'self' *.pix.fr; script-src 'self' 'unsafe-inline' https://stats.pix.fr/; img-src 'self' *.pix.fr dl.airtable.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com;";
 add_header X-Content-Type-Options "nosniff";
 add_header X-Frame-Options "SAMEORIGIN";
 add_header X-XSS-Protection 1;
