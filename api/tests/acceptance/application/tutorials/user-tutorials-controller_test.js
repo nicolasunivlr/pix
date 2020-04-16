@@ -179,4 +179,47 @@ describe('Acceptance | Controller | user-tutorial-controller', () => {
 
   });
 
+  describe('PUT /api/users/tutorials/{tutorialId}/evaluate', () => {
+
+    let options;
+
+    beforeEach(async () => {
+      options = {
+        method: 'PUT',
+        url: '/api/users/tutorials/tutorialId/evaluate',
+        headers: {
+          authorization: generateValidRequestAuthorizationHeader(4444)
+        },
+      };
+    });
+
+    afterEach(async () => {
+      return knex('tutorial-evaluations').delete();
+    });
+
+    describe('nominal case', () => {
+      it('should respond with a 201', async () => {
+        // when
+        const response = await server.inject(options);
+
+        // then
+        expect(response.statusCode).to.equal(201);
+      });
+    });
+
+    describe('error cases', () => {
+      it('should respond with a 404 - not found when tutorialId does not exist', async () => {
+        // given
+        options.url = '/api/users/tutorials/badId';
+
+        // when
+        const response = await server.inject(options);
+
+        // then
+        expect(response.statusCode).to.equal(404);
+      });
+    });
+
+  });
+
 });

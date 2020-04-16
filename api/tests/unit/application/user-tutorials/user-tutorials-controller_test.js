@@ -66,4 +66,28 @@ describe('Unit | Controller | User-tutorials', function() {
       expect(removeFromUserArgs).to.have.property('tutorialId', tutorialId);
     });
   });
+
+  describe('#evaluate', function() {
+    it('should call the expected usecase', async function() {
+      // given
+      const tutorialId = 'tutorialId';
+      const userId = 'userId';
+      sinon.stub(usecases, 'addTutorialEvaluation').returns({
+        id: 'tutorialEvaluationId'
+      });
+
+      const request = {
+        auth: { credentials: { userId } },
+        params: { tutorialId }
+      };
+
+      // when
+      await userTutorialsController.evaluate(request, hFake);
+
+      // then
+      const addTutorialEvaluationArgs = usecases.addTutorialEvaluation.firstCall.args[0];
+      expect(addTutorialEvaluationArgs).to.have.property('userId', userId);
+      expect(addTutorialEvaluationArgs).to.have.property('tutorialId', tutorialId);
+    });
+  });
 });

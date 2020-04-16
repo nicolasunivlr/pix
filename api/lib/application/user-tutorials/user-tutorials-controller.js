@@ -30,4 +30,13 @@ module.exports = {
     return h.response().code(204);
   },
 
+  async evaluate(request, h) {
+    const { userId } = request.auth.credentials;
+    const { tutorialId } = request.params;
+
+    await usecases.addTutorialEvaluation({ userId, tutorialId });
+
+    return h.response().created();
+  },
+
 };
