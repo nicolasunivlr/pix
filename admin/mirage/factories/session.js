@@ -1,7 +1,7 @@
 import { Factory, trait } from 'ember-cli-mirage';
 import faker from 'faker';
 import moment from 'moment';
-import { CREATED, FINALIZED, PROCESSED } from 'pix-admin/models/session';
+import { CREATED, FINALIZED, IN_PROCESS, PROCESSED } from 'pix-admin/models/session';
 
 export default Factory.extend({
 
@@ -61,6 +61,14 @@ export default Factory.extend({
 
   created: trait({
     status: CREATED,
+  }),
+
+  withAssignedCertificationOfficer: trait({
+    afterCreate(session, server) {
+      if (!session.assignedCertificationOfficer) {
+        session.update({ assignedCertificationOfficer: server.create('user'), status: IN_PROCESS });
+      }
+    }
   }),
 
   finalized: trait({

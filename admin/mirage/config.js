@@ -10,6 +10,8 @@ export default function() {
   this.urlPrefix = 'http://localhost:3000';
   this.namespace = 'api';
 
+  this.get('admin/certification-officer/:id/name');
+
   this.get('/users');
   this.get('/certification-centers');
   this.get('/certification-centers/:id');
