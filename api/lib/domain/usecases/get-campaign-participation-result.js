@@ -15,6 +15,10 @@ module.exports = async function getCampaignParticipationResult(
   const campaignParticipation = await campaignParticipationRepository.get(campaignParticipationId);
   await _checkIfUserHasAccessToThisCampaignParticipation(userId, campaignParticipation, campaignRepository);
 
+  if (!campaignParticipation.isShared) {
+    return null;
+  }
+  
   const targetProfile = await targetProfileRepository.getByCampaignId(campaignParticipation.campaignId);
   const badge = await badgeRepository.findOneByTargetProfileId(targetProfile.id);
 

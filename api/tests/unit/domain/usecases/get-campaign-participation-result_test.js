@@ -12,6 +12,7 @@ describe('Unit | UseCase | get-campaign-participation-result', () => {
   const campaignParticipation = {
     campaignId,
     userId,
+    isShared: true,
   };
 
   const targetProfile = {
@@ -55,79 +56,97 @@ describe('Unit | UseCase | get-campaign-participation-result', () => {
       campaignRepository.checkIfUserOrganizationHasAccessToCampaign.withArgs(campaignId, otherUserId).resolves(true);
     });
 
-    it('should get the campaignParticipationResult', async () => {
-      // when
-      const campaignParticipationResult = Symbol('campaignParticipationResult');
-
-      campaignParticipationResultRepository.getByParticipationId.resolves(campaignParticipationResult);
-      const actualCampaignParticipationResult = await getCampaignParticipationResult(usecaseDependencies);
-
-      // then
-      expect(actualCampaignParticipationResult).to.deep.equal(campaignParticipationResult);
-    });
-
-    context('when a badge is available for the campaignParticipationResult', () => {
-      const badge = {
-        id: Symbol('badgeId')
-      };
-
-      beforeEach(() => {
-        // given
-        badgeRepository.findOneByTargetProfileId.withArgs(targetProfileId).resolves(badge);
-      });
-
-      it('should assign badge to campaignParticipationResult', async () => {
+    context('participant has shared its results', () => {
+      it('should get the campaignParticipationResult', async () => {
         // when
-        const campaignParticipationResult = {
-          id: 'foo'
-        };
+        const campaignParticipationResult = Symbol('campaignParticipationResult');
 
         campaignParticipationResultRepository.getByParticipationId.resolves(campaignParticipationResult);
         const actualCampaignParticipationResult = await getCampaignParticipationResult(usecaseDependencies);
 
         // then
-        expect(actualCampaignParticipationResult.badge).not.to.be.null;
+        expect(actualCampaignParticipationResult).to.deep.equal(campaignParticipationResult);
       });
 
-      context('when badge is acquired', () => {
-        it('should assign badge acquisition to campaignParticipationResult', async () => {
+      context('when a badge is available for the campaignParticipationResult', () => {
+        const badge = {
+          id: Symbol('badgeId')
+        };
+
+        beforeEach(() => {
           // given
+          badgeRepository.findOneByTargetProfileId.withArgs(targetProfileId).resolves(badge);
+        });
+
+        it('should assign badge to campaignParticipationResult', async () => {
+          // when
           const campaignParticipationResult = {
             id: 'foo'
           };
+
           campaignParticipationResultRepository.getByParticipationId.resolves(campaignParticipationResult);
-
-          badgeAcquisitionRepository.hasAcquiredBadgeWithId.withArgs({
-            userId,
-            badgeId: badge.id
-          }).resolves(true);
-
-          // when
           const actualCampaignParticipationResult = await getCampaignParticipationResult(usecaseDependencies);
 
           // then
-          expect(actualCampaignParticipationResult.areBadgeCriteriaFulfilled).to.be.true;
+          expect(actualCampaignParticipationResult.badge).not.to.be.null;
+        });
+
+        context('when badge is acquired', () => {
+          it('should assign badge acquisition to campaignParticipationResult', async () => {
+            // given
+            const campaignParticipationResult = {
+              id: 'foo'
+            };
+            campaignParticipationResultRepository.getByParticipationId.resolves(campaignParticipationResult);
+
+            badgeAcquisitionRepository.hasAcquiredBadgeWithId.withArgs({
+              userId,
+              badgeId: badge.id
+            }).resolves(true);
+
+            // when
+            const actualCampaignParticipationResult = await getCampaignParticipationResult(usecaseDependencies);
+
+            // then
+            expect(actualCampaignParticipationResult.areBadgeCriteriaFulfilled).to.be.true;
+          });
+        });
+
+        context('when badge is not acquired', () => {
+          it('should not assign badge acquisition to campaignParticipationResult', async () => {
+            // given
+            const campaignParticipationResult = {
+              id: 'foo'
+            };
+            campaignParticipationResultRepository.getByParticipationId.resolves(campaignParticipationResult);
+            badgeAcquisitionRepository.hasAcquiredBadgeWithId.withArgs({
+              userId,
+              badgeId: badge.id
+            }).resolves(false);
+
+            // when
+            const actualCampaignParticipationResult = await getCampaignParticipationResult(usecaseDependencies);
+
+            // then
+            expect(actualCampaignParticipationResult.areBadgeCriteriaFulfilled).to.be.false;
+          });
         });
       });
+    });
 
-      context('when badge is not acquired', () => {
-        it('should not assign badge acquisition to campaignParticipationResult', async () => {
-          // given
-          const campaignParticipationResult = {
-            id: 'foo'
-          };
-          campaignParticipationResultRepository.getByParticipationId.resolves(campaignParticipationResult);
-          badgeAcquisitionRepository.hasAcquiredBadgeWithId.withArgs({
-            userId,
-            badgeId: badge.id
-          }).resolves(false);
+    context('participant has not shared its results', () => {
+      it('should returns null', async () => {
+        // given
+        campaignParticipation.isShared = false;
 
-          // when
-          const actualCampaignParticipationResult = await getCampaignParticipationResult(usecaseDependencies);
+        // when
+        const campaignParticipationResult = Symbol('campaignParticipationResult');
 
-          // then
-          expect(actualCampaignParticipationResult.areBadgeCriteriaFulfilled).to.be.false;
-        });
+        campaignParticipationResultRepository.getByParticipationId.resolves(campaignParticipationResult);
+        const actualCampaignParticipationResult = await getCampaignParticipationResult(usecaseDependencies);
+
+        // then
+        expect(actualCampaignParticipationResult).to.be.null;
       });
     });
   });
