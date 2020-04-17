@@ -11,6 +11,7 @@
         <th>Nombre de certifications publiées</th>
         <th>Date de publication</th>
         <th>Date de diffusion au prescripteur</th>
+        <th>Qui ?</th>
       </tr>
       <tr>
         <th>
@@ -46,6 +47,11 @@
           <td>{{session.countPublishedCertifications}}</td>
           <td>{{session.displayPublishedAtDate}}</td>
           <td>{{session.displayResultsSentToPrescriberDate}}</td>
+          {{#if session.assignedCertificationOfficer}}
+            <td class="session-list__item--align-center">{{session.assignedCertificationOfficer.fullName}}</td>
+          {{else}}
+            <td class="session-list__item--align-center">-</td>
+          {{/if}}
         </tr>
       {{/each}}
       </tbody>
