@@ -8,40 +8,47 @@ import hbs from 'htmlbars-inline-precompile';
 describe('Integration | Component | Challenge Embed Simulator', function() {
 
   setupRenderingTest();
+  const embedDocument = {
+    url: 'http://embed-simulator.url',
+    title: 'Embed simulator',
+    height: 200
+  };
 
   describe('Acknowledgment overlay', function() {
+    beforeEach(async function() {
+      // given
+      this.set('embedDocument', embedDocument);
+
+      // when
+      await render(hbs`{{challenge-embed-simulator embedDocument=embedDocument}}`);
+    });
 
     it('should be displayed when component has just been rendered', async function() {
-      // when
-      await render(hbs`{{challenge-embed-simulator}}`);
-
       // then
       expect(find('.embed__acknowledgment-overlay')).to.exist;
     });
 
     it('should contain a button to launch the simulator', async function() {
-      // when
-      await render(hbs`{{challenge-embed-simulator}}`);
-
       // then
       expect(find('.embed__acknowledgment-overlay .embed__launch-simulator-button')).to.exist;
     });
   });
 
   describe('Launch simulator button', () => {
+    beforeEach(async function() {
+      // given
+      this.set('embedDocument', embedDocument);
+
+      // when
+      await render(hbs`{{challenge-embed-simulator embedDocument=embedDocument}}`);
+    });
 
     it('should have text "Je lance le simulateur"', async function() {
-      // when
-      await render(hbs`{{challenge-embed-simulator}}`);
-
       // then
       expect(find('.embed__acknowledgment-overlay .embed__launch-simulator-button').textContent).to.equal('Je lance l’application');
     });
 
     it('should close the acknowledgment overlay when clicked', async function() {
-      // given
-      await render(hbs`{{challenge-embed-simulator}}`);
-
       // when
       await click('.embed__launch-simulator-button');
 
@@ -51,21 +58,22 @@ describe('Integration | Component | Challenge Embed Simulator', function() {
   });
 
   describe('Reload simulator button', () => {
+    let stubRebootSimulator;
+    beforeEach(async function() {
+      // given
+      this.set('embedDocument', embedDocument);
+
+      stubRebootSimulator = sinon.stub();
+      this.set('stubRebootSimulator', stubRebootSimulator);
+      await render(hbs`{{challenge-embed-simulator _rebootSimulator=stubRebootSimulator embedDocument=embedDocument}}`);
+    });
 
     it('should have text "Réinitialiser"', async function() {
-      // when
-      await render(hbs`{{challenge-embed-simulator}}`);
-
       // then
       expect(find('.embed__reboot').textContent.trim()).to.equal('Réinitialiser');
     });
 
     it('should reload simulator when user clicked on button reload', async function() {
-      // given
-      const stubRebootSimulator = sinon.stub();
-      this.set('stubRebootSimulator', stubRebootSimulator);
-      await render(hbs`{{challenge-embed-simulator _rebootSimulator=stubRebootSimulator}}`);
-
       // when
       await click('.embed-reboot__content');
 
@@ -75,19 +83,20 @@ describe('Integration | Component | Challenge Embed Simulator', function() {
   });
 
   describe('Blur effect on simulator panel', function() {
+    beforeEach(async function() {
+      // given
+      this.set('embedDocument', embedDocument);
+
+      // when
+      await render(hbs`{{challenge-embed-simulator embedDocument=embedDocument}}`);
+    });
 
     it('should be active when component is first rendered', async function() {
-      // when
-      await render(hbs`{{challenge-embed-simulator}}`);
-
       // then
       expect(findAll('.embed__simulator')[0].classList.contains('blurred')).to.be.true;
     });
 
     it('should be removed when simulator was launched', async function() {
-      // given
-      await render(hbs`{{challenge-embed-simulator}}`);
-
       // when
       await click('.embed__launch-simulator-button');
 
@@ -97,21 +106,12 @@ describe('Integration | Component | Challenge Embed Simulator', function() {
   });
 
   describe('Embed simulator', function() {
-
-    const embedDocument = {
-      url: 'http://embed-simulator.url',
-      title: 'Embed simulator',
-      height: 200
-    };
-
     beforeEach(async function() {
       // given
       this.set('embedDocument', embedDocument);
 
       // when
       await render(hbs`{{challenge-embed-simulator embedDocument=embedDocument}}`);
-
-      // then
     });
 
     it('should have an height that is the one defined in the referential', function() {

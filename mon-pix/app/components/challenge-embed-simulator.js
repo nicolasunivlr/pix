@@ -14,7 +14,7 @@ export default class ChallengeEmbedSimulator extends Component {
   // CPs
   @computed('embedDocument.height')
   get embedDocumentHeightStyle() {
-    return htmlSafe(`height: ${this.get('embedDocument.height')}px`);
+    return htmlSafe(`height: ${this.embedDocument.height}px`);
   }
 
   @action
