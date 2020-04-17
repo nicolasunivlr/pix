@@ -5,6 +5,19 @@ import sinon from 'sinon';
 module('Unit | Route | authenticated/sessions/session', function(hooks) {
   setupTest(hooks);
 
+  test('#setupController', function(assert) {
+    const sessions = { inputId: 5 };
+    const id = Symbol('id');
+    // given
+    const route = this.owner.lookup('route:authenticated/sessions/session');
+    route.controllerFor = sinon.stub().returns(sessions);
+
+    //when
+    route.setupController(null, { id });
+    assert.equal(sessions.inputId, id);
+    assert.ok(route.controllerFor.calledWith('authenticated.sessions.session'));
+  });
+
   test('#error', function(assert) {
     // given
     const route = this.owner.lookup('route:authenticated/sessions/session');
