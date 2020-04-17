@@ -133,10 +133,26 @@ module.exports = {
   async findPaginatedFiltered({ filters, page }) {
     const { models, pagination } = await BookshelfSession
       .query((qb) => {
-        const { id } = filters;
+        const { id, isCreated, isFinalized, isPublished, areResultsSent } = filters;
         if (id) {
           qb.where({ id });
         }
+        if (areResultsSent) {
+          qb.whereNotNull('resultsSentToPrescriberAt');
+        }
+        qb.where(function() {
+          const whereOrStatements = [];
+          if (isCreated) {
+            whereOrStatements.push('("finalizedAt" IS NULL AND "publishedAt" IS NULL)');
+          }
+          if (isFinalized) {
+            whereOrStatements.push('("finalizedAt" IS NOT NULL AND "publishedAt" IS NULL)');
+          }
+          if (isPublished) {
+            whereOrStatements.push('("finalizedAt" IS NOT NULL AND "publishedAt" IS NOT NULL)');
+          }
+          this.whereRaw(_.join(whereOrStatements, ' OR '));
+        });
         qb.orderByRaw('?? ASC NULLS FIRST', 'publishedAt');
         qb.orderByRaw('?? ASC', 'finalizedAt');
       })

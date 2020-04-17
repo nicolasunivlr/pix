@@ -583,6 +583,105 @@ describe('Integration | Repository | Session', function() {
           expect(sessions[0].id).to.equal(expectedSession.id);
         });
       });
+
+      context('when there are filters regarding session status', () => {
+        context('when there is a filter on created sessions only', () => {
+          let expectedSessionId;
+
+          beforeEach(() => {
+            expectedSessionId = databaseBuilder.factory.buildSession({ finalizedAt: null, publishedAt: null }).id;
+            databaseBuilder.factory.buildSession({ finalizedAt: new Date('2020-01-01T00:00:00Z') });
+
+            return databaseBuilder.commit();
+          });
+
+          it('should apply the strict filter and return the appropriate results', async () => {
+            // given
+            const filters = { isCreated: true };
+            const page = { number: 1, size: 10 };
+
+            // when
+            const { sessions } = await sessionRepository.findPaginatedFiltered({ filters, page });
+
+            // then
+            expect(sessions[0].id).to.equal(expectedSessionId);
+          });
+        });
+        context('when there is a filter on finalized sessions only', () => {
+          let expectedSessionId;
+
+          beforeEach(() => {
+            expectedSessionId = databaseBuilder.factory.buildSession({ finalizedAt: new Date('2020-01-01T00:00:00Z'), publishedAt: null }).id;
+            databaseBuilder.factory.buildSession({ finalizedAt: null });
+
+            return databaseBuilder.commit();
+          });
+
+          it('should apply the strict filter and return the appropriate results', async () => {
+            // given
+            const filters = { isFinalized: true };
+            const page = { number: 1, size: 10 };
+
+            // when
+            const { sessions } = await sessionRepository.findPaginatedFiltered({ filters, page });
+
+            // then
+            expect(sessions[0].id).to.equal(expectedSessionId);
+          });
+        });
+
+        context('when there is a filter on published sessions only', () => {
+          let expectedSessionId;
+
+          beforeEach(() => {
+            const someDate = new Date('2020-01-01T00:00:00Z');
+            expectedSessionId = databaseBuilder.factory.buildSession({ finalizedAt: someDate, publishedAt: someDate }).id;
+            databaseBuilder.factory.buildSession({ finalizedAt: null });
+
+            return databaseBuilder.commit();
+          });
+
+          it('should apply the strict filter and return the appropriate results', async () => {
+            // given
+            const filters = { isPublished: true };
+            const page = { number: 1, size: 10 };
+
+            // when
+            const { sessions } = await sessionRepository.findPaginatedFiltered({ filters, page });
+
+            // then
+            expect(sessions[0].id).to.equal(expectedSessionId);
+          });
+        });
+        context('when there are several status related filters', () => {
+          let expectedCreatedSessionId;
+          let expectedFinalizedSessionId;
+
+          beforeEach(() => {
+            const someDate = new Date('2020-01-01T00:00:00Z');
+            expectedCreatedSessionId = databaseBuilder.factory.buildSession({ finalizedAt: null, publishedAt: null }).id;
+            expectedFinalizedSessionId = databaseBuilder.factory.buildSession({ finalizedAt: someDate, publishedAt: null }).id;
+            databaseBuilder.factory.buildSession({ finalizedAt: someDate, publishedAt: someDate });
+
+            return databaseBuilder.commit();
+          });
+
+          it('should apply the filters with an OR fashion and return the appropriate results', async () => {
+            // given
+            const filters = { isFinalized: true, isCreated: true };
+            const page = { number: 1, size: 10 };
+
+            // when
+            const { sessions } = await sessionRepository.findPaginatedFiltered({ filters, page });
+
+            // then
+            expect(sessions).to.have.length(2);
+            expect(sessions[0].id).to.equal(expectedFinalizedSessionId);
+            expect(sessions[1].id).to.equal(expectedCreatedSessionId);
+          });
+        });
+      });
+
     });
   });
 });
