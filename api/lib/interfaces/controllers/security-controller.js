@@ -4,6 +4,7 @@ const checkUserHasRolePixMasterUseCase = require('../../application/usecases/che
 const checkUserIsAdminInOrganizationUseCase = require('../../application/usecases/checkUserIsAdminInOrganization');
 const checkUserBelongsToScoOrganizationAndManagesStudentsUseCase  = require('../../application/usecases/checkUserBelongsToScoOrganizationAndManagesStudents');
 const checkUserBelongsToOrganizationUseCase  = require('../../application/usecases/checkUserBelongsToOrganization');
+const checkUserCanAccessCampaignUseCase  = require('../../application/usecases/checkUserCanAccessCampaign');
 
 const JSONAPIError = require('jsonapi-serializer').Error;
 
@@ -186,6 +187,22 @@ async function checkUserIsAdminInScoOrganizationAndManagesStudents(request, h) {
   return _replyWithAuthorizationError(h);
 }
 
+async function checkUserCanAccessCampaign(request, h) {
+  if (!request.auth.credentials || !request.auth.credentials.userId) {
+    return _replyWithAuthorizationError(h);
+  }
+
+  const userId = request.auth.credentials.userId;
+  const campaignId = parseInt(request.params.id);
+
+  const canAccessCampaign = await checkUserCanAccessCampaignUseCase.execute(userId, campaignId);
+  if (canAccessCampaign) {
+    return h.response(true);
+  }
+
+  return _replyWithAuthorizationError(h);
+}
+
 module.exports = {
   checkRequestedUserIsAuthenticatedUser,
   checkUserBelongsToOrganizationOrHasRolePixMaster,
@@ -195,4 +212,5 @@ module.exports = {
   checkUserIsAdminInOrganization,
   checkUserIsAdminInOrganizationOrHasRolePixMaster,
   checkUserIsAdminInScoOrganizationAndManagesStudents,
+  checkUserCanAccessCampaign,
 };
