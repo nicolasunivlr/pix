@@ -12,6 +12,10 @@ export default class SessionListController extends Controller {
   @tracked pageNumber = DEFAULT_PAGE_NUMBER;
   @tracked pageSize = 10;
   @tracked id = null;
+  @tracked isCreated = false;
+  @tracked isFinalized = false;
+  @tracked isPublished = false;
+  @tracked areResultsSent = false;
 
   searchFilter = null;
 
@@ -24,5 +28,10 @@ export default class SessionListController extends Controller {
   triggerFiltering(fieldName, value) {
     this.searchFilter = { fieldName, value };
     debounce(this, this.setFieldName, 500);
+  }
+
+  @action
+  toggle(value) {
+    this[value] = !this[value];
   }
 }

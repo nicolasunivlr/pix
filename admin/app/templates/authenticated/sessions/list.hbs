@@ -3,6 +3,16 @@
 </header>
 
 <main class="page-body">
+    <div>
+        <label for="filterCreated">Créée</label>
+        <Input @type="checkbox" {{on "click" (fn this.toggle 'isCreated')}} id="filterCreated" />
+        <label for="filterFinalized">Finalisée</label>
+        <Input @type="checkbox" {{on "click" (fn this.toggle 'isFinalized')}} id="filterFinalized" />
+        <label for="filterPublished">Résultats transmis par Pix</label>
+        <Input @type="checkbox" {{on "click" (fn this.toggle 'isPublished')}} id="filterPublished" />
+        <label for="filterResultsSent">Envoyée au prescripteur</label>
+        <Input @type="checkbox" {{on "click" (fn this.toggle 'areResultsSent')}} id="filterResultsSent" />
+    </div>
   <section class="page-section">
       <Sessions::ListItems
         @sessions={{@model}}
